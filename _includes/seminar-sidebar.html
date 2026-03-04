@@ -24,7 +24,7 @@
           aria-expanded="{% if is_expanded %}true{% else %}false{% endif %}"
         >
           <span>{{ season.label }}</span>
-          <span class="season-icon" aria-hidden="true">{% if is_expanded %}⌃{% else %}⌄{% endif %}</span>
+          <span class="season-icon" aria-hidden="true">⌃</span>
         </button>
         <ul class="season-items"{% unless is_expanded %} style="display: none;"{% endunless %}>
           {% for item in season.items %}

@@ -1,9 +1,8 @@
 document.querySelectorAll(".seminar-sidebar .season").forEach((season) => {
   const toggle = season.querySelector(".season-toggle");
   const items = season.querySelector(".season-items");
-  const icon = season.querySelector(".season-icon");
 
-  if (!toggle || !items || !icon) {
+  if (!toggle || !items) {
     return;
   }
 
@@ -13,6 +12,5 @@ document.querySelectorAll(".seminar-sidebar .season").forEach((season) => {
     toggle.setAttribute("aria-expanded", String(!isExpanded));
     season.setAttribute("data-expanded", String(!isExpanded));
     items.style.display = isExpanded ? "none" : "block";
-    icon.textContent = isExpanded ? "⌄" : "⌃";
   });
 });
