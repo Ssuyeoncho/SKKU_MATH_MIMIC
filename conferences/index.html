@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conferences | SKKU MATH MIMIC</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        background: #fbfbfd;
+      }
+
+      .page-nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(251, 251, 253, 0.95);
+        border-bottom: 1px solid #dbd9e2;
+        backdrop-filter: blur(10px);
+      }
+
+      .page-nav .container {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .page-nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .page-nav-link {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #56525f;
+        letter-spacing: 0.06em;
+      }
+
+      .page-nav-link.is-active {
+        color: #6957f3;
+      }
+
+      .page-content {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .page-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-content p {
+        max-width: 42rem;
+        font-size: 1.1rem;
+        color: #56525f;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="page-nav">
+      <div class="container">
+        <h1 id="logo">
+          <a href="../index.html"><img src="../assets/logo.png" alt="MIMIC logo" /></a>
+        </h1>
+        <div class="page-nav-menu">
+          <a class="page-nav-link" href="../index.html">MAIN</a>
+          <a class="page-nav-link" href="../seminars/index.html">SEMINARS</a>
+          <a class="page-nav-link is-active" href="index.html">CONFERENCES</a>
+          <a class="page-nav-link" href="../contact/index.html">CONTACT</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-content">
+      <h1>Conference Archive</h1>
+      <p>
+        이 페이지는 컨퍼런스 목록용 기본 화면입니다. 이후 세미나 아카이브와 같은
+        방식으로 연도별 목록, 개별 행사 페이지, 발표 자료 링크를 추가할 수 있습니다.
+      </p>
+    </main>
+  </body>
+</html>

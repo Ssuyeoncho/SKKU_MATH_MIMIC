@@ -30,10 +30,43 @@
         min-height: 100vh;
       }
 
+      .page-nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid #e3e1ea;
+        backdrop-filter: blur(10px);
+      }
+
+      .page-nav .container {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .page-nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .page-nav-link {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #56525f;
+        letter-spacing: 0.06em;
+      }
+
+      .page-nav-link.is-active {
+        color: #6957f3;
+      }
+
       .seminar-detail {
         max-width: 960px;
         margin: 0 auto;
-        padding: 7rem 2rem 4rem;
+        padding: 4rem 2rem;
       }
 
       .seminar-detail-header {
@@ -88,8 +121,21 @@
       }
 
       @media (max-width: 768px) {
+        .page-nav .container {
+          height: auto;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .page-nav-menu {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
         .seminar-detail {
-          padding-top: 5.5rem;
+          padding-top: 3rem;
         }
 
         .seminar-detail-header h1 {
@@ -99,19 +145,22 @@
     </style>
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="page-nav">
       <div class="container">
         <h1 id="logo">
           <a href="../index.html"><img src="../assets/logo.png" alt="MIMIC logo" /></a>
         </h1>
-        <ul class="nav-menu">
-          <li><a class="nav-link" href="../index.html#seminars">SEMINARS</a></li>
-        </ul>
+        <div class="page-nav-menu">
+          <a class="page-nav-link" href="../index.html">MAIN</a>
+          <a class="page-nav-link is-active" href="index.html">SEMINARS</a>
+          <a class="page-nav-link" href="../conferences/index.html">CONFERENCES</a>
+          <a class="page-nav-link" href="../contact/index.html">CONTACT</a>
+        </div>
       </div>
     </nav>
 
     <main class="seminar-detail">
-      <a class="back-link" href="../index.html#seminars">← Back to seminars</a>
+      <a class="back-link" href="index.html">← Back to seminars</a>
 
       <header class="seminar-detail-header">
         <p>2025 Fall / Seminar 01</p>
