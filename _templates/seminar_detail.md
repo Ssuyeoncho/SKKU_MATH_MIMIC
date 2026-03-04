@@ -1,13 +1,14 @@
 ---
 layout: seminar_detail
 page_title: "MIMIC | SEMINAR TITLE"
+permalink: /seminars/2025Fall/your-slug/
 
 # Basic info
 seminar_title: "SEMINAR TITLE"
 semester_label: "2025 Fall"
 seminar_number: "02"
 speaker: "Speaker Name (Affiliation)"
-current_path: "2025Fall/YYYY-MM-DD-your-file-name.html"
+current_path: "2025Fall/your-slug/"
 
 # Korean content
 abstract_tagline: "“한 줄 멘트”"

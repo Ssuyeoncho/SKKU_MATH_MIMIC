@@ -2,7 +2,7 @@ seasons:
   - label: "2025 Fall"
     items:
       - title: "1+1=0"
-        href: "2025Fall/2025-09-08-1+1=0.html"
+        href: "2025Fall/one-plus-one-equals-zero/"
       - title: "Course Registration and Game Theory"
       - title: "Tessellation of H²"
       - title: "Randomness and Infinity"
