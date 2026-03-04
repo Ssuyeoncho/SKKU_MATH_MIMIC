@@ -107,7 +107,7 @@ body.seminar-page {
   font-weight: 700;
   line-height: 1;
   flex-shrink: 0;
-  transform: rotate(var(--icon-rotation));
+  transform: translateY(-1px) rotate(var(--icon-rotation));
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -116,7 +116,7 @@ body.seminar-page {
 }
 
 .season-toggle:hover .season-icon {
-  transform: translateY(-1px) rotate(var(--icon-rotation));
+  transform: translateY(-2px) rotate(var(--icon-rotation));
   border-color: var(--season-icon-border-hover);
   box-shadow: 0 12px 24px var(--season-icon-shadow-strong);
 }
