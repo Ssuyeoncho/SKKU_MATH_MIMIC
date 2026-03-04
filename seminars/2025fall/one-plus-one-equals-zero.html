@@ -8,23 +8,23 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../assets/favicon/apple-touch-icon.png"
+      href="../../assets/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets/favicon/favicon-16x16.png"
+      href="../../assets/favicon/favicon-16x16.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/favicon/favicon-32x32.png"
+      href="../../assets/favicon/favicon-32x32.png"
     />
-    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/utilities.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/utilities.css" />
     <style>
       :root {
         --sidebar-border: #dbd9e2;
@@ -46,11 +46,13 @@
       .seminar-layout {
         display: grid;
         grid-template-columns: minmax(220px, 310px) 1fr;
+        grid-template-areas: "sidebar detail";
         margin-top: 80px;
         min-height: calc(100vh - 80px);
       }
 
       .seminar-sidebar {
+        grid-area: sidebar;
         border-right: 1px solid var(--sidebar-border);
         background: #fbfbfd;
       }
@@ -130,6 +132,7 @@
       }
 
       .seminar-detail {
+        grid-area: detail;
         max-width: 1100px;
         padding: 4rem 3rem;
       }
@@ -188,6 +191,9 @@
       @media (max-width: 768px) {
         .seminar-layout {
           grid-template-columns: 1fr;
+          grid-template-areas:
+            "sidebar"
+            "detail";
         }
 
         .seminar-sidebar {
@@ -209,18 +215,18 @@
     <nav class="navbar">
       <div class="container">
         <h1 id="logo">
-          <a href="../index.html"><img src="../assets/logo.png" alt="MIMIC logo" /></a>
+          <a href="../../index.html"><img src="../../assets/logo.png" alt="MIMIC logo" /></a>
         </h1>
         <ul class="nav-menu">
-          <li><a class="nav-link" href="../index.html">MAIN</a></li>
-          <li><a class="nav-link is-active" href="index.html">SEMINARS</a></li>
-          <li><a class="nav-link" href="../conferences/index.html">CONFERENCES</a></li>
-          <li><a class="nav-link" href="../contact/index.html">CONTACT</a></li>
+          <li><a class="nav-link" href="../../index.html">MAIN</a></li>
+          <li><a class="nav-link is-active" href="../index.html">SEMINARS</a></li>
+          <li><a class="nav-link" href="../../conferences/index.html">CONFERENCES</a></li>
+          <li><a class="nav-link" href="../../contact/index.html">CONTACT</a></li>
           <div class="theme-switch">
             <input type="checkbox" id="switch" />
             <label class="toggle-icons" for="switch">
-              <img class="moon" src="../assets/moon.svg" alt="Dark mode" />
-              <img class="sun" src="../assets/sun.svg" alt="Light mode" />
+              <img class="moon" src="../../assets/moon.svg" alt="Dark mode" />
+              <img class="sun" src="../../assets/sun.svg" alt="Light mode" />
             </label>
           </div>
         </ul>
@@ -233,32 +239,9 @@
     </nav>
 
     <main class="seminar-layout">
-      <aside class="seminar-sidebar">
-        <div class="seminar-sidebar-header">
-          <h1>SEMINARS</h1>
-        </div>
-
-        <section class="season">
-          <button class="season-toggle" type="button" aria-expanded="true">
-            <span>2025 Fall</span>
-            <span class="season-icon" aria-hidden="true">⌃</span>
-          </button>
-          <ul class="season-items">
-            <li><a class="season-link is-current" href="one-plus-one-equals-zero.html">1+1=0</a></li>
-            <li><span class="season-link">Course Registration and Game Theory</span></li>
-            <li><span class="season-link">Tessellation of H²</span></li>
-            <li><span class="season-link">Randomness and Infinity</span></li>
-            <li><span class="season-link">Dual Number and Split-Complex Number</span></li>
-            <li><span class="season-link">Basic Convex Optimization II - Second-Order Methods</span></li>
-            <li><span class="season-link">Peter-Weyl Theorem</span></li>
-            <li><span class="season-link">Root System of Semisimple Lie Algebra and its Classification</span></li>
-            <li><span class="season-link">Antipodes and Involutions</span></li>
-          </ul>
-        </section>
-      </aside>
-
+      <!-- Edit this block for each seminar -->
       <section class="seminar-detail">
-        <a class="back-link" href="index.html">← Back to seminars</a>
+        <a class="back-link" href="../index.html">← Back to seminars</a>
 
         <header class="seminar-detail-header">
           <p>2025 Fall / Seminar 01</p>
@@ -287,12 +270,20 @@
           <p>영상 링크가 준비되면 이 위치에 추가할 수 있습니다.</p>
           <img
             class="seminar-image"
-            src="../assets/project/project-one.png"
+            src="../../assets/project/project-one.png"
             alt="1+1=0 seminar thumbnail"
           />
         </section>
       </section>
+
+      <aside
+        class="seminar-sidebar"
+        data-seminar-sidebar
+        data-base-path=".."
+        data-current-path="2025fall/one-plus-one-equals-zero.html"
+      ></aside>
     </main>
-    <script src="../js/script.js"></script>
+    <script src="../../js/seminar-sidebar.js"></script>
+    <script src="../../js/script.js"></script>
   </body>
 </html>

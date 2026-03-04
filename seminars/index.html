@@ -227,119 +227,12 @@
     </nav>
 
     <main class="seminar-browser">
-      <aside class="seminar-sidebar">
-        <div class="seminar-sidebar-header">
-          <h1>SEMINARS</h1>
-        </div>
-
-        <div class="season-list">
-          <section class="season" data-expanded="true">
-            <button class="season-toggle" type="button" aria-expanded="true">
-              <span>2025 Fall</span>
-              <span class="season-icon" aria-hidden="true">⌃</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item">
-                <a class="season-link is-current" href="one-plus-one-equals-zero.html">1+1=0</a>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Course Registration and Game Theory</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Tessellation of H²</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Randomness and Infinity</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Dual Number and Split-Complex Number</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Basic Convex Optimization II - Second-Order Methods</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Peter-Weyl Theorem</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Root System of Semisimple Lie Algebra and its Classification</span>
-              </li>
-              <li class="season-item">
-                <span class="season-link">Antipodes and Involutions</span>
-              </li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2025 Spring</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2024 Fall</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2024 Spring</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2023 Fall</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2023 Spring</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2022 Fall</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-
-          <section class="season" data-expanded="false">
-            <button class="season-toggle" type="button" aria-expanded="false">
-              <span>2022 Spring</span>
-              <span class="season-icon" aria-hidden="true">⌄</span>
-            </button>
-            <ul class="season-items">
-              <li class="season-item"><span class="season-link">Coming soon</span></li>
-            </ul>
-          </section>
-        </div>
-      </aside>
+      <aside
+        class="seminar-sidebar"
+        data-seminar-sidebar
+        data-base-path=""
+        data-current-path=""
+      ></aside>
 
       <section class="seminar-content">
         <span class="content-eyebrow">Seminar Archive</span>
@@ -357,36 +250,7 @@
       </section>
     </main>
 
-    <script>
-      const seasons = document.querySelectorAll(".season");
-
-      seasons.forEach((season) => {
-        const toggle = season.querySelector(".season-toggle");
-        const items = season.querySelector(".season-items");
-        const icon = season.querySelector(".season-icon");
-
-        toggle.addEventListener("click", () => {
-          const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-
-          if (isExpanded) {
-            toggle.setAttribute("aria-expanded", "false");
-            items.style.display = "none";
-            icon.textContent = "⌄";
-            season.setAttribute("data-expanded", "false");
-            return;
-          }
-
-          toggle.setAttribute("aria-expanded", "true");
-          items.style.display = "block";
-          icon.textContent = "⌃";
-          season.setAttribute("data-expanded", "true");
-        });
-
-        if (toggle.getAttribute("aria-expanded") === "false") {
-          items.style.display = "none";
-        }
-      });
-    </script>
+    <script src="../js/seminar-sidebar.js"></script>
     <script src="../js/script.js"></script>
   </body>
 </html>
