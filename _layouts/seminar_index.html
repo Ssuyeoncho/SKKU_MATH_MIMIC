@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% include site-head.html %}
+    <style>
+      .seminar-browser {
+        grid-template-columns: minmax(220px, 310px) 1fr;
+      }
+
+      .seminar-content {
+        padding: 6rem 4rem 3rem;
+      }
+
+      .seminar-content p {
+        max-width: 48rem;
+        font-size: 1.1rem;
+        color: #56525f;
+      }
+
+      .seminar-content h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .content-eyebrow {
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: var(--sidebar-accent);
+        font-weight: 700;
+      }
+
+      .back-home {
+        display: inline-block;
+        margin-top: 2rem;
+        font-weight: 700;
+      }
+
+      @media (max-width: 900px) {
+        .seminar-content {
+          padding: 3rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="seminar-page">
+    {% include site-navbar.html active="seminars" %}
+
+    <main class="seminar-shell seminar-browser">
+      {% include seminar-sidebar.html current_path='' %}
+
+      <section class="seminar-content">
+        {{ content }}
+      </section>
+    </main>
+
+    <script src="{{ '/js/seminar-sidebar.js' | relative_url }}"></script>
+    <script src="{{ '/js/script.js' | relative_url }}"></script>
+  </body>
+</html>

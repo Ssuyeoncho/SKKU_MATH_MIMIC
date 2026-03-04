@@ -1,0 +1,34 @@
+seasons:
+  - label: "2025 Fall"
+    items:
+      - title: "1+1=0"
+        href: "2025fall/one-plus-one-equals-zero.html"
+      - title: "Course Registration and Game Theory"
+      - title: "Tessellation of H²"
+      - title: "Randomness and Infinity"
+      - title: "Dual Number and Split-Complex Number"
+      - title: "Basic Convex Optimization II - Second-Order Methods"
+      - title: "Peter-Weyl Theorem"
+      - title: "Root System of Semisimple Lie Algebra and its Classification"
+      - title: "Antipodes and Involutions"
+  - label: "2025 Spring"
+    items:
+      - title: "Coming soon"
+  - label: "2024 Fall"
+    items:
+      - title: "Coming soon"
+  - label: "2024 Spring"
+    items:
+      - title: "Coming soon"
+  - label: "2023 Fall"
+    items:
+      - title: "Coming soon"
+  - label: "2023 Spring"
+    items:
+      - title: "Coming soon"
+  - label: "2022 Fall"
+    items:
+      - title: "Coming soon"
+  - label: "2022 Spring"
+    items:
+      - title: "Coming soon"

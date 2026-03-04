@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% include site-head.html %}
+    <style>
+      .seminar-layout {
+        grid-template-areas: "sidebar detail";
+      }
+
+      .seminar-sidebar {
+        grid-area: sidebar;
+      }
+
+      .seminar-detail {
+        grid-area: detail;
+        max-width: 1100px;
+        padding: 4rem 3rem;
+      }
+
+      .seminar-detail-header {
+        margin-bottom: 2.5rem;
+      }
+
+      .seminar-detail-header p {
+        color: #666;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .seminar-detail-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .seminar-meta {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .seminar-summary {
+        background: var(--card-background);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .seminar-summary h2,
+      .seminar-video h2 {
+        margin-bottom: 1rem;
+      }
+
+      .seminar-summary p,
+      .seminar-video p {
+        font-size: 1.05rem;
+      }
+
+      .seminar-image {
+        width: 100%;
+        max-width: 520px;
+        display: block;
+        margin: 2rem auto 0;
+        border-radius: 12px;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        .seminar-layout {
+          grid-template-areas:
+            "sidebar"
+            "detail";
+        }
+
+        .seminar-detail {
+          padding: 3rem 1.5rem;
+        }
+
+        .seminar-detail-header h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="seminar-page">
+    {% include site-navbar.html active="seminars" %}
+
+    <main class="seminar-shell seminar-layout">
+      <section class="seminar-detail">
+        <a class="back-link" href="{{ '/seminars/index.html' | relative_url }}">← Back to seminars</a>
+
+        <header class="seminar-detail-header">
+          <p>{{ page.semester_label }} / Seminar {{ page.seminar_number }}</p>
+          <h1>{{ page.seminar_title }}</h1>
+          <div class="seminar-meta">
+            <strong>Speaker:</strong> {{ page.speaker }}
+          </div>
+        </header>
+
+        {{ content }}
+      </section>
+
+      {% include seminar-sidebar.html current_path=page.current_path %}
+    </main>
+    <script src="{{ '/js/seminar-sidebar.js' | relative_url }}"></script>
+    <script src="{{ '/js/script.js' | relative_url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+:root {
+  --sidebar-border: #dbd9e2;
+  --sidebar-text: #56525f;
+  --sidebar-accent: #1c6b42;
+  --sidebar-hover: #eef6f0;
+  --page-bg: #fbfbfd;
+}
+
+body.seminar-page {
+  min-height: 100vh;
+  background: var(--page-bg);
+}
+
+.seminar-page .navbar .nav-link.is-active {
+  color: var(--sidebar-accent);
+}
+
+.seminar-shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 310px) 1fr;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.seminar-sidebar {
+  border-right: 1px solid var(--sidebar-border);
+  background: #fbfbfd;
+}
+
+.seminar-sidebar-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.seminar-sidebar-header h1 {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+.season-list {
+  padding: 0;
+  margin: 0;
+}
+
+.season {
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.season-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--sidebar-accent);
+  cursor: pointer;
+}
+
+.season-toggle span:first-child {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.season-icon {
+  width: 2.3rem;
+  height: 2.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c8c3d7;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef6f0 100%);
+  box-shadow: 0 8px 20px rgba(28, 107, 66, 0.12);
+  color: var(--sidebar-accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.season-toggle:hover .season-icon {
+  transform: translateY(-1px);
+  border-color: #6da985;
+  box-shadow: 0 12px 24px rgba(28, 107, 66, 0.18);
+}
+
+.season-items {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 1rem;
+}
+
+.season-item {
+  display: block;
+  margin: 0;
+}
+
+.season-link {
+  display: block;
+  padding: 0.55rem 1.25rem 0.55rem 1.5rem;
+  color: var(--sidebar-text);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.season-link.is-current,
+.season-link:hover {
+  background: var(--sidebar-hover);
+}
+
+.season-link.is-current {
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .seminar-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .seminar-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--sidebar-border);
+  }
+}

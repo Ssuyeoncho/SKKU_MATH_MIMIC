@@ -1,0 +1,47 @@
+<aside class="seminar-sidebar">
+  <div class="seminar-sidebar-header">
+    <h1>SEMINARS</h1>
+  </div>
+  <div class="season-list">
+    {% for season in site.data.seminars.seasons %}
+      {% assign season_has_current = false %}
+      {% for item in season.items %}
+        {% if item.href and item.href == include.current_path %}
+          {% assign season_has_current = true %}
+        {% endif %}
+      {% endfor %}
+      {% assign default_open = false %}
+      {% if include.current_path == nil or include.current_path == '' %}
+        {% if forloop.first %}
+          {% assign default_open = true %}
+        {% endif %}
+      {% endif %}
+      {% assign is_expanded = season_has_current or default_open %}
+      <section class="season" data-expanded="{% if is_expanded %}true{% else %}false{% endif %}">
+        <button
+          class="season-toggle"
+          type="button"
+          aria-expanded="{% if is_expanded %}true{% else %}false{% endif %}"
+        >
+          <span>{{ season.label }}</span>
+          <span class="season-icon" aria-hidden="true">{% if is_expanded %}⌃{% else %}⌄{% endif %}</span>
+        </button>
+        <ul class="season-items"{% unless is_expanded %} style="display: none;"{% endunless %}>
+          {% for item in season.items %}
+            <li class="season-item">
+              {% if item.href %}
+                {% assign item_url = '/seminars/' | append: item.href %}
+                <a
+                  class="season-link{% if item.href == include.current_path %} is-current{% endif %}"
+                  href="{{ item_url | relative_url }}"
+                >{{ item.title }}</a>
+              {% else %}
+                <span class="season-link">{{ item.title }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </div>
+</aside>

@@ -1,289 +1,33 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1+1=0 | SKKU MATH MIMIC</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../../assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../../assets/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../../assets/favicon/favicon-32x32.png"
-    />
-    <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico" />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="../../css/utilities.css" />
-    <style>
-      :root {
-        --sidebar-border: #dbd9e2;
-        --sidebar-text: #56525f;
-        --sidebar-accent: #1c6b42;
-        --sidebar-hover: #eef6f0;
-        --page-bg: #fbfbfd;
-      }
+---
+layout: seminar_detail
+page_title: "1+1=0 | SKKU MATH MIMIC"
+seminar_title: "1+1=0"
+semester_label: "2025 Fall"
+seminar_number: "01"
+speaker: "Ye-sung Kook (Sungkyunkwan University)"
+current_path: "2025fall/one-plus-one-equals-zero.html"
+---
 
-      body {
-        min-height: 100vh;
-        background: var(--page-bg);
-      }
+<section class="seminar-summary">
+  <h2>초록</h2>
+  <p>
+    우리는 보통 1+1=2를 절대적인 사실처럼 받아들이지만, 어떤 연산을 어떻게
+    정의하느냐에 따라 전혀 다른 결과가 나올 수 있습니다. 이 세미나는 덧셈의
+    정의를 다시 바라보면서, 수학이 단순한 계산을 넘어 개념을 설계하는 학문임을
+    직관적으로 보여주는 입문 세션입니다.
+  </p>
+  <p>
+    연산의 규칙이 달라질 때 어떤 구조가 만들어지는지, 그리고 이런 발상이 현대
+    수학과 컴퓨터 과학에서 왜 중요한지 간단한 예시와 함께 소개합니다.
+  </p>
+</section>
 
-      .navbar .nav-link.is-active {
-        color: var(--sidebar-accent);
-      }
-
-      .seminar-layout {
-        display: grid;
-        grid-template-columns: minmax(220px, 310px) 1fr;
-        grid-template-areas: "sidebar detail";
-        margin-top: 80px;
-        min-height: calc(100vh - 80px);
-      }
-
-      .seminar-sidebar {
-        grid-area: sidebar;
-        border-right: 1px solid var(--sidebar-border);
-        background: #fbfbfd;
-      }
-
-      .seminar-sidebar-header {
-        padding: 1.5rem 1.5rem 1rem;
-        border-bottom: 1px solid var(--sidebar-border);
-      }
-
-      .seminar-sidebar-header h1 {
-        font-size: 1.05rem;
-        letter-spacing: 0.04em;
-      }
-
-      .season {
-        border-bottom: 1px solid var(--sidebar-border);
-      }
-
-      .season-toggle {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 1.25rem 1.5rem;
-        border: 0;
-        background: transparent;
-        font: inherit;
-        color: var(--sidebar-accent);
-        cursor: pointer;
-      }
-
-      .season-toggle span:first-child {
-        font-size: 0.92rem;
-        font-weight: 600;
-      }
-
-      .season-icon {
-        width: 2.3rem;
-        height: 2.3rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #c8c3d7;
-        border-radius: 999px;
-        background: linear-gradient(180deg, #ffffff 0%, #eef6f0 100%);
-        box-shadow: 0 8px 20px rgba(28, 107, 66, 0.12);
-        color: var(--sidebar-accent);
-        font-size: 0.95rem;
-        font-weight: 700;
-        line-height: 1;
-        flex-shrink: 0;
-      }
-
-      .season-items {
-        list-style: none;
-        margin: 0;
-        padding: 0 0 1rem;
-      }
-
-      .season-link {
-        display: block;
-        padding: 0.55rem 1.25rem 0.55rem 1.5rem;
-        color: var(--sidebar-text);
-        font-size: 0.92rem;
-        line-height: 1.45;
-        text-decoration: none;
-      }
-
-      .season-link.is-current,
-      .season-link:hover {
-        background: var(--sidebar-hover);
-      }
-
-      .season-link.is-current {
-        font-weight: 700;
-      }
-
-      .seminar-detail {
-        grid-area: detail;
-        max-width: 1100px;
-        padding: 4rem 3rem;
-      }
-
-      .seminar-detail-header {
-        margin-bottom: 2.5rem;
-      }
-
-      .seminar-detail-header p {
-        color: #666;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-      }
-
-      .seminar-detail-header h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .seminar-meta {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-      }
-
-      .seminar-summary {
-        background: var(--card-background);
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .seminar-summary h2,
-      .seminar-video h2 {
-        margin-bottom: 1rem;
-      }
-
-      .seminar-summary p,
-      .seminar-video p {
-        font-size: 1.05rem;
-      }
-
-      .seminar-image {
-        width: 100%;
-        max-width: 520px;
-        display: block;
-        margin: 2rem auto 0;
-        border-radius: 12px;
-      }
-
-      .back-link {
-        display: inline-block;
-        margin-bottom: 2rem;
-        font-weight: 700;
-      }
-
-      @media (max-width: 768px) {
-        .seminar-layout {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-            "sidebar"
-            "detail";
-        }
-
-        .seminar-sidebar {
-          border-right: 0;
-          border-bottom: 1px solid var(--sidebar-border);
-        }
-
-        .seminar-detail {
-          padding: 3rem 1.5rem;
-        }
-
-        .seminar-detail-header h1 {
-          font-size: 2.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="container">
-        <h1 id="logo">
-          <a href="../../index.html"><img src="../../assets/logo.png" alt="MIMIC logo" /></a>
-        </h1>
-        <ul class="nav-menu">
-          <li><a class="nav-link" href="../../index.html">MAIN</a></li>
-          <li><a class="nav-link is-active" href="../index.html">SEMINARS</a></li>
-          <li><a class="nav-link" href="../../conferences/index.html">CONFERENCES</a></li>
-          <li><a class="nav-link" href="../../contact/index.html">CONTACT</a></li>
-          <div class="theme-switch">
-            <input type="checkbox" id="switch" />
-            <label class="toggle-icons" for="switch">
-              <img class="moon" src="../../assets/moon.svg" alt="Dark mode" />
-              <img class="sun" src="../../assets/sun.svg" alt="Light mode" />
-            </label>
-          </div>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </div>
-    </nav>
-
-    <main class="seminar-layout">
-      <!-- Edit this block for each seminar -->
-      <section class="seminar-detail">
-        <a class="back-link" href="../index.html">← Back to seminars</a>
-
-        <header class="seminar-detail-header">
-          <p>2025 Fall / Seminar 01</p>
-          <h1>1+1=0</h1>
-          <div class="seminar-meta">
-            <strong>Speaker:</strong> Ye-sung Kook (Sungkyunkwan University)
-          </div>
-        </header>
-
-        <section class="seminar-summary">
-          <h2>초록</h2>
-          <p>
-            우리는 보통 1+1=2를 절대적인 사실처럼 받아들이지만, 어떤 연산을 어떻게
-            정의하느냐에 따라 전혀 다른 결과가 나올 수 있습니다. 이 세미나는 덧셈의
-            정의를 다시 바라보면서, 수학이 단순한 계산을 넘어 개념을 설계하는 학문임을
-            직관적으로 보여주는 입문 세션입니다.
-          </p>
-          <p>
-            연산의 규칙이 달라질 때 어떤 구조가 만들어지는지, 그리고 이런 발상이 현대
-            수학과 컴퓨터 과학에서 왜 중요한지 간단한 예시와 함께 소개합니다.
-          </p>
-        </section>
-
-        <section class="seminar-video">
-          <h2>Video Link</h2>
-          <p>영상 링크가 준비되면 이 위치에 추가할 수 있습니다.</p>
-          <img
-            class="seminar-image"
-            src="../../assets/project/project-one.png"
-            alt="1+1=0 seminar thumbnail"
-          />
-        </section>
-      </section>
-
-      <aside
-        class="seminar-sidebar"
-        data-seminar-sidebar
-        data-base-path=".."
-        data-current-path="2025fall/one-plus-one-equals-zero.html"
-      ></aside>
-    </main>
-    <script src="../../js/seminar-sidebar.js"></script>
-    <script src="../../js/script.js"></script>
-  </body>
-</html>
+<section class="seminar-video">
+  <h2>Video Link</h2>
+  <p>영상 링크가 준비되면 이 위치에 추가할 수 있습니다.</p>
+  <img
+    class="seminar-image"
+    src="{{ '/assets/project/project-one.png' | relative_url }}"
+    alt="1+1=0 seminar thumbnail"
+  />
+</section>
