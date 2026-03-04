@@ -38,4 +38,12 @@ video_note: "영상 링크가 준비되면 이 위치에 추가할 수 있습니
 thumbnail_src: "/assets/project/project-one.png"
 thumbnail_alt_en: "Seminar thumbnail"
 thumbnail_alt: "Seminar thumbnail"
+materials_heading: "Presentation Material"
+materials:
+  - label: "Slide deck title"
+    url: "#"
+materials_heading_en: "Presentation Material"
+materials_en:
+  - label: "Slide deck title"
+    url: "#"
 ---

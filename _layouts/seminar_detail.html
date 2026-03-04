@@ -13,19 +13,23 @@
 
       .seminar-detail {
         grid-area: detail;
-        max-width: 1100px;
-        padding: 4rem 3rem;
+        max-width: 1040px;
+        padding: 3rem 3rem 4rem;
       }
 
-      .seminar-detail-header {
-        margin-bottom: 2.5rem;
+      .detail-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
       }
 
       .seminar-language-toggle {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        margin-bottom: 2rem;
         padding: 0.3rem;
         border: 1px solid var(--sidebar-border);
         border-radius: 999px;
@@ -49,70 +53,152 @@
         color: var(--bg-primary);
       }
 
-      .seminar-detail-header p {
+      .seminar-lang-panel {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .seminar-lang-panel[hidden] {
+        display: none;
+      }
+
+      .seminar-hero-card,
+      .detail-card {
+        background: var(--panel-bg);
+        border: 1px solid var(--sidebar-border);
+        border-radius: 22px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+      }
+
+      .seminar-hero-card {
+        padding: 2rem 2.2rem;
+      }
+
+      .seminar-detail-header {
+        margin: 0;
+      }
+
+      .seminar-context {
         color: var(--content-subtle);
-        font-weight: 600;
-        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-bottom: 0.9rem;
       }
 
       .seminar-detail-header h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
+        font-size: 3.2rem;
+        line-height: 1;
+        margin: 0 0 1.25rem;
       }
 
       .seminar-meta {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 14px;
+        background: var(--sidebar-hover);
+        font-size: 1rem;
       }
 
-      .seminar-summary {
-        background: var(--card-background);
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 2rem;
+      .seminar-summary,
+      .seminar-video {
+        padding: 1.9rem 2.2rem 2rem;
+      }
+
+      .seminar-materials {
+        padding: 1.8rem 2.2rem 2rem;
       }
 
       .seminar-summary h2,
       .seminar-video h2 {
-        margin-bottom: 1rem;
+        margin: 0 0 1rem;
+        font-size: 1.45rem;
+      }
+
+      .seminar-materials h2 {
+        margin: 0 0 1rem;
+        font-size: 1.45rem;
+      }
+
+      .seminar-summary h2 {
+        text-align: center;
       }
 
       .abstract-tagline {
-        margin-bottom: 1.25rem;
-        font-size: 1.35rem;
+        margin: 0 0 1.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
         text-align: center;
         color: var(--text-color);
       }
 
       .seminar-summary p,
-      .seminar-video p {
-        font-size: 1.05rem;
+      .seminar-video p,
+      .seminar-materials p {
+        margin: 0;
+        font-size: 1.02rem;
+        line-height: 1.85;
         color: var(--content-muted);
       }
 
+      .seminar-summary p + p,
+      .seminar-video p + p,
+      .seminar-materials p + p {
+        margin-top: 1rem;
+      }
+
+      .material-list {
+        display: grid;
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .material-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        color: var(--sidebar-accent);
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .material-link::before {
+        content: "↗";
+        font-size: 0.95rem;
+      }
+
       .seminar-prerequisite {
-        margin-top: 1.5rem;
-        font-size: 1rem;
+        margin-top: 1.6rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid var(--sidebar-border);
+        font-size: 0.98rem;
         color: var(--content-muted);
       }
 
       .seminar-image {
         width: 100%;
-        max-width: 520px;
+        max-width: 560px;
         display: block;
-        margin: 2rem auto 0;
-        border-radius: 12px;
+        margin: 1.5rem auto 0;
+        padding: 0.7rem;
+        border: 1px solid var(--sidebar-border);
+        background: var(--bg-primary);
+        border-radius: 18px;
       }
 
       .back-link {
-        display: inline-block;
-        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 0.85rem;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 999px;
+        background: var(--panel-bg);
         font-weight: 700;
-      }
-
-      .seminar-lang-panel[hidden] {
-        display: none;
       }
 
       @media (max-width: 768px) {
@@ -123,11 +209,19 @@
         }
 
         .seminar-detail {
-          padding: 3rem 1.5rem;
+          padding: 2rem 1.25rem 3rem;
+        }
+
+        .seminar-hero-card,
+        .seminar-summary,
+        .seminar-video,
+        .seminar-materials {
+          padding-left: 1.35rem;
+          padding-right: 1.35rem;
         }
 
         .seminar-detail-header h1 {
-          font-size: 2.5rem;
+          font-size: 2.35rem;
         }
       }
     </style>
@@ -137,39 +231,41 @@
 
     <main class="seminar-shell seminar-layout">
       <section class="seminar-detail">
-        <a class="back-link" href="{{ '/seminars/index.html' | relative_url }}">← Back to seminars</a>
         {% assign has_english = false %}
         {% if page.abstract_body_en or page.seminar_title_en or page.speaker_en %}
           {% assign has_english = true %}
         {% endif %}
 
-        {% if has_english %}
-        <div class="seminar-language-toggle" data-language-toggle>
-          <button
-            class="language-button is-active"
-            type="button"
-            data-language-button="ko"
-            aria-pressed="true"
-          >한국어</button>
-          <button
-            class="language-button"
-            type="button"
-            data-language-button="en"
-            aria-pressed="false"
-          >EN</button>
+        <div class="detail-toolbar">
+          <a class="back-link" href="{{ '/seminars/index.html' | relative_url }}">← Back to seminars</a>
+          {% if has_english %}
+          <div class="seminar-language-toggle" data-language-toggle>
+            <button
+              class="language-button is-active"
+              type="button"
+              data-language-button="ko"
+              aria-pressed="true"
+            >한국어</button>
+            <button
+              class="language-button"
+              type="button"
+              data-language-button="en"
+              aria-pressed="false"
+            >EN</button>
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
 
         <div class="seminar-lang-panel" data-language-panel="ko">
-          <header class="seminar-detail-header">
-            <p>{{ page.semester_label }} / Seminar {{ page.seminar_number }}</p>
+          <header class="seminar-detail-header seminar-hero-card">
+            <p class="seminar-context">{{ page.semester_label }} / Seminar {{ page.seminar_number }}</p>
             <h1>{{ page.seminar_title }}</h1>
             <div class="seminar-meta">
               <strong>Speaker:</strong> {{ page.speaker }}
             </div>
           </header>
 
-          <section class="seminar-summary">
+          <section class="seminar-summary detail-card">
             <h2>초록</h2>
             {% if page.abstract_tagline %}
             <p class="abstract-tagline">{{ page.abstract_tagline }}</p>
@@ -184,7 +280,7 @@
             {% endif %}
           </section>
 
-          <section class="seminar-video">
+          <section class="seminar-video detail-card">
             <h2>{{ page.video_heading | default: 'Video Link' }}</h2>
             <p>{{ page.video_note | default: '영상 링크가 준비되면 이 위치에 추가할 수 있습니다.' }}</p>
             <img
@@ -193,19 +289,30 @@
               alt="{{ page.thumbnail_alt | default: page.seminar_title }}"
             />
           </section>
+
+          {% if page.materials %}
+          <section class="seminar-materials detail-card">
+            <h2>{{ page.materials_heading | default: 'Presentation Material' }}</h2>
+            <div class="material-list">
+              {% for item in page.materials %}
+              <a class="material-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+              {% endfor %}
+            </div>
+          </section>
+          {% endif %}
         </div>
 
         {% if has_english %}
         <div class="seminar-lang-panel" data-language-panel="en" hidden>
-          <header class="seminar-detail-header">
-            <p>{{ page.semester_label_en | default: page.semester_label }} / Seminar {{ page.seminar_number }}</p>
+          <header class="seminar-detail-header seminar-hero-card">
+            <p class="seminar-context">{{ page.semester_label_en | default: page.semester_label }} / Seminar {{ page.seminar_number }}</p>
             <h1>{{ page.seminar_title_en | default: page.seminar_title }}</h1>
             <div class="seminar-meta">
               <strong>Speaker:</strong> {{ page.speaker_en | default: page.speaker }}
             </div>
           </header>
 
-          <section class="seminar-summary">
+          <section class="seminar-summary detail-card">
             <h2>{{ page.abstract_heading_en | default: 'Abstract' }}</h2>
             {% if page.abstract_tagline_en %}
             <p class="abstract-tagline">{{ page.abstract_tagline_en }}</p>
@@ -216,7 +323,7 @@
             {% endif %}
           </section>
 
-          <section class="seminar-video">
+          <section class="seminar-video detail-card">
             <h2>{{ page.video_heading_en | default: page.video_heading | default: 'Video Link' }}</h2>
             <p>{{ page.video_note_en | default: page.video_note | default: 'Video link will be added here when available.' }}</p>
             <img
@@ -225,6 +332,26 @@
               alt="{{ page.thumbnail_alt_en | default: page.thumbnail_alt | default: page.seminar_title_en | default: page.seminar_title }}"
             />
           </section>
+
+          {% if page.materials_en %}
+          <section class="seminar-materials detail-card">
+            <h2>{{ page.materials_heading_en | default: 'Presentation Material' }}</h2>
+            <div class="material-list">
+              {% for item in page.materials_en %}
+              <a class="material-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+              {% endfor %}
+            </div>
+          </section>
+          {% elsif page.materials %}
+          <section class="seminar-materials detail-card">
+            <h2>{{ page.materials_heading_en | default: page.materials_heading | default: 'Presentation Material' }}</h2>
+            <div class="material-list">
+              {% for item in page.materials %}
+              <a class="material-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+              {% endfor %}
+            </div>
+          </section>
+          {% endif %}
         </div>
         {% endif %}
       </section>
