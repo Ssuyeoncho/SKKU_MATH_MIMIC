@@ -201,7 +201,11 @@
         {% assign featured_season = site.data.seminars.seasons | first %}
         {% assign featured_item = featured_season.items | first %}
         {% assign featured_href = featured_item.href | default: '' %}
-        {% assign featured_page = site.pages | where: "current_path", featured_href | first %}
+        {% assign featured_page_url = '/seminars/' | append: featured_href %}
+        {% assign featured_page = site.pages | where: "url", featured_page_url | first %}
+        {% if featured_page == nil %}
+          {% assign featured_page = site.pages | where: "current_path", featured_href | first %}
+        {% endif %}
         {% assign featured_thumbnail = featured_page.thumbnail_src | default: '/assets/project/project-one.png' %}
         {% assign featured_title = featured_item.title | default: 'Featured Seminar' %}
         {% assign featured_label = featured_season.label | default: 'Seminar' %}

@@ -129,7 +129,12 @@ h2::selection {
 
 .conference-card {
   display: block;
-  color: inherit;
+  color: #ffffff;
+}
+
+.conference-card:hover,
+.conference-card:focus-visible {
+  color: #ffffff;
 }
 
 .card a {
