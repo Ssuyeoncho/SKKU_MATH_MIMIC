@@ -15,6 +15,8 @@
         grid-area: detail;
         max-width: 1040px;
         padding: 3rem 3rem 4rem;
+        display: grid;
+        gap: 1.15rem;
       }
 
       .detail-toolbar {
@@ -23,7 +25,7 @@
         justify-content: space-between;
         gap: 1rem;
         flex-wrap: wrap;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.35rem;
       }
 
       .seminar-language-toggle {
@@ -66,12 +68,15 @@
       .detail-card {
         background: var(--panel-bg);
         border: 1px solid var(--sidebar-border);
-        border-radius: 22px;
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+        border-radius: 20px;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
       }
 
       .seminar-hero-card {
-        padding: 2rem 2.2rem;
+        padding: 2rem 2.25rem;
+        background:
+          radial-gradient(circle at 100% 0%, rgba(28, 107, 66, 0.08), transparent 45%),
+          var(--panel-bg);
       }
 
       .seminar-detail-header {
@@ -87,9 +92,10 @@
       }
 
       .seminar-detail-header h1 {
-        font-size: 3.2rem;
-        line-height: 1;
-        margin: 0 0 1.25rem;
+        font-size: 2.85rem;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin: 0 0 1.15rem;
       }
 
       .seminar-meta {
@@ -97,44 +103,51 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 0.35rem;
-        padding: 0.8rem 1rem;
+        padding: 0.72rem 0.95rem;
         border: 1px solid var(--sidebar-border);
-        border-radius: 14px;
+        border-radius: 12px;
         background: var(--sidebar-hover);
-        font-size: 1rem;
+        font-size: 0.98rem;
       }
 
       .seminar-summary,
       .seminar-video {
-        padding: 1.9rem 2.2rem 2rem;
+        padding: 1.65rem 1.9rem 1.75rem;
       }
 
       .seminar-materials {
-        padding: 1.8rem 2.2rem 2rem;
+        padding: 1.55rem 1.9rem 1.8rem;
       }
 
       .seminar-summary h2,
       .seminar-video h2 {
-        margin: 0 0 1rem;
-        font-size: 1.45rem;
+        margin: 0 0 0.95rem;
+        font-size: 1.28rem;
+        letter-spacing: 0.01em;
       }
 
       .seminar-materials h2 {
-        margin: 0 0 1rem;
-        font-size: 1.45rem;
+        margin: 0 0 0.95rem;
+        font-size: 1.28rem;
+        letter-spacing: 0.01em;
       }
 
       .seminar-summary h2 {
-        text-align: center;
+        text-align: left;
       }
 
       .abstract-tagline {
-        margin: 0 0 1.5rem;
-        font-size: 1.48rem;
+        display: inline-block;
+        margin: 0 0 0.95rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid var(--sidebar-border);
+        background: var(--sidebar-hover);
+        font-size: 1.05rem;
         font-weight: 800;
-        line-height: 1.35;
-        letter-spacing: -0.01em;
-        text-align: center;
+        line-height: 1.4;
+        letter-spacing: 0;
+        text-align: left;
         color: var(--text-color);
       }
 
@@ -142,8 +155,8 @@
       .seminar-video p,
       .seminar-materials p {
         margin: 0;
-        font-size: 1.02rem;
-        line-height: 1.85;
+        font-size: 1rem;
+        line-height: 1.78;
         color: var(--content-muted);
       }
 
@@ -163,9 +176,14 @@
         display: inline-flex;
         align-items: center;
         gap: 0.55rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid var(--sidebar-border);
+        background: var(--sidebar-hover);
         color: var(--sidebar-accent);
         font-weight: 700;
         line-height: 1.5;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
 
       .material-link::before {
@@ -173,32 +191,47 @@
         font-size: 0.95rem;
       }
 
+      .material-link:hover,
+      .material-link:focus-visible {
+        transform: translateY(-1px);
+        border-color: var(--sidebar-accent);
+      }
+
       .seminar-prerequisite {
-        margin-top: 1.6rem;
-        padding-top: 1.2rem;
-        border-top: 1px solid var(--sidebar-border);
-        font-size: 0.98rem;
+        margin-top: 1.15rem;
+        padding: 0.75rem 0.85rem;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 10px;
+        background: var(--sidebar-hover);
+        font-size: 0.95rem;
+        line-height: 1.6;
         color: var(--content-muted);
+      }
+
+      .seminar-video {
+        text-align: center;
       }
 
       .seminar-image {
         width: 100%;
-        max-width: 560px;
+        max-width: 360px;
         display: block;
-        margin: 1.5rem auto 0;
-        padding: 0.7rem;
+        margin: 1.05rem auto 0;
+        padding: 0.4rem;
         border: 1px solid var(--sidebar-border);
         background: var(--bg-primary);
-        border-radius: 18px;
+        border-radius: 14px;
       }
 
       .seminar-video-thumb-link {
         display: block;
-        width: 100%;
+        width: min(100%, 360px);
+        margin: 1.05rem auto 0;
         text-decoration: none;
       }
 
       .seminar-video-thumb-link .seminar-image {
+        margin: 0 auto;
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
 
@@ -213,11 +246,12 @@
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
-        padding: 0.55rem 0.85rem;
+        padding: 0.5rem 0.8rem;
         border: 1px solid var(--sidebar-border);
         border-radius: 999px;
         background: var(--panel-bg);
         font-weight: 700;
+        font-size: 0.95rem;
       }
 
       @media (max-width: 768px) {
@@ -235,19 +269,27 @@
         .seminar-summary,
         .seminar-video,
         .seminar-materials {
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: 1.05rem;
+          padding-right: 1.05rem;
         }
 
         .seminar-detail-header h1 {
-          font-size: 2.35rem;
+          font-size: 2.2rem;
         }
 
         .seminar-summary p,
         .seminar-video p,
         .seminar-materials p {
-          font-size: 0.98rem;
-          line-height: 1.75;
+          font-size: 0.97rem;
+          line-height: 1.72;
+        }
+
+        .seminar-video-thumb-link {
+          width: min(100%, 280px);
+        }
+
+        .seminar-image {
+          max-width: 280px;
         }
       }
     </style>
