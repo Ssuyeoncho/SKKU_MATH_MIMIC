@@ -57,7 +57,7 @@
 
       .seminar-lang-panel {
         display: grid;
-        gap: 1.5rem;
+        gap: 0.65rem;
       }
 
       .seminar-lang-panel[hidden] {
@@ -115,6 +115,12 @@
         padding: 1.65rem 1.9rem 1.75rem;
       }
 
+      .seminar-summary {
+        background:
+          linear-gradient(180deg, rgba(28, 107, 66, 0.06) 0, rgba(28, 107, 66, 0) 130px),
+          var(--panel-bg);
+      }
+
       .seminar-materials {
         padding: 1.55rem 1.9rem 1.8rem;
       }
@@ -134,14 +140,28 @@
 
       .seminar-summary h2 {
         text-align: left;
+        margin-bottom: 0.72rem;
+        font-size: 1.4rem;
+        letter-spacing: -0.01em;
+      }
+
+      .seminar-summary h2::after {
+        content: "";
+        display: block;
+        width: 42px;
+        height: 2px;
+        margin-top: 0.42rem;
+        border-radius: 999px;
+        background: var(--sidebar-accent);
+        opacity: 0.55;
       }
 
       .abstract-tagline {
-        margin: 0 0 0.85rem;
-        font-size: 1.16rem;
-        font-weight: 800;
-        line-height: 1.45;
-        letter-spacing: -0.01em;
+        margin: 0.05rem 0 0.24rem;
+        font-size: clamp(1.6rem, 3.1vw, 2rem);
+        font-weight: 900;
+        line-height: 1.22;
+        letter-spacing: -0.02em;
         text-align: center;
         color: var(--text-color);
       }
@@ -155,10 +175,19 @@
         color: var(--content-muted);
       }
 
+      .seminar-summary p {
+        font-size: 1.02rem;
+        line-height: 1.7;
+      }
+
       .seminar-summary p + p,
       .seminar-video p + p,
       .seminar-materials p + p {
-        margin-top: 0.68rem;
+        margin-top: 0.82rem;
+      }
+
+      .seminar-summary .seminar-lang-panel p + p {
+        margin-top: 0;
       }
 
       .material-list {
@@ -193,11 +222,11 @@
       }
 
       .seminar-prerequisite {
-        margin-top: 1.25rem;
-        padding-top: 0.95rem;
+        margin-top: 1.05rem;
+        padding-top: 0.82rem;
         border-top: 1px solid var(--sidebar-border);
-        font-size: 0.96rem;
-        line-height: 1.65;
+        font-size: 0.95rem;
+        line-height: 1.6;
         color: var(--content-muted);
       }
 

@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -195,12 +198,24 @@
       </div>
 
       <article class="project">
+        {% assign featured_season = site.data.seminars.seasons | first %}
+        {% assign featured_item = featured_season.items | first %}
+        {% assign featured_href = featured_item.href | default: '' %}
+        {% assign featured_page = site.pages | where: "current_path", featured_href | first %}
+        {% assign featured_thumbnail = featured_page.thumbnail_src | default: '/assets/project/project-one.png' %}
+        {% assign featured_title = featured_item.title | default: 'Featured Seminar' %}
+        {% assign featured_label = featured_season.label | default: 'Seminar' %}
+
         <!-- Seminar 1 -->
-        <a class="card seminar-card" href="seminars/2025Fall/one-plus-one-equals-zero/">
+        <a
+          class="card seminar-card"
+          href="{% if featured_href != '' %}{{ '/seminars/' | append: featured_href | relative_url }}{% else %}{{ '/seminars/index.html' | relative_url }}{% endif %}"
+          style="background-image: url('{{ featured_thumbnail | relative_url }}'); background-position: center; background-size: cover;"
+        >
           <div class="project-info">
             <div class="project-bio">
-              <h3>1+1=0</h3>
-              <p>2025 Fall Seminar</p>
+              <h3>{{ featured_title }}</h3>
+              <p>{{ featured_label }} Seminar</p>
             </div>
           </div>
         </a>
