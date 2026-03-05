@@ -22,30 +22,24 @@ prerequisite_label: "사전지식"
 prerequisite: "없음"
 
 # English content
+## Leave abstract_body_en empty if there is no English abstract.
 abstract_heading_en: "Abstract"
+abstract_tagline_en: "\"One-line tagline\""
 abstract_body_en: |
   English abstract first paragraph.
 
   English abstract second paragraph.
-speaker_label_en: "Speaker"
 prerequisite_en: "None"
 prerequisite_label_en: "Prerequisite"
 
-# Media
-video_heading_en: "Video Link"
-video_note_en: "The video link will be added here when available."
+# Media (shared for both Korean/English view)
 video_heading: "Video Link"
 video_note: "영상 링크가 준비되면 이 위치에 추가할 수 있습니다."
 video_url: ""
 thumbnail_src: "/assets/project/project-one.png"
-thumbnail_alt_en: "Seminar thumbnail"
 thumbnail_alt: "Seminar thumbnail"
 materials_heading: "Presentation Material"
 materials:
-  - label: "Slide deck title"
-    url: "#"
-materials_heading_en: "Presentation Material"
-materials_en:
   - label: "Slide deck title"
     url: "#"
 ---
