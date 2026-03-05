@@ -97,15 +97,20 @@
       }
 
       .seminar-meta {
-        display: inline-flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.35rem;
-        padding: 0.72rem 0.95rem;
-        border: 1px solid var(--sidebar-border);
-        border-radius: 12px;
-        background: var(--sidebar-hover);
-        font-size: 0.98rem;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        border-radius: 0;
+        font-size: 1.06rem;
+        line-height: 1.55;
+        color: var(--sidebar-accent);
+        font-weight: 700;
+      }
+
+      .seminar-meta strong {
+        color: var(--sidebar-accent);
+        font-weight: 800;
       }
 
       .seminar-summary,
@@ -152,7 +157,7 @@
         line-height: 1.00;
         letter-spacing: 0em;
         text-align: center;
-        color: var(--text-color);
+        color: var(--sidebar-accent);
       }
 
       .seminar-summary p,
