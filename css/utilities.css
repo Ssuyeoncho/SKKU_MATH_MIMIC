@@ -179,6 +179,12 @@ h2::selection {
   transform: translateY(0);
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding: 0.9rem 0.9rem;
+  }
+}
+
 .card:hover {
   box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
 }

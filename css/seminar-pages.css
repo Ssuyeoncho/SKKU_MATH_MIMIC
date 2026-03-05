@@ -78,18 +78,6 @@ body.seminar-page {
   letter-spacing: 0.04em;
 }
 
-.sidebar-mobile-toggle {
-  display: none;
-}
-
-.sidebar-mobile-toggle-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1rem;
-  transition: transform 0.2s ease;
-}
-
 .season-list {
   padding: 0;
   margin: 0;
@@ -189,11 +177,7 @@ body.seminar-page {
   }
 
   .seminar-sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.8rem;
-    padding: 1rem;
+    padding: 1rem 0.9rem;
   }
 
   .seminar-sidebar-header h1 {
@@ -201,31 +185,9 @@ body.seminar-page {
     letter-spacing: 0.03em;
   }
 
-  .sidebar-mobile-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.4rem 0.65rem;
-    border: 1px solid var(--sidebar-border);
-    border-radius: 999px;
-    background: var(--panel-bg);
-    color: var(--sidebar-accent);
-    font: inherit;
-    font-size: 0.84rem;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .sidebar-mobile-toggle[aria-expanded="false"] .sidebar-mobile-toggle-icon {
-    transform: rotate(180deg);
-  }
-
-  .seminar-sidebar[data-mobile-collapsed="true"] .season-list {
-    display: none;
-  }
-
   .season-toggle {
-    padding: 1rem;
+    padding: 1rem 0.9rem;
+    pointer-events: none;
   }
 
   .season-toggle span:first-child {
@@ -233,17 +195,16 @@ body.seminar-page {
   }
 
   .season-icon {
-    width: 2.1rem;
-    height: 2.1rem;
-    font-size: 0.9rem;
+    display: none;
   }
 
   .season-items {
+    display: block !important;
     padding-bottom: 0.7rem;
   }
 
   .season-link {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.9rem;
     font-size: 0.9rem;
   }
 }

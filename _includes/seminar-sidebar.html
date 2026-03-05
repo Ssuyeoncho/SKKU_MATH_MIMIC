@@ -1,19 +1,6 @@
-{% assign mobile_collapsed = false %}
-{% if include.mobile_collapsed == true or include.mobile_collapsed == 'true' %}
-  {% assign mobile_collapsed = true %}
-{% endif %}
-
-<aside class="seminar-sidebar" data-mobile-collapsed="{% if mobile_collapsed %}true{% else %}false{% endif %}">
+<aside class="seminar-sidebar">
   <div class="seminar-sidebar-header">
     <h1>SEMINARS</h1>
-    <button
-      class="sidebar-mobile-toggle"
-      type="button"
-      aria-expanded="{% if mobile_collapsed %}false{% else %}true{% endif %}"
-    >
-      <span class="sidebar-mobile-toggle-label">목록</span>
-      <span class="sidebar-mobile-toggle-icon" aria-hidden="true">⌃</span>
-    </button>
   </div>
   <div class="season-list">
     {% for season in site.data.seminars.seasons %}

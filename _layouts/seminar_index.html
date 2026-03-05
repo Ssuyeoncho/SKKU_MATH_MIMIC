@@ -49,7 +49,7 @@
         }
 
         .seminar-content {
-          padding: 2.4rem 1.2rem 2rem;
+          padding: 2.4rem 0.7rem 2rem;
         }
 
         .seminar-content h2 {
@@ -68,7 +68,7 @@
     {% include site-navbar.html active="seminars" %}
 
     <main class="seminar-shell seminar-browser">
-      {% include seminar-sidebar.html current_path='' mobile_collapsed=true %}
+      {% include seminar-sidebar.html current_path='' %}
 
       <section class="seminar-content">
         {{ content }}

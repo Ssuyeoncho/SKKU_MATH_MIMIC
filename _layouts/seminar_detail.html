@@ -228,15 +228,15 @@
         }
 
         .seminar-detail {
-          padding: 2rem 1.25rem 3rem;
+          padding: 2rem 0.7rem 2.6rem;
         }
 
         .seminar-hero-card,
         .seminar-summary,
         .seminar-video,
         .seminar-materials {
-          padding-left: 1.35rem;
-          padding-right: 1.35rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
         }
 
         .seminar-detail-header h1 {
@@ -416,7 +416,7 @@
         {% endif %}
       </section>
 
-      {% include seminar-sidebar.html current_path=page.current_path mobile_collapsed=true %}
+      {% include seminar-sidebar.html current_path=page.current_path %}
     </main>
     {% if has_english %}
     <script src="{{ '/js/seminar-language-toggle.js' | relative_url }}"></script>
