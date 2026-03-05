@@ -74,9 +74,7 @@
 
       .seminar-hero-card {
         padding: 2rem 2.25rem;
-        background:
-          radial-gradient(circle at 100% 0%, rgba(28, 107, 66, 0.08), transparent 45%),
-          var(--panel-bg);
+        background: var(--panel-bg);
       }
 
       .seminar-detail-header {
@@ -116,9 +114,7 @@
       }
 
       .seminar-summary {
-        background:
-          linear-gradient(180deg, rgba(28, 107, 66, 0.06) 0, rgba(28, 107, 66, 0) 130px),
-          var(--panel-bg);
+        background: var(--panel-bg);
       }
 
       .seminar-materials {
@@ -222,12 +218,24 @@
       }
 
       .seminar-prerequisite {
-        margin-top: 1.05rem;
-        padding-top: 0.82rem;
-        border-top: 1px solid var(--sidebar-border);
+        --prereq-gap: 2.1rem;
+        position: relative;
+        margin-top: var(--prereq-gap);
+        padding-top: 1.05rem;
+        border-top: 0;
         font-size: 0.95rem;
         line-height: 1.6;
         color: var(--content-muted);
+      }
+
+      .seminar-prerequisite::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(var(--prereq-gap) / -2);
+        height: 1px;
+        background: var(--sidebar-border);
       }
 
       .seminar-video {
@@ -415,7 +423,17 @@
           <h2>{{ page.materials_heading | default: 'Presentation Material' }}</h2>
           <div class="material-list">
             {% for item in page.materials %}
-            <a class="material-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+            {% assign material_url = item.url | default: '' %}
+            {% assign is_external_material = false %}
+            {% if material_url contains '://' or material_url contains 'mailto:' %}
+              {% assign is_external_material = true %}
+            {% endif %}
+            <a
+              class="material-link"
+              href="{% if is_external_material %}{{ material_url }}{% else %}{{ material_url | relative_url }}{% endif %}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{{ item.label }}</a>
             {% endfor %}
           </div>
         </section>
