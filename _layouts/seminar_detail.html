@@ -302,9 +302,6 @@
             {% else %}
             {{ content }}
             {% endif %}
-            {% if page.prerequisite %}
-            <p class="seminar-prerequisite"><strong>{{ page.prerequisite_label | default: '사전지식' }}:</strong> {{ page.prerequisite }}</p>
-            {% endif %}
           </div>
 
           {% if has_english %}
@@ -315,11 +312,11 @@
             <p class="abstract-tagline">{{ english_tagline }}</p>
             {% endif %}
             {{ english_abstract | markdownify }}
-            {% if page.prerequisite_en or page.prerequisite %}
-            {% assign english_prerequisite = page.prerequisite_en | default: page.prerequisite %}
-            <p class="seminar-prerequisite"><strong>{{ page.prerequisite_label_en | default: 'Prerequisite' }}:</strong> {{ english_prerequisite }}</p>
-            {% endif %}
           </div>
+          {% endif %}
+
+          {% if page.prerequisite %}
+          <p class="seminar-prerequisite"><strong>{{ page.prerequisite_label | default: '사전지식' }}:</strong> {{ page.prerequisite }}</p>
           {% endif %}
         </section>
 

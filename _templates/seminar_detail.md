@@ -1,17 +1,16 @@
 ---
 layout: seminar_detail
 page_title: "MIMIC | SEMINAR TITLE"
-permalink: /seminars/2025Fall/your-slug/
 
-# Basic info
+# Basic info (shared)
 seminar_title: "SEMINAR TITLE"
 semester_label: "2025 Fall"
 seminar_number: "02"
 speaker_label: "Speaker"
 speaker: "Speaker Name (Affiliation)"
-current_path: "2025Fall/your-slug/"
+current_path: "2025Fall/2025-09-08-your-title.html"
 
-# Korean content
+# Korean abstract
 abstract_heading: "초록"
 abstract_tagline: "“한 줄 멘트”"
 abstract_body_ko: |
@@ -21,7 +20,7 @@ abstract_body_ko: |
 prerequisite_label: "사전지식"
 prerequisite: "없음"
 
-# English content
+# English abstract (optional)
 ## Leave abstract_body_en empty if there is no English abstract.
 abstract_heading_en: "Abstract"
 abstract_tagline_en: "\"One-line tagline\""
@@ -29,8 +28,6 @@ abstract_body_en: |
   English abstract first paragraph.
 
   English abstract second paragraph.
-prerequisite_en: "None"
-prerequisite_label_en: "Prerequisite"
 
 # Media (shared for both Korean/English view)
 video_heading: "Video Link"
