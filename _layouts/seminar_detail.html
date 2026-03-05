@@ -147,7 +147,7 @@
 
       .abstract-tagline {
         margin: 0.05rem 0 0.24rem;
-        font-size: clamp(2.3rem, 3.1vw, 2.3rem);
+        font-size: clamp(4.5rem, 3.1vw, 4.5rem);
         font-weight: 900;
         line-height: 1.00;
         letter-spacing: 0em;
@@ -211,13 +211,22 @@
       }
 
       .seminar-prerequisite {
-        --prerequisite-separator-gap: 2.8rem;
+        --prerequisite-separator-gap: 3rem;
         margin-top: var(--prerequisite-separator-gap);
-        padding-top: var(--prerequisite-separator-gap);
-        border-top: 1px solid var(--sidebar-border);
+        padding-top: 0;
+        border-top: 0;
         font-size: 0.95rem;
         line-height: 1.6;
         color: var(--content-muted);
+      }
+
+      .seminar-prerequisite::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--sidebar-border);
+        margin-bottom: var(--prerequisite-separator-gap);
       }
 
       .seminar-video {
