@@ -3,15 +3,51 @@ layout: seminar_index
 page_title: "SEMINARS | MIMIC"
 ---
 
+<div class="detail-toolbar">
+  <a class="back-home" href="{{ '/index.html' | relative_url }}">← Back to home</a>
+  <div class="seminar-language-toggle" data-language-toggle>
+    <button
+      class="language-button is-active"
+      type="button"
+      data-language-button="ko"
+      aria-pressed="true"
+    >한국어</button>
+    <button
+      class="language-button"
+      type="button"
+      data-language-button="en"
+      aria-pressed="false"
+    >EN</button>
+  </div>
+</div>
+
 <span class="content-eyebrow">Seminar Archive</span>
 <h2>Browse by semester</h2>
-<p>
-  왼쪽 목록에서 학기를 펼치면 해당 세미나 제목들이 나타나도록 구성했습니다.
-  현재는 2025 Fall만 예시 데이터를 넣었고, 첫 번째 항목인
-  <strong>1+1=0</strong>은 기존 상세 페이지로 연결됩니다.
-</p>
-<p>
-  이후에는 각 제목을 개별 세미나 페이지로 연결하거나, 이 화면 오른쪽 영역에
-  요약 내용을 바로 보여주도록 확장할 수 있습니다.
-</p>
-<a class="back-home" href="{{ '/index.html' | relative_url }}">← Back to home</a>
+
+<section class="seminar-lang-panel" data-language-panel="ko">
+  <p>
+    MIMIC은 매주 2회 정기적으로 세미나를 진행합니다. 2026학년도 1학기에는
+    매주 월요일 오후 6시, 화요일 오후 6시에 성균관대학교 자연과학캠퍼스
+    31316에서 세미나가 열립니다.
+  </p>
+  <p>
+    월요일에는 심화 주제를 중심으로 한 난이도 높은 세미나를, 화요일에는
+    새내기도 이해할 수 있는 입문형 세미나를 진행합니다. 동아리원이 아니어도
+    세미나 참여가 가능하니, 참여를 원하시면 Contact 섹션에 있는 연락처로
+    문의해 주세요.
+  </p>
+</section>
+
+<section class="seminar-lang-panel" data-language-panel="en" hidden>
+  <p>
+    MIMIC holds two regular seminars every week. In the first semester of the
+    2026 academic year, sessions take place at 6:00 PM on Mondays and Tuesdays
+    in Room 31316 at Sungkyunkwan University Natural Sciences Campus.
+  </p>
+  <p>
+    Monday sessions are advanced seminars on challenging topics, while Tuesday
+    sessions are beginner-friendly seminars that first-year students can follow.
+    Non-members are also welcome to attend. If you would like to join, please
+    contact us using the details in the Contact section.
+  </p>
+</section>
