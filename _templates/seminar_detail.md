@@ -5,10 +5,19 @@ page_title: "MIMIC | SEMINAR TITLE"
 # Basic info (shared)
 seminar_title: "SEMINAR TITLE"
 semester_label: "2025 Fall"
-seminar_number: "02"
+# Preferred: use seminar_date (ISO format) to show "YYYY.MM.DD." in header.
+seminar_date: 2025-09-08
+# Optional custom date text:
+# seminar_date_display: "2025.09.08."
+# Optional fallback if seminar_date is omitted:
+# seminar_number: "02"
 speaker_label: "Speaker"
 speaker: "Speaker Name (Affiliation)"
-current_path: "2025Fall/2025-09-08-your-title.html"
+permalink: /your-seminar-slug
+current_path: "/your-seminar-slug"
+# Also add this page to _data/seminars.yml:
+# - title: "SEMINAR TITLE"
+#   href: "/your-seminar-slug"
 
 # Korean abstract
 abstract_heading: "초록"

@@ -331,6 +331,17 @@
         {% if english_abstract != '' %}
           {% assign has_english = true %}
         {% endif %}
+        {% assign seminar_date_text = '' %}
+        {% if page.seminar_date_display %}
+          {% assign seminar_date_text = page.seminar_date_display %}
+        {% elsif page.seminar_date %}
+          {% assign seminar_date_input = page.seminar_date | append: '' %}
+          {% if seminar_date_input contains '.' %}
+            {% assign seminar_date_text = page.seminar_date %}
+          {% else %}
+            {% assign seminar_date_text = page.seminar_date | date: '%Y.%m.%d.' %}
+          {% endif %}
+        {% endif %}
 
         <div class="detail-toolbar">
           <a class="back-link" href="{{ '/seminars/index.html' | relative_url }}">← Back to seminars</a>
@@ -353,7 +364,14 @@
         </div>
 
         <header class="seminar-detail-header seminar-hero-card">
-          <p class="seminar-context">{{ page.semester_label }} / Seminar {{ page.seminar_number }}</p>
+          <p class="seminar-context">
+            {{ page.semester_label }}
+            {% if seminar_date_text != '' %}
+              / {{ seminar_date_text }}
+            {% elsif page.seminar_number %}
+              / Seminar {{ page.seminar_number }}
+            {% endif %}
+          </p>
           <h1>{{ page.seminar_title }}</h1>
           <div class="seminar-meta">
             <strong>{{ page.speaker_label | default: 'Speaker' }}:</strong> {{ page.speaker }}
