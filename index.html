@@ -200,100 +200,50 @@
 
       <article class="project">
         {% assign seminar_pages = site.pages | where: "layout", "seminar_detail" | sort: "seminar_date" | reverse %}
-        {% assign featured_page = seminar_pages | first %}
-        {% assign featured_page_url = featured_page.url | default: '' %}
-        {% assign featured_thumbnail = featured_page.thumbnail_src | default: '/assets/project/project-one.png' %}
-        {% assign featured_title = featured_page.seminar_title | default: featured_page.title | default: 'Featured Seminar' %}
-        {% assign featured_label = featured_page.semester_label | default: 'Seminar' %}
+        {% if seminar_pages.size > 0 %}
+          {% for seminar_page in seminar_pages limit: 6 %}
+            {% assign seminar_url = seminar_page.url | default: '' %}
+            {% assign seminar_thumbnail = seminar_page.thumbnail_src | default: '/assets/project/project-one.png' %}
+            {% assign seminar_title = seminar_page.seminar_title | default: seminar_page.title | default: 'Seminar' %}
+            {% assign seminar_label = seminar_page.semester_label | default: 'Seminar' %}
+            {% assign seminar_date_text = '' %}
+            {% if seminar_page.seminar_date_display %}
+              {% assign seminar_date_text = seminar_page.seminar_date_display %}
+            {% elsif seminar_page.seminar_date %}
+              {% assign seminar_date_input = seminar_page.seminar_date | append: '' %}
+              {% if seminar_date_input contains '.' %}
+                {% assign seminar_date_text = seminar_page.seminar_date %}
+              {% else %}
+                {% assign seminar_date_text = seminar_page.seminar_date | date: '%Y.%m.%d.' %}
+              {% endif %}
+            {% endif %}
 
-        <!-- Seminar 1 -->
-        <a
-          class="card seminar-card"
-          href="{% if featured_page_url != '' %}{{ featured_page_url | relative_url }}{% else %}{{ '/seminars/index.html' | relative_url }}{% endif %}"
-          style="background-image: url('{{ featured_thumbnail | relative_url }}'); background-position: center; background-size: cover;"
-        >
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>{{ featured_title }}</h3>
-              <p>{{ featured_label }} Seminar</p>
+            <a
+              class="card seminar-card"
+              href="{% if seminar_url != '' %}{{ seminar_url | relative_url }}{% else %}{{ '/seminars/index.html' | relative_url }}{% endif %}"
+              style="background-image: url('{{ seminar_thumbnail | relative_url }}'); background-position: center; background-size: cover;"
+            >
+              <div class="project-info">
+                <div class="project-bio">
+                  <h3>{{ seminar_title }}</h3>
+                  <p>
+                    {{ seminar_label }}
+                    {% if seminar_date_text != '' %} · {{ seminar_date_text }}{% endif %}
+                  </p>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        {% else %}
+          <div class="card">
+            <div class="project-info">
+              <div class="project-bio">
+                <h3>Seminars coming soon</h3>
+                <p>New seminar cards will appear here automatically.</p>
+              </div>
             </div>
           </div>
-        </a>
-
-        <!-- Project 2 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Two</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Porject 3 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Three</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Four</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Five</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Six</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
+        {% endif %}
       </article>
 
       <a href="seminars/index.html" class="btn btn-secondary archive-link"
