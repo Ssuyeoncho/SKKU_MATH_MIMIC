@@ -14,9 +14,10 @@ seminar_date: 2025-09-08
 speaker_label: "Speaker"
 speaker: "Speaker Name (Affiliation)"
 permalink: /your-seminar-slug
-current_path: "/your-seminar-slug"
-# Sidebar links are auto-detected from seminar_detail pages.
-# Make sure semester_label matches one of the labels in _data/seminars.yml.
+# current_path is optional (not required for sidebar linking).
+# current_path: "/your-seminar-slug"
+# Sidebar links are auto-detected from .html files inside each season folder
+# (for example seminars/2025Fall/*.html). Keep semester_label and folder aligned.
 
 # Korean abstract
 abstract_heading: "초록"

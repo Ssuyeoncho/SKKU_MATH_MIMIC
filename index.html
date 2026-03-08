@@ -201,11 +201,7 @@
       <article class="project">
         {% assign seminar_pages = site.pages | where: "layout", "seminar_detail" | sort: "seminar_date" | reverse %}
         {% assign featured_page = seminar_pages | first %}
-        {% assign featured_page_url = featured_page.current_path | default: featured_page.url | default: '' %}
-        {% assign featured_url_head = featured_page_url | slice: 0, 1 %}
-        {% if featured_page_url != '' and featured_url_head != '/' %}
-          {% assign featured_page_url = '/seminars/' | append: featured_page_url %}
-        {% endif %}
+        {% assign featured_page_url = featured_page.url | default: '' %}
         {% assign featured_thumbnail = featured_page.thumbnail_src | default: '/assets/project/project-one.png' %}
         {% assign featured_title = featured_page.seminar_title | default: featured_page.title | default: 'Featured Seminar' %}
         {% assign featured_label = featured_page.semester_label | default: 'Seminar' %}
