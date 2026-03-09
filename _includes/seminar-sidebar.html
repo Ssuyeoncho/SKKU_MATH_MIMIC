@@ -50,12 +50,6 @@
                 >{{ seminar_title }}</a>
               </li>
             {% endfor %}
-          {% elsif season.items and season.items.size > 0 %}
-            {% for item in season.items %}
-              <li class="season-item">
-                <span class="season-link">{{ item.title }}</span>
-              </li>
-            {% endfor %}
           {% else %}
             <li class="season-item">
               <span class="season-link">Coming soon</span>
