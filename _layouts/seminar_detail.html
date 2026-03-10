@@ -460,6 +460,8 @@
 
       {% include seminar-sidebar.html current_path=page.url %}
     </main>
+
+    {% include site-footer.html %}
     {% if has_english %}
     <script src="{{ '/js/seminar-language-toggle.js' | relative_url }}"></script>
     {% endif %}
