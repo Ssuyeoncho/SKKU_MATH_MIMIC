@@ -87,42 +87,50 @@ const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
 );
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
+const applyTheme = (theme) => {
+  if (theme !== "dark" && theme !== "light") {
+    return;
   }
+
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.style.colorScheme = theme;
+};
+
+const getSavedTheme = () => {
+  try {
+    return localStorage.getItem("theme");
+  } catch (error) {
+    return null;
+  }
+};
+
+const saveTheme = (theme) => {
+  try {
+    localStorage.setItem("theme", theme);
+  } catch (error) {
+    // Ignore localStorage access errors.
+  }
+};
+
+function switchTheme(e) {
+  const nextTheme = e.target.checked ? "dark" : "light";
+  applyTheme(nextTheme);
+  saveTheme(nextTheme);
 }
 
 if (toggleSwitch) {
   toggleSwitch.addEventListener("change", switchTheme, false);
 }
 
-//  Store color theme for future visits
+const currentTheme = getSavedTheme();
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark"); //add this
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light"); //add this
-  }
+if (currentTheme === "dark" || currentTheme === "light") {
+  applyTheme(currentTheme);
 }
 
-// Save user preference on load
-
-const currentTheme = localStorage.getItem("theme")
-  ? localStorage.getItem("theme")
-  : null;
-
-if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
-
-  if (currentTheme === "dark" && toggleSwitch) {
-    toggleSwitch.checked = true;
-  }
+if (toggleSwitch) {
+  toggleSwitch.checked =
+    document.documentElement.getAttribute("data-theme") === "dark";
 }
 
 //Adding date

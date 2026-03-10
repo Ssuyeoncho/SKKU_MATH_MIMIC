@@ -74,6 +74,9 @@ body {
   color: var(--text-color);
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navbar */
@@ -507,6 +510,7 @@ body {
 /* Footer */
 #footer {
   background: var(--bg-secondary-two);
+  margin-top: auto;
 }
 
 #footer .container {

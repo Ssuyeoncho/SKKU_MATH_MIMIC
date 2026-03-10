@@ -46,6 +46,19 @@
       property="twitter:image"
       content="https://ssuyeoncho.github.io/SKKU_MATH_MIMIC/assets/logo.png"
     />
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "dark" || savedTheme === "light") {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+            document.documentElement.style.colorScheme = savedTheme;
+          }
+        } catch (error) {
+          /* Ignore localStorage access errors */
+        }
+      })();
+    </script>
 
     <!-- Link -->
     <link

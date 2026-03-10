@@ -5,7 +5,10 @@
     <style>
       .seminar-browser {
         grid-template-columns: minmax(220px, 310px) 1fr;
-        grid-template-areas: "sidebar content";
+        grid-template-areas:
+          "sidebar content"
+          "sidebar spacer";
+        grid-template-rows: auto clamp(8rem, 16vh, 12rem);
       }
 
       .seminar-browser .seminar-sidebar {
@@ -15,6 +18,10 @@
       .seminar-content {
         grid-area: content;
         padding: 6rem 4rem 3rem;
+      }
+
+      .seminar-footer-spacer {
+        grid-area: spacer;
       }
 
       .seminar-content p {
@@ -137,6 +144,7 @@
           grid-template-areas:
             "content"
             "sidebar";
+          grid-template-rows: auto auto;
         }
 
         .seminar-content {
@@ -159,6 +167,10 @@
 
         .detail-toolbar {
           margin-bottom: 1rem;
+        }
+
+        .seminar-footer-spacer {
+          display: none;
         }
       }
 
@@ -184,6 +196,7 @@
       <section class="seminar-content">
         {{ content }}
       </section>
+      <div class="seminar-footer-spacer" aria-hidden="true"></div>
     </main>
 
     {% include site-footer.html %}

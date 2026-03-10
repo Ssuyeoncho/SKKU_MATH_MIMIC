@@ -1,4 +1,8 @@
 <nav class="navbar">
+  {% assign seminars_href = include.seminars_href | default: '/seminars/index.html' %}
+  {% if include.active == 'news' and include.seminars_href == nil %}
+    {% assign seminars_href = '/index.html#seminars' %}
+  {% endif %}
   <div class="container">
     <h1 id="logo">
       <a href="{{ '/index.html' | relative_url }}">
@@ -10,7 +14,7 @@
         <a class="nav-link{% if include.active == 'main' %} is-active{% endif %}" href="{{ '/index.html#hero' | relative_url }}">MAIN</a>
       </li>
       <li>
-        <a class="nav-link{% if include.active == 'seminars' %} is-active{% endif %}" href="{{ '/seminars/index.html' | relative_url }}">SEMINARS</a>
+        <a class="nav-link{% if include.active == 'seminars' %} is-active{% endif %}" href="{{ seminars_href | relative_url }}">SEMINARS</a>
       </li>
       <li>
         <a class="nav-link{% if include.active == 'conferences' %} is-active{% endif %}" href="{{ '/index.html#conferences' | relative_url }}">CONFERENCES</a>
