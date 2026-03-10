@@ -95,8 +95,8 @@ h2::selection {
   margin: 0;
 }
 
-.header-container .mimic-initial {
-  color: var(--accent-color);
+.header-container .mimic-headline .mimic-initial {
+  color: var(--accent-color, #1c6b42) !important;
 }
 
 .content-text {

@@ -13,6 +13,7 @@
   --season-icon-shadow: rgba(28, 107, 66, 0.12);
   --season-icon-shadow-strong: rgba(28, 107, 66, 0.18);
   --season-icon-border-hover: #6da985;
+  --seminar-footer-gap: clamp(10rem, 20vh, 15rem);
 }
 
 body.seminar-page {
@@ -39,27 +40,27 @@ body.seminar-page {
 }
 
 [data-theme="dark"] {
-  --sidebar-border: #2b313b;
-  --sidebar-text: #cfd5df;
-  --sidebar-accent: #6fb58c;
-  --sidebar-hover: #171c23;
-  --page-bg: #0d1016;
-  --panel-bg: #11161e;
-  --content-muted: #cfd5df;
-  --content-subtle: #98a1ae;
-  --season-icon-border: #3c4553;
-  --season-icon-bg-start: #141a23;
-  --season-icon-bg-end: #111720;
+  --sidebar-border: #2d342f;
+  --sidebar-text: #cfd8d1;
+  --sidebar-accent: #74ba92;
+  --sidebar-hover: #171d19;
+  --page-bg: #0c0f0d;
+  --panel-bg: #111511;
+  --content-muted: #cfd8d1;
+  --content-subtle: #97a29a;
+  --season-icon-border: #3c473f;
+  --season-icon-bg-start: #141a15;
+  --season-icon-bg-end: #111612;
   --season-icon-shadow: rgba(0, 0, 0, 0.30);
   --season-icon-shadow-strong: rgba(0, 0, 0, 0.42);
-  --season-icon-border-hover: #6fb58c;
+  --season-icon-border-hover: #74ba92;
 }
 
 .seminar-shell {
   display: grid;
   grid-template-columns: minmax(220px, 310px) 1fr;
   margin-top: 80px;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px + var(--seminar-footer-gap));
 }
 
 .seminar-sidebar {
@@ -169,6 +170,7 @@ body.seminar-page {
 @media (max-width: 900px) {
   .seminar-shell {
     grid-template-columns: 1fr;
+    min-height: calc(100vh - 80px);
   }
 
   .seminar-sidebar {
@@ -187,7 +189,6 @@ body.seminar-page {
 
   .season-toggle {
     padding: 1rem 0.9rem;
-    pointer-events: none;
   }
 
   .season-toggle span:first-child {
@@ -195,11 +196,13 @@ body.seminar-page {
   }
 
   .season-icon {
-    display: none;
+    display: inline-flex;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 0.92rem;
   }
 
   .season-items {
-    display: block !important;
     padding-bottom: 0.7rem;
   }
 
