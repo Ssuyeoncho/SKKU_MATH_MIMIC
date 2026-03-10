@@ -1,7 +1,11 @@
 <nav class="navbar">
   {% assign seminars_href = include.seminars_href | default: '/seminars/index.html' %}
+  {% assign news_href = include.news_href | default: '/index.html#news' %}
   {% if include.active == 'news' and include.seminars_href == nil %}
     {% assign seminars_href = '/index.html#seminars' %}
+  {% endif %}
+  {% if include.active == 'news' and include.news_href == nil %}
+    {% assign news_href = '/news/index.html' %}
   {% endif %}
   <div class="container">
     <h1 id="logo">
@@ -20,7 +24,7 @@
         <a class="nav-link{% if include.active == 'conferences' %} is-active{% endif %}" href="{{ '/index.html#conferences' | relative_url }}">CONFERENCES</a>
       </li>
       <li>
-        <a class="nav-link{% if include.active == 'news' %} is-active{% endif %}" href="{{ '/index.html#news' | relative_url }}">NEWS</a>
+        <a class="nav-link{% if include.active == 'news' %} is-active{% endif %}" href="{{ news_href | relative_url }}">NEWS</a>
       </li>
       <li>
         <a class="nav-link{% if include.active == 'contact' %} is-active{% endif %}" href="{{ '/index.html#contact' | relative_url }}">CONTACT</a>

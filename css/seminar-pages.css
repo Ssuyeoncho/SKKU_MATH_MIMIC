@@ -40,20 +40,26 @@ body.seminar-page {
 }
 
 [data-theme="dark"] {
-  --sidebar-border: #303730;
+  --sidebar-border: #373d37;
   --sidebar-text: #d0d8d2;
   --sidebar-accent: #73b892;
-  --sidebar-hover: #171c18;
-  --page-bg: #0c0f0d;
-  --panel-bg: #101411;
+  --sidebar-hover: #1b201c;
+  --page-bg: #101210;
+  --panel-bg: #151815;
   --content-muted: #d0d8d2;
-  --content-subtle: #96a198;
-  --season-icon-border: #3f493f;
-  --season-icon-bg-start: #151915;
-  --season-icon-bg-end: #111511;
+  --content-subtle: #99a39b;
+  --season-icon-border: #474f47;
+  --season-icon-bg-start: #1b201c;
+  --season-icon-bg-end: #151914;
   --season-icon-shadow: rgba(0, 0, 0, 0.30);
   --season-icon-shadow-strong: rgba(0, 0, 0, 0.42);
   --season-icon-border-hover: #73b892;
+}
+
+[data-theme="dark"] .season-toggle,
+[data-theme="dark"] .season-toggle span:first-child,
+[data-theme="dark"] .season-icon {
+  color: var(--sidebar-accent) !important;
 }
 
 [data-theme="dark"] .season-link.is-current {
