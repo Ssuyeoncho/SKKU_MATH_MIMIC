@@ -482,6 +482,14 @@ body {
   grid-gap: 0.9rem;
 }
 
+#seminars .project > .card,
+#conferences .project > .card,
+#news .project > .card {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .card .project-bio p {
   font-size: 0.83rem;
 }
