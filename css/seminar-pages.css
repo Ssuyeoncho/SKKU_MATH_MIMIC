@@ -39,20 +39,20 @@ body.seminar-page {
 }
 
 [data-theme="dark"] {
-  --sidebar-border: #243129;
-  --sidebar-text: #c5d0c9;
-  --sidebar-accent: #69b384;
-  --sidebar-hover: #162019;
-  --page-bg: #0c0f0d;
-  --panel-bg: #101513;
-  --content-muted: #c5d0c9;
-  --content-subtle: #8fa095;
-  --season-icon-border: #34503f;
-  --season-icon-bg-start: #111714;
-  --season-icon-bg-end: #17211b;
-  --season-icon-shadow: rgba(0, 0, 0, 0.28);
-  --season-icon-shadow-strong: rgba(0, 0, 0, 0.38);
-  --season-icon-border-hover: #69b384;
+  --sidebar-border: #2b313b;
+  --sidebar-text: #cfd5df;
+  --sidebar-accent: #6fb58c;
+  --sidebar-hover: #171c23;
+  --page-bg: #0d1016;
+  --panel-bg: #11161e;
+  --content-muted: #cfd5df;
+  --content-subtle: #98a1ae;
+  --season-icon-border: #3c4553;
+  --season-icon-bg-start: #141a23;
+  --season-icon-bg-end: #111720;
+  --season-icon-shadow: rgba(0, 0, 0, 0.30);
+  --season-icon-shadow-strong: rgba(0, 0, 0, 0.42);
+  --season-icon-border-hover: #6fb58c;
 }
 
 .seminar-shell {

@@ -91,6 +91,14 @@ h2::selection {
   margin-top: 1rem;
 }
 
+.header-container .mimic-headline {
+  margin: 0;
+}
+
+.header-container .mimic-initial {
+  color: var(--accent-color);
+}
+
 .content-text {
   text-align: center;
   margin: 1.5rem 0;
