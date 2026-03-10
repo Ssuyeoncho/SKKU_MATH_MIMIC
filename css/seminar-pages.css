@@ -40,33 +40,20 @@ body.seminar-page {
 }
 
 [data-theme="dark"] {
-  --sidebar-border: #343841;
-  --sidebar-text: #d2d7df;
+  --sidebar-border: #303730;
+  --sidebar-text: #d0d8d2;
   --sidebar-accent: #73b892;
-  --sidebar-hover: #171b22;
-  --page-bg: #0d1015;
-  --panel-bg: #11151c;
-  --content-muted: #d2d7df;
-  --content-subtle: #9aa2ae;
-  --season-icon-border: #464e5a;
-  --season-icon-bg-start: #161b24;
-  --season-icon-bg-end: #131821;
+  --sidebar-hover: #171c18;
+  --page-bg: #0c0f0d;
+  --panel-bg: #101411;
+  --content-muted: #d0d8d2;
+  --content-subtle: #96a198;
+  --season-icon-border: #3f493f;
+  --season-icon-bg-start: #151915;
+  --season-icon-bg-end: #111511;
   --season-icon-shadow: rgba(0, 0, 0, 0.30);
   --season-icon-shadow-strong: rgba(0, 0, 0, 0.42);
   --season-icon-border-hover: #73b892;
-}
-
-[data-theme="dark"] .season-toggle {
-  color: var(--sidebar-text);
-}
-
-[data-theme="dark"] .season-icon {
-  color: var(--sidebar-text);
-}
-
-[data-theme="dark"] .season-toggle:hover .season-icon,
-[data-theme="dark"] .season-toggle[aria-expanded="true"] .season-icon {
-  color: var(--sidebar-accent);
 }
 
 [data-theme="dark"] .season-link.is-current {
