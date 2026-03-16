@@ -1,0 +1,45 @@
+---
+layout: seminar_detail
+page_title: "Alternative Way to Estimate Our Test Rank, Bayesian Statistics | MIMIC"
+permalink: /Alternative_Way_to_Estimate_Our_Test_Rank_Bayesian_Statistics
+# Basic info (shared)
+seminar_title: "Alternative Way to Estimate Our Test Rank, Bayesian Statistics"
+semester_label: "2025 Fall"
+seminar_date: 2025-11-17
+speaker: "Ji-un Ha (Sungkyunkwan University)"
+current_path: "/Alternative_Way_to_Estimate_Our_Test_Rank_Bayesian_Statistics"
+
+# Korean abstract
+abstract_heading: "초록"
+abstract_tagline: "\"우리의 믿음과 가지고 있는 데이터를 이용해서 통계적 증거로 바꿀 수 있을까요?\""
+abstract_body_ko: |
+  이번 세미나는 지난 학기에 소개했던 지필고사의 성적을 가지고 등수를 추정하는 방법에서 의문점이었던 신뢰도 이야기부터 시작합니다. 특정 통계량(가령 성적 분포, 분산, 표준편차 등등)이 무엇일지 예측하는 상황에서 기존 가설 검정을 사용하고, 이에 대한 신뢰도를 나타내는 신뢰구간을 사용할 수 있으나, 특정 가설(가령 귀무가설)에 너무 의존하는 문제가 있습니다. 이를 탈피하고자, 베이즈 정리를 활용하여, 두 가설을 한 번에 다루는 방법을 소개합니다.
+  
+  데이터를 보기 전에 가지고 있는 정보들을 표현한 사전분포, 데이터가 실제로 따르는 분포인 가능도(Likelihood)를 바탕으로, 데이터를 보고 난 이후의 믿음인 사후분포를 구하고, 이를 바탕으로 신용집합(credible set)과 베이즈 추론에 대해 소개합니다. 물론 사후분포를 구하는 것이 어렵기 때문에 이를 도와주는 알고리즘인 MCMC(Markov Chain Monte Carlo)도 다루면서, 성적이라는 데이터를 가지고 새롭게 통계적으로 추론하는 방법을 소개하려고 합니다.
+prerequisite: "Monte Carlo, 가설 검정"
+
+# English abstract (optional)
+# Leave abstract_body_en empty to hide the language toggle.
+abstract_heading_en: "Abstract"
+abstract_tagline_en: "\"Can we transform our beliefs and the data we have into statistical evidence?\""
+abstract_body_en: |
+ This seminar begins with a discussion of reliability, a question that arose from the method introduced last semester for estimating rankings using the scores from a written exam.
+ When predicting what certain statistics (such as the distribution of scores, variance, standard deviation, etc.) might be, we can use traditional hypothesis testing and confidence intervals to express the reliability of our estimates. However, these approaches often rely too heavily on a specific hypothesis (for example, the null hypothesis).
+
+ To move beyond this limitation, we introduce an approach that uses Bayes’ theorem to handle two competing hypotheses simultaneously.
+
+ Using a prior distribution, which represents the information we have before observing the data, and a likelihood, which describes the distribution that the data are assumed to follow, we obtain a posterior distribution, representing our updated belief after observing the data. Based on this, we introduce the concepts of credible sets and Bayesian inference.
+
+ Since obtaining the posterior distribution is often difficult, we will also discuss MCMC (Markov Chain Monte Carlo), an algorithm that helps approximate it. Using exam score data as an example, the seminar will present a new way of making statistical inferences.
+prerequisite_en: "None"
+
+# Media and materials (shared)
+video_heading: "Video Link"
+video_url: "https://youtu.be/0Po3OXIluHg"
+thumbnail_src: "/seminars/2025Fall/thumbnails/14_Alternative Way to Estimate Our Test Rank, Bayesian Statistics.jpg"
+thumbnail_alt: "Alternative Way to Estimate Our Test Rank, Bayesian Statistics"
+materials_heading: "Presentation Material"
+materials:
+  - label: "Slide deck: Alternative Way to Estimate Our Test Rank, Bayesian Statistics"
+    url: "/seminars/2025Fall/slidedecks/14_Alternative Way to Estimate Our Test Rank, Bayesian Statistics.pdf"
+---
