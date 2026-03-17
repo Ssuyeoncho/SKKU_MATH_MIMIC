@@ -880,8 +880,3 @@ body {
   }
 }
 
-
-#seminars .project, 
-#conferences .project {
-  min-height: 520px; 
-}
