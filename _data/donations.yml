@@ -1,20 +1,16 @@
 headline: "Former Members & Alumni"
 lead: "Former members and alumni can help MIMIC continue its seminars, materials, and student activities."
-description: "If you would like to support MIMIC, you can send a bank transfer and optionally leave your name or a short message afterward."
+description: "Bank transfer is available, and listing on this page is optional."
 period: "Names listed with permission"
-tags:
-  - "Seminars"
-  - "Learning Materials"
-  - "Club Activities"
 account:
   bank_name: ""
   account_number: ""
   account_holder: ""
-  note: "If you make a transfer, you can optionally share your name, transfer date, and a short message afterward."
+  note: ""
 form:
   url: ""
   label: "Notify Us After Transfer"
-  description: "Use the optional form only if you want to share your name, a short message, or consent to being listed on this page."
+  description: "Optional: share your name, a short message, or consent to being listed."
 entries: []
 # Example entries:
 #   - name: "Example Name"

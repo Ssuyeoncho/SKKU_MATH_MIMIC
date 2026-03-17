@@ -307,19 +307,6 @@ body {
   color: #f7fbf7;
 }
 
-.donations-kicker {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 0 1rem;
-  padding: 0.36rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
 .donations-card h3 {
   font-size: 1.35rem;
   line-height: 1.18;
@@ -342,23 +329,6 @@ body {
 .donations-card-lead p {
   max-width: 34rem;
   color: rgba(247, 251, 247, 0.92);
-}
-
-.donations-chip-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 0.95rem;
-}
-
-.donations-chip-list li {
-  padding: 0.38rem 0.78rem;
-  border-radius: 999px;
-  border: 1px solid #d1ddd3;
-  background: #eef5ef;
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: #305740;
 }
 
 .donations-account-list {
@@ -396,7 +366,6 @@ body {
   margin-top: 1rem;
 }
 
-.donations-form-note,
 .donations-muted {
   font-size: 0.92rem !important;
   line-height: 1.65 !important;
@@ -708,12 +677,10 @@ body {
 [data-theme="dark"] .donations-card p,
 [data-theme="dark"] .donations-roll-note,
 [data-theme="dark"] .donor-message,
-[data-theme="dark"] .donations-form-note,
 [data-theme="dark"] .donations-muted {
   color: #c5d0c9;
 }
 
-[data-theme="dark"] .donations-chip-list li,
 [data-theme="dark"] .donations-period,
 [data-theme="dark"] .donor-year {
   border-color: #2c4738;

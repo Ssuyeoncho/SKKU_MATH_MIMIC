@@ -358,35 +358,14 @@
       <div class="donations-layout">
         <div class="donations-summary-grid">
           <article class="donations-card donations-card-lead">
-            <p class="donations-kicker">COMMUNITY SUPPORT</p>
             <h3>{{ donations.headline | default: "Former Members & Alumni" }}</h3>
             <p>
-              {{ donations.description | default: "If you would like to support MIMIC, you can send a bank transfer and optionally leave your name or a short message afterward." }}
+              {{ donations.description | default: "Bank transfer is available, and listing on this page is optional." }}
             </p>
           </article>
 
-          <article class="donations-card donations-card-meta">
-            <p class="donations-kicker">WHAT IT SUPPORTS</p>
-            <h3>Where donations help</h3>
-            {% assign donation_tags = donations.tags %}
-            {% if donation_tags and donation_tags.size > 0 %}
-            <ul class="donations-chip-list">
-              {% for tag in donation_tags %}
-              <li>{{ tag }}</li>
-              {% endfor %}
-            </ul>
-            {% else %}
-            <ul class="donations-chip-list">
-              <li>Seminars</li>
-              <li>Learning Materials</li>
-              <li>Club Activities</li>
-            </ul>
-            {% endif %}
-          </article>
-
           <article class="donations-card donations-card-account">
-            <p class="donations-kicker">BANK TRANSFER</p>
-            <h3>Send a donation</h3>
+            <h3>Bank Transfer</h3>
             {% if donation_account.bank_name != '' or donation_account.account_number != '' or donation_account.account_holder != '' %}
             <dl class="donations-account-list">
               <div class="donations-account-row">
@@ -405,14 +384,10 @@
             {% else %}
             <p class="donations-muted">Account details will be added here.</p>
             {% endif %}
-            {% if donation_account.note %}
-            <p class="donations-form-note">{{ donation_account.note }}</p>
-            {% endif %}
           </article>
 
           <article class="donations-card donations-card-form">
-            <p class="donations-kicker">AFTER TRANSFER</p>
-            <h3>Share your name or a message</h3>
+            <h3>After Transfer</h3>
             <p>
               {{ donation_form.description | default: "Use the optional form only if you want to share your name, a short message, or consent to being listed on this page." }}
             </p>
@@ -437,7 +412,6 @@
         <article class="donations-card donations-card-roll">
           <div class="donations-roll-header">
             <div>
-              <p class="donations-kicker">WITH THANKS</p>
               <h3>Donor List</h3>
             </div>
             <p class="donations-roll-note">{{ donations.period | default: "Names listed with permission" }}</p>
