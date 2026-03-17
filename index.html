@@ -115,6 +115,7 @@
             <li><a class="nav-link" href="#seminars">SEMINARS</a></li>
             <li><a class="nav-link" href="#conferences">CONFERENCES</a></li>
             <li><a class="nav-link" href="#news">NEWS</a></li>
+            <li><a class="nav-link" href="#thanks-to">THANKS TO</a></li>
             <li><a class="nav-link" href="#contact">CONTACT</a></li>
             <!-- Toggle switch -->
             <div class="theme-switch">
@@ -339,6 +340,77 @@
       <a href="{{ '/news/index.html' | relative_url }}" class="btn btn-secondary archive-link"
         >See All News <i class="fas fa-arrow-right"></i
       ></a>
+    </section>
+
+    <section id="thanks-to" class="project-container container">
+      {% assign gratitude = site.data.supporters %}
+      {% assign supporter_entries = site.data.supporters.entries %}
+      <div class="division"></div>
+      <div class="content-text">
+        <h2>Thanks To</h2>
+        <p>
+          {{ gratitude.lead | default: "MIMIC grows through the generosity of former members who continue to support the club after graduation." }}
+        </p>
+      </div>
+
+      <div class="thanks-panel">
+        <article class="thanks-intro-card">
+          <p class="thanks-kicker">WITH GRATITUDE</p>
+          <h3>{{ gratitude.headline | default: "For the alumni and former members who continue to back MIMIC" }}</h3>
+          <p class="thanks-description">
+            {{ gratitude.description | default: "We gratefully acknowledge the alumni and former club members whose personal support helps sustain seminars, resources, and new student activities." }}
+          </p>
+
+          {% if gratitude.tags %}
+          <ul class="thanks-tags">
+            {% for tag in gratitude.tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          <div class="thanks-seal" aria-hidden="true">
+            <span>THANK</span>
+            <span>YOU</span>
+          </div>
+        </article>
+
+        <article class="thanks-roll-card">
+          <div class="thanks-roll-header">
+            <div>
+              <p class="thanks-roll-label">Supporters</p>
+              <h3>Former Members & Alumni</h3>
+            </div>
+            <p class="thanks-roll-note">{{ gratitude.period | default: "Listed with permission" }}</p>
+          </div>
+
+          {% if supporter_entries and supporter_entries.size > 0 %}
+          <div class="thanks-roll-list">
+            {% for item in supporter_entries %}
+            <article class="thanks-supporter">
+              <div class="thanks-supporter-copy">
+                <h4>{{ item.name }}</h4>
+                {% if item.note %}
+                <p>{{ item.note }}</p>
+                {% endif %}
+              </div>
+              {% if item.year %}
+              <span class="thanks-year">{{ item.year }}</span>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </div>
+          {% else %}
+          <div class="thanks-empty">
+            <h4>Supporter list will appear here</h4>
+            <p>
+              We will share the names of alumni and former members who have
+              supported MIMIC here, with their permission.
+            </p>
+          </div>
+          {% endif %}
+        </article>
+      </div>
     </section>
 
     <section id="contact" class="project-container container">
