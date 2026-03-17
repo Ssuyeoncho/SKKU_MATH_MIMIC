@@ -1,19 +1,9 @@
-headline: "Support MIMIC"
-lead: "Donations help MIMIC continue its seminars, materials, and student activities."
-description: "Bank transfer is available, and listing on this page is optional."
+lead: "Support helps MIMIC continue its seminars and activities."
 period: "Names listed with permission"
 account:
   bank_name: ""
   account_number: ""
   account_holder: ""
-  note: ""
-form:
-  url: ""
-  label: "Notify Us After Transfer"
-  description: "Optional: share your name, a short message, or consent to being listed."
 entries: []
 # Example entries:
-#   - name: "Example Name"
-#     note: "Supporter"
-#     message: "Always cheering for MIMIC."
-#     year: "2026"
+#   - "Example Name"

@@ -82,6 +82,82 @@ if (scrollSpyItems.length > 0) {
   requestActiveLinkUpdate();
 }
 
+const donationSliders = Array.from(
+  document.querySelectorAll("[data-donations-slider]")
+);
+
+donationSliders.forEach((slider) => {
+  const reduceMotionQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  if (reduceMotionQuery.matches) {
+    return;
+  }
+
+  const track = slider.querySelector(".donations-slider-track");
+  if (!track) {
+    return;
+  }
+
+  const slides = Array.from(track.children);
+  if (slides.length <= 1) {
+    return;
+  }
+
+  const hasClone = slides[slides.length - 1].classList.contains(
+    "donor-slide-clone"
+  );
+  let currentIndex = 0;
+  let intervalId = null;
+  let resetTimeoutId = null;
+
+  const setSlidePosition = (animate) => {
+    track.style.transition = animate ? "transform 480ms ease" : "none";
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  };
+
+  const stopSlider = () => {
+    if (intervalId !== null) {
+      window.clearInterval(intervalId);
+      intervalId = null;
+    }
+
+    if (resetTimeoutId !== null) {
+      window.clearTimeout(resetTimeoutId);
+      resetTimeoutId = null;
+    }
+  };
+
+  const advanceSlider = () => {
+    currentIndex += 1;
+    setSlidePosition(true);
+
+    if (hasClone && currentIndex === slides.length - 1) {
+      resetTimeoutId = window.setTimeout(() => {
+        currentIndex = 0;
+        setSlidePosition(false);
+      }, 500);
+    }
+  };
+
+  const startSlider = () => {
+    if (intervalId !== null) {
+      return;
+    }
+
+    intervalId = window.setInterval(advanceSlider, 2600);
+  };
+
+  setSlidePosition(false);
+  startSlider();
+
+  slider.addEventListener("mouseenter", stopSlider);
+  slider.addEventListener("mouseleave", startSlider);
+  slider.addEventListener("focusin", stopSlider);
+  slider.addEventListener("focusout", startSlider);
+});
+
 // Event Listeners: Handling toggle event
 const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
