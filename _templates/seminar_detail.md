@@ -2,8 +2,12 @@
 layout: seminar_detail
 page_title: "MIMIC | SEMINAR TITLE"
 
-# Basic info (shared)
+# Basic info (shared fallback)
 seminar_title: "SEMINAR TITLE"
+# Optional: use language-specific fields when title/speaker should follow the toggle.
+# Older seminars can keep using only seminar_title and speaker.
+# seminar_title_ko: "세미나 제목"
+# seminar_title_en: "SEMINAR TITLE"
 semester_label: "2025 Fall"
 # Preferred: use seminar_date (ISO format) to show "YYYY.MM.DD." in header.
 seminar_date: 2025-09-08
@@ -12,7 +16,11 @@ seminar_date: 2025-09-08
 # Optional fallback if seminar_date is omitted:
 # seminar_number: "02"
 speaker_label: "Speaker"
+# speaker_label_ko: "연사자"
+# speaker_label_en: "Speaker"
 speaker: "Speaker Name (Affiliation)"
+# speaker_ko: "홍길동 (소속)"
+# speaker_en: "Speaker Name (Affiliation)"
 permalink: /your-seminar-slug
 # current_path is optional (not required for sidebar linking).
 # current_path: "/your-seminar-slug"

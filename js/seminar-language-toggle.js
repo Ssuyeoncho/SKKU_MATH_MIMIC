@@ -1,21 +1,39 @@
+const languageTextKey = {
+  ko: "languageTextKo",
+  en: "languageTextEn",
+};
+
+const applyLanguage = (target) => {
+  document.querySelectorAll("[data-language-toggle]").forEach((toggleRoot) => {
+    toggleRoot.querySelectorAll("[data-language-button]").forEach((button) => {
+      const isActive = button.dataset.languageButton === target;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  });
+
+  document.querySelectorAll("[data-language-panel]").forEach((panel) => {
+    panel.hidden = panel.dataset.languagePanel !== target;
+  });
+
+  const textKey = languageTextKey[target];
+  document.querySelectorAll("[data-language-text]").forEach((node) => {
+    const localizedText = node.dataset[textKey];
+
+    if (typeof localizedText === "string" && localizedText !== "") {
+      node.textContent = localizedText;
+    }
+  });
+};
+
 document.querySelectorAll("[data-language-toggle]").forEach((toggleRoot) => {
   const buttons = toggleRoot.querySelectorAll("[data-language-button]");
-  const panels = document.querySelectorAll("[data-language-panel]");
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      const target = button.dataset.languageButton;
-
-      buttons.forEach((item) => {
-        const isActive = item === button;
-        item.classList.toggle("is-active", isActive);
-        item.setAttribute("aria-pressed", String(isActive));
-      });
-
-      panels.forEach((panel) => {
-        const isTarget = panel.dataset.languagePanel === target;
-        panel.hidden = !isTarget;
-      });
+      applyLanguage(button.dataset.languageButton || "ko");
     });
   });
 });
+
+applyLanguage("ko");

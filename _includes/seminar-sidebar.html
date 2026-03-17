@@ -42,12 +42,20 @@
         <ul class="season-items"{% unless is_expanded %} style="display: none;"{% endunless %}>
           {% if season_pages.size > 0 %}
             {% for seminar_page in season_pages %}
-              {% assign seminar_title = seminar_page.seminar_title | default: seminar_page.title | default: seminar_page.page_title %}
+              {% assign seminar_title_default = seminar_page.seminar_title | default: seminar_page.title | default: seminar_page.page_title %}
+              {% assign seminar_title_ko = seminar_page.seminar_title_ko | default: seminar_title_default %}
+              {% assign seminar_title_en = seminar_page.seminar_title_en | default: seminar_title_default %}
               <li class="season-item">
                 <a
                   class="season-link{% if seminar_page.url == normalized_current_path %} is-current{% endif %}"
                   href="{{ seminar_page.url | relative_url }}"
-                >{{ seminar_title }}</a>
+                >
+                  <span
+                    data-language-text
+                    data-language-text-ko="{{ seminar_title_ko | escape }}"
+                    data-language-text-en="{{ seminar_title_en | escape }}"
+                  >{{ seminar_title_ko }}</span>
+                </a>
               </li>
             {% endfor %}
           {% else %}

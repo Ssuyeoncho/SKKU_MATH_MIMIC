@@ -329,9 +329,20 @@
       <section class="seminar-detail">
         {% assign english_abstract = page.abstract_body_en | default: '' | strip %}
         {% assign has_english = false %}
-        {% if english_abstract != '' %}
+        {% if english_abstract != '' or page.seminar_title_en or page.speaker_en or page.speaker_label_en %}
           {% assign has_english = true %}
         {% endif %}
+        {% assign english_summary = english_abstract %}
+        {% if english_summary == '' %}
+          {% assign english_summary = page.abstract_body_ko | default: content %}
+        {% endif %}
+        {% assign seminar_title_default = page.seminar_title | default: page.title | default: page.page_title %}
+        {% assign seminar_title_ko = page.seminar_title_ko | default: seminar_title_default %}
+        {% assign seminar_title_en = page.seminar_title_en | default: seminar_title_default %}
+        {% assign speaker_label_ko = page.speaker_label_ko | default: page.speaker_label | default: '연사자' %}
+        {% assign speaker_label_en = page.speaker_label_en | default: page.speaker_label | default: 'Speaker' %}
+        {% assign speaker_ko = page.speaker_ko | default: page.speaker %}
+        {% assign speaker_en = page.speaker_en | default: page.speaker %}
         {% assign seminar_date_text = '' %}
         {% if page.seminar_date_display %}
           {% assign seminar_date_text = page.seminar_date_display %}
@@ -373,9 +384,22 @@
               / Seminar {{ page.seminar_number }}
             {% endif %}
           </p>
-          <h1>{{ page.seminar_title }}</h1>
+          <h1
+            data-language-text
+            data-language-text-ko="{{ seminar_title_ko | escape }}"
+            data-language-text-en="{{ seminar_title_en | escape }}"
+          >{{ seminar_title_ko }}</h1>
           <div class="seminar-meta">
-            <strong>{{ page.speaker_label | default: 'Speaker' }}:</strong> {{ page.speaker }}
+            <strong
+              data-language-text
+              data-language-text-ko="{{ speaker_label_ko | escape }}"
+              data-language-text-en="{{ speaker_label_en | escape }}"
+            >{{ speaker_label_ko }}</strong>:
+            <span
+              data-language-text
+              data-language-text-ko="{{ speaker_ko | escape }}"
+              data-language-text-en="{{ speaker_en | escape }}"
+            >{{ speaker_ko }}</span>
           </div>
         </header>
 
@@ -402,7 +426,7 @@
             {% if english_tagline %}
             <p class="abstract-tagline">{{ english_tagline }}</p>
             {% endif %}
-            {{ english_abstract | markdownify }}
+            {{ english_summary | markdownify }}
             {% assign english_prerequisite = page.prerequisite_en | default: page.prerequisite %}
             {% if english_prerequisite %}
             <div class="seminar-prerequisite"><strong>{{ page.prerequisite_label_en | default: 'Prerequisite' }}:</strong> {{ english_prerequisite }}</div>
@@ -419,19 +443,19 @@
             href="{{ page.video_url }}"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open video for {{ page.seminar_title }}"
+            aria-label="Open video for {{ seminar_title_en }}"
           >
             <img
               class="seminar-image"
               src="{{ page.thumbnail_src | default: '/assets/project/project-one.png' | relative_url }}"
-              alt="{{ page.thumbnail_alt | default: page.seminar_title }}"
+              alt="{{ page.thumbnail_alt | default: seminar_title_en }}"
             />
           </a>
           {% else %}
           <img
             class="seminar-image"
             src="{{ page.thumbnail_src | default: '/assets/project/project-one.png' | relative_url }}"
-            alt="{{ page.thumbnail_alt | default: page.seminar_title }}"
+            alt="{{ page.thumbnail_alt | default: seminar_title_en }}"
           />
           {% endif %}
         </section>
