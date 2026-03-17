@@ -115,7 +115,7 @@
             <li><a class="nav-link" href="#seminars">SEMINARS</a></li>
             <li><a class="nav-link" href="#conferences">CONFERENCES</a></li>
             <li><a class="nav-link" href="#news">NEWS</a></li>
-            <li><a class="nav-link" href="#thanks-to">THANKS TO</a></li>
+            <li><a class="nav-link" href="#supporters">SUPPORTERS</a></li>
             <li><a class="nav-link" href="#contact">CONTACT</a></li>
             <!-- Toggle switch -->
             <div class="theme-switch">
@@ -320,7 +320,7 @@
       </div>
 
       {% assign latest_news = site.data.news.items | default: empty %}
-      <article class="project news-project">
+      <article class="project">
         {% for item in latest_news limit: 3 %}
         <a
           class="card news-card"
@@ -342,71 +342,95 @@
       ></a>
     </section>
 
-    <section id="thanks-to" class="project-container container">
-      {% assign gratitude = site.data.supporters %}
+    <section id="supporters" class="project-container container">
+      {% assign supporters = site.data.supporters %}
       {% assign supporter_entries = site.data.supporters.entries %}
       <div class="division"></div>
       <div class="content-text">
-        <h2>Thanks To</h2>
+        <h2>Supporters</h2>
         <p>
-          {{ gratitude.lead | default: "MIMIC grows through the generosity of former members who continue to support the club after graduation." }}
+          {{ supporters.lead | default: "We gratefully acknowledge the former members and alumni whose support helps MIMIC continue each semester." }}
         </p>
       </div>
 
-      <div class="thanks-panel">
-        <article class="thanks-intro-card">
-          <p class="thanks-kicker">WITH GRATITUDE</p>
-          <h3>{{ gratitude.headline | default: "For the alumni and former members who continue to back MIMIC" }}</h3>
-          <p class="thanks-description">
-            {{ gratitude.description | default: "We gratefully acknowledge the alumni and former club members whose personal support helps sustain seminars, resources, and new student activities." }}
-          </p>
+      <div class="supporters-layout">
+        <div class="supporters-summary-grid">
+          <article class="supporters-card supporters-card-lead">
+            <p class="supporters-kicker">COMMUNITY SUPPORT</p>
+            <h3>{{ supporters.headline | default: "Former Members & Alumni" }}</h3>
+            <p>
+              {{ supporters.description | default: "Their personal support helps sustain seminars, learning materials, and welcoming activities for new members." }}
+            </p>
+          </article>
 
-          {% if gratitude.tags %}
-          <ul class="thanks-tags">
-            {% for tag in gratitude.tags %}
-            <li>{{ tag }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+          <article class="supporters-card supporters-card-meta">
+            <h3>What support helps</h3>
+            {% assign supporter_tags = supporters.tags %}
+            {% if supporter_tags and supporter_tags.size > 0 %}
+            <ul class="supporters-chip-list">
+              {% for tag in supporter_tags %}
+              <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+            {% else %}
+            <ul class="supporters-chip-list">
+              <li>Seminars</li>
+              <li>Learning Materials</li>
+              <li>Club Activities</li>
+            </ul>
+            {% endif %}
+          </article>
 
-          <div class="thanks-seal" aria-hidden="true">
-            <span>THANK</span>
-            <span>YOU</span>
-          </div>
-        </article>
+          <article class="supporters-card supporters-card-meta">
+            <h3>Recognition</h3>
+            <p>
+              We keep this page simple and personal, and list names only with
+              permission.
+            </p>
+            <p class="supporters-period">{{ supporters.period | default: "Listed with permission" }}</p>
+          </article>
+        </div>
 
-        <article class="thanks-roll-card">
-          <div class="thanks-roll-header">
+        <article class="supporters-card supporters-card-roll">
+          <div class="supporters-roll-header">
             <div>
-              <p class="thanks-roll-label">Supporters</p>
+              <p class="supporters-kicker">SUPPORTERS</p>
               <h3>Former Members & Alumni</h3>
             </div>
-            <p class="thanks-roll-note">{{ gratitude.period | default: "Listed with permission" }}</p>
+            <p class="supporters-roll-note">{{ supporters.period | default: "Listed with permission" }}</p>
           </div>
 
           {% if supporter_entries and supporter_entries.size > 0 %}
-          <div class="thanks-roll-list">
+          <div class="supporters-grid">
             {% for item in supporter_entries %}
-            <article class="thanks-supporter">
-              <div class="thanks-supporter-copy">
-                <h4>{{ item.name }}</h4>
-                {% if item.note %}
-                <p>{{ item.note }}</p>
-                {% endif %}
-              </div>
+            <article class="supporter-tile">
+              {% if item.note %}
+              <p class="supporter-note">{{ item.note }}</p>
+              {% endif %}
+              <h4>{{ item.name }}</h4>
               {% if item.year %}
-              <span class="thanks-year">{{ item.year }}</span>
+              <span class="supporter-year">{{ item.year }}</span>
               {% endif %}
             </article>
             {% endfor %}
           </div>
           {% else %}
-          <div class="thanks-empty">
-            <h4>Supporter list will appear here</h4>
-            <p>
-              We will share the names of alumni and former members who have
-              supported MIMIC here, with their permission.
-            </p>
+          <div class="supporters-grid supporters-grid-placeholder">
+            <article class="supporter-tile supporter-tile-placeholder">
+              <p class="supporter-note">Former Members</p>
+              <h4>Names will appear here</h4>
+              <span class="supporter-year">With permission</span>
+            </article>
+            <article class="supporter-tile supporter-tile-placeholder">
+              <p class="supporter-note">Alumni Support</p>
+              <h4>Personal donations from former members</h4>
+              <span class="supporter-year">Ongoing</span>
+            </article>
+            <article class="supporter-tile supporter-tile-placeholder">
+              <p class="supporter-note">MIMIC</p>
+              <h4>Support that helps the club continue steadily</h4>
+              <span class="supporter-year">Each semester</span>
+            </article>
           </div>
           {% endif %}
         </article>
