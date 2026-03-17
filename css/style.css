@@ -220,7 +220,7 @@ body {
   scroll-margin-top: 98px;
 }
 
-#supporters {
+#donations {
   display: flex;
   flex-direction: column;
   margin: 2rem auto 5rem;
@@ -272,33 +272,33 @@ body {
   line-height: 1.75;
 }
 
-#supporters .content-text p {
+#donations .content-text p {
   max-width: 820px;
   font-size: 1.03rem;
   line-height: 1.75;
 }
 
-.supporters-layout {
+.donations-layout {
   margin-top: 1rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.98fr);
   gap: 1rem;
 }
 
-.supporters-summary-grid {
+.donations-summary-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.supporters-card {
+.donations-card {
   border-radius: 20px;
   border: 1px solid #dce5de;
   background: #f8faf8;
   padding: 1.35rem;
 }
 
-.supporters-card-lead {
+.donations-card-lead {
   grid-column: 1 / -1;
   border-color: #285b43;
   background:
@@ -307,7 +307,7 @@ body {
   color: #f7fbf7;
 }
 
-.supporters-kicker {
+.donations-kicker {
   display: inline-flex;
   align-items: center;
   margin: 0 0 1rem;
@@ -320,38 +320,38 @@ body {
   letter-spacing: 0.14em;
 }
 
-.supporters-card h3 {
+.donations-card h3 {
   font-size: 1.35rem;
   line-height: 1.18;
 }
 
-.supporters-card p {
+.donations-card p {
   margin-top: 0.8rem;
   font-size: 0.97rem;
   line-height: 1.72;
   color: #59625e;
 }
 
-.supporters-card-lead h3 {
+.donations-card-lead h3 {
   max-width: 13ch;
   font-size: clamp(1.9rem, 3vw, 2.7rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
-.supporters-card-lead p {
+.donations-card-lead p {
   max-width: 34rem;
   color: rgba(247, 251, 247, 0.92);
 }
 
-.supporters-chip-list {
+.donations-chip-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
   margin-top: 0.95rem;
 }
 
-.supporters-chip-list li {
+.donations-chip-list li {
   padding: 0.38rem 0.78rem;
   border-radius: 999px;
   border: 1px solid #d1ddd3;
@@ -361,7 +361,49 @@ body {
   color: #305740;
 }
 
-.supporters-period {
+.donations-account-list {
+  margin-top: 0.95rem;
+  display: grid;
+  gap: 0.72rem;
+}
+
+.donations-account-row {
+  display: grid;
+  gap: 0.22rem;
+  padding: 0.8rem 0.85rem;
+  border-radius: 14px;
+  border: 1px solid #d5dfd8;
+  background: #ffffff;
+}
+
+.donations-account-row dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.donations-account-row dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #1f2924;
+  font-weight: 700;
+}
+
+.donations-form-button {
+  margin-top: 1rem;
+}
+
+.donations-form-note,
+.donations-muted {
+  font-size: 0.92rem !important;
+  line-height: 1.65 !important;
+  color: #59625e !important;
+}
+
+.donations-period {
   display: inline-flex;
   align-items: center;
   margin-top: 1rem;
@@ -374,39 +416,39 @@ body {
   color: #305740;
 }
 
-.supporters-card-roll {
+.donations-card-roll {
   background:
     linear-gradient(160deg, rgba(255, 205, 66, 0.08), rgba(255, 205, 66, 0) 34%),
     linear-gradient(180deg, #ffffff 0%, #f8faf8 100%);
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
 }
 
-.supporters-roll-header {
+.donations-roll-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.supporters-roll-header h3 {
+.donations-roll-header h3 {
   font-size: 1.55rem;
   line-height: 1.15;
 }
 
-.supporters-roll-note {
+.donations-roll-note {
   font-size: 0.84rem;
   color: #64706b;
   white-space: nowrap;
 }
 
-.supporters-grid {
+.donations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.8rem;
   margin-top: 1rem;
 }
 
-.supporter-tile {
+.donor-tile {
   min-height: 150px;
   padding: 1rem;
   border-radius: 16px;
@@ -417,7 +459,7 @@ body {
   gap: 0.6rem;
 }
 
-.supporter-note {
+.donor-note {
   margin: 0;
   font-size: 0.72rem;
   font-weight: 800;
@@ -426,17 +468,24 @@ body {
   color: var(--accent-color);
 }
 
-.supporter-tile h4 {
+.donor-tile h4 {
   margin: 0;
   font-size: 1rem;
   line-height: 1.3;
 }
 
-.supporter-tile-placeholder h4 {
+.donor-message {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #59625e;
+}
+
+.donor-tile-placeholder h4 {
   max-width: 18ch;
 }
 
-.supporter-year {
+.donor-year {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -651,25 +700,37 @@ body {
     #101513;
 }
 
-[data-theme="dark"] .supporters-card {
+[data-theme="dark"] .donations-card {
   border-color: #223028;
   background: #101513;
 }
 
-[data-theme="dark"] .supporters-card p,
-[data-theme="dark"] .supporters-roll-note {
+[data-theme="dark"] .donations-card p,
+[data-theme="dark"] .donations-roll-note,
+[data-theme="dark"] .donor-message,
+[data-theme="dark"] .donations-form-note,
+[data-theme="dark"] .donations-muted {
   color: #c5d0c9;
 }
 
-[data-theme="dark"] .supporters-chip-list li,
-[data-theme="dark"] .supporters-period,
-[data-theme="dark"] .supporter-year {
+[data-theme="dark"] .donations-chip-list li,
+[data-theme="dark"] .donations-period,
+[data-theme="dark"] .donor-year {
   border-color: #2c4738;
   background: #162019;
   color: #a5d3b8;
 }
 
-[data-theme="dark"] .supporters-card-roll {
+[data-theme="dark"] .donations-account-row {
+  background: #0f1512;
+  border-color: #2a3a32;
+}
+
+[data-theme="dark"] .donations-account-row dd {
+  color: #edf4ef;
+}
+
+[data-theme="dark"] .donations-card-roll {
   border-color: #223028;
   background:
     linear-gradient(160deg, rgba(255, 205, 66, 0.06), rgba(255, 205, 66, 0) 34%),
@@ -677,7 +738,7 @@ body {
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
 }
 
-[data-theme="dark"] .supporter-tile {
+[data-theme="dark"] .donor-tile {
   background: #0f1512;
   border-color: #2a3a32;
 }
@@ -781,11 +842,11 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .supporters-layout {
+  .donations-layout {
     grid-template-columns: 1fr;
   }
 
-  .supporters-summary-grid {
+  .donations-summary-grid {
     grid-template-columns: 1fr;
   }
 
@@ -882,16 +943,16 @@ body {
     padding: 1.15rem 1rem;
   }
 
-  .supporters-card {
+  .donations-card {
     padding: 1.15rem 1rem;
   }
 
-  .supporters-card-lead h3 {
+  .donations-card-lead h3 {
     max-width: none;
     font-size: 1.85rem;
   }
 
-  .supporters-roll-header {
+  .donations-roll-header {
     flex-direction: column;
     align-items: flex-start;
   }

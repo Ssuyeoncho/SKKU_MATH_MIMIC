@@ -115,7 +115,7 @@
             <li><a class="nav-link" href="#seminars">SEMINARS</a></li>
             <li><a class="nav-link" href="#conferences">CONFERENCES</a></li>
             <li><a class="nav-link" href="#news">NEWS</a></li>
-            <li><a class="nav-link" href="#supporters">SUPPORTERS</a></li>
+            <li><a class="nav-link" href="#donations">DONATIONS</a></li>
             <li><a class="nav-link" href="#contact">CONTACT</a></li>
             <!-- Toggle switch -->
             <div class="theme-switch">
@@ -342,38 +342,41 @@
       ></a>
     </section>
 
-    <section id="supporters" class="project-container container">
-      {% assign supporters = site.data.supporters %}
-      {% assign supporter_entries = site.data.supporters.entries %}
+    <section id="donations" class="project-container container">
+      {% assign donations = site.data.donations %}
+      {% assign donation_entries = site.data.donations.entries %}
+      {% assign donation_account = site.data.donations.account %}
+      {% assign donation_form = site.data.donations.form %}
       <div class="division"></div>
       <div class="content-text">
-        <h2>Supporters</h2>
+        <h2>Donations</h2>
         <p>
-          {{ supporters.lead | default: "We gratefully acknowledge the former members and alumni whose support helps MIMIC continue each semester." }}
+          {{ donations.lead | default: "Former members and alumni can help MIMIC continue its seminars, materials, and student activities." }}
         </p>
       </div>
 
-      <div class="supporters-layout">
-        <div class="supporters-summary-grid">
-          <article class="supporters-card supporters-card-lead">
-            <p class="supporters-kicker">COMMUNITY SUPPORT</p>
-            <h3>{{ supporters.headline | default: "Former Members & Alumni" }}</h3>
+      <div class="donations-layout">
+        <div class="donations-summary-grid">
+          <article class="donations-card donations-card-lead">
+            <p class="donations-kicker">COMMUNITY SUPPORT</p>
+            <h3>{{ donations.headline | default: "Former Members & Alumni" }}</h3>
             <p>
-              {{ supporters.description | default: "Their personal support helps sustain seminars, learning materials, and welcoming activities for new members." }}
+              {{ donations.description | default: "If you would like to support MIMIC, you can send a bank transfer and optionally leave your name or a short message afterward." }}
             </p>
           </article>
 
-          <article class="supporters-card supporters-card-meta">
-            <h3>What support helps</h3>
-            {% assign supporter_tags = supporters.tags %}
-            {% if supporter_tags and supporter_tags.size > 0 %}
-            <ul class="supporters-chip-list">
-              {% for tag in supporter_tags %}
+          <article class="donations-card donations-card-meta">
+            <p class="donations-kicker">WHAT IT SUPPORTS</p>
+            <h3>Where donations help</h3>
+            {% assign donation_tags = donations.tags %}
+            {% if donation_tags and donation_tags.size > 0 %}
+            <ul class="donations-chip-list">
+              {% for tag in donation_tags %}
               <li>{{ tag }}</li>
               {% endfor %}
             </ul>
             {% else %}
-            <ul class="supporters-chip-list">
+            <ul class="donations-chip-list">
               <li>Seminars</li>
               <li>Learning Materials</li>
               <li>Club Activities</li>
@@ -381,55 +384,98 @@
             {% endif %}
           </article>
 
-          <article class="supporters-card supporters-card-meta">
-            <h3>Recognition</h3>
+          <article class="donations-card donations-card-account">
+            <p class="donations-kicker">BANK TRANSFER</p>
+            <h3>Send a donation</h3>
+            {% if donation_account.bank_name != '' or donation_account.account_number != '' or donation_account.account_holder != '' %}
+            <dl class="donations-account-list">
+              <div class="donations-account-row">
+                <dt>Bank</dt>
+                <dd>{{ donation_account.bank_name }}</dd>
+              </div>
+              <div class="donations-account-row">
+                <dt>Account</dt>
+                <dd>{{ donation_account.account_number }}</dd>
+              </div>
+              <div class="donations-account-row">
+                <dt>Holder</dt>
+                <dd>{{ donation_account.account_holder }}</dd>
+              </div>
+            </dl>
+            {% else %}
+            <p class="donations-muted">Account details will be added here.</p>
+            {% endif %}
+            {% if donation_account.note %}
+            <p class="donations-form-note">{{ donation_account.note }}</p>
+            {% endif %}
+          </article>
+
+          <article class="donations-card donations-card-form">
+            <p class="donations-kicker">AFTER TRANSFER</p>
+            <h3>Share your name or a message</h3>
             <p>
-              We keep this page simple and personal, and list names only with
-              permission.
+              {{ donation_form.description | default: "Use the optional form only if you want to share your name, a short message, or consent to being listed on this page." }}
             </p>
-            <p class="supporters-period">{{ supporters.period | default: "Listed with permission" }}</p>
+            {% assign donation_form_url = donation_form.url | default: '' %}
+            {% if donation_form_url != '' %}
+            <a
+              class="btn btn-secondary donations-form-button"
+              href="{{ donation_form_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{{ donation_form.label | default: "Notify Us After Transfer" }}</a>
+            {% else %}
+            <p class="donations-muted">
+              A short form link can be added here for optional name, message,
+              and listing consent.
+            </p>
+            {% endif %}
+            <p class="donations-period">{{ donations.period | default: "Names listed with permission" }}</p>
           </article>
         </div>
 
-        <article class="supporters-card supporters-card-roll">
-          <div class="supporters-roll-header">
+        <article class="donations-card donations-card-roll">
+          <div class="donations-roll-header">
             <div>
-              <p class="supporters-kicker">SUPPORTERS</p>
-              <h3>Former Members & Alumni</h3>
+              <p class="donations-kicker">WITH THANKS</p>
+              <h3>Donor List</h3>
             </div>
-            <p class="supporters-roll-note">{{ supporters.period | default: "Listed with permission" }}</p>
+            <p class="donations-roll-note">{{ donations.period | default: "Names listed with permission" }}</p>
           </div>
 
-          {% if supporter_entries and supporter_entries.size > 0 %}
-          <div class="supporters-grid">
-            {% for item in supporter_entries %}
-            <article class="supporter-tile">
+          {% if donation_entries and donation_entries.size > 0 %}
+          <div class="donations-grid">
+            {% for item in donation_entries %}
+            <article class="donor-tile">
               {% if item.note %}
-              <p class="supporter-note">{{ item.note }}</p>
+              <p class="donor-note">{{ item.note }}</p>
               {% endif %}
               <h4>{{ item.name }}</h4>
+              {% if item.message %}
+              <p class="donor-message">{{ item.message }}</p>
+              {% endif %}
               {% if item.year %}
-              <span class="supporter-year">{{ item.year }}</span>
+              <span class="donor-year">{{ item.year }}</span>
               {% endif %}
             </article>
             {% endfor %}
           </div>
           {% else %}
-          <div class="supporters-grid supporters-grid-placeholder">
-            <article class="supporter-tile supporter-tile-placeholder">
-              <p class="supporter-note">Former Members</p>
+          <div class="donations-grid donations-grid-placeholder">
+            <article class="donor-tile donor-tile-placeholder">
+              <p class="donor-note">With permission</p>
               <h4>Names will appear here</h4>
-              <span class="supporter-year">With permission</span>
+              <span class="donor-year">Former Members</span>
             </article>
-            <article class="supporter-tile supporter-tile-placeholder">
-              <p class="supporter-note">Alumni Support</p>
-              <h4>Personal donations from former members</h4>
-              <span class="supporter-year">Ongoing</span>
+            <article class="donor-tile donor-tile-placeholder">
+              <p class="donor-note">Optional message</p>
+              <h4>Short notes can be shared after a transfer</h4>
+              <span class="donor-year">By consent</span>
             </article>
-            <article class="supporter-tile supporter-tile-placeholder">
-              <p class="supporter-note">MIMIC</p>
-              <h4>Support that helps the club continue steadily</h4>
-              <span class="supporter-year">Each semester</span>
+            <article class="donor-tile donor-tile-placeholder">
+              <p class="donor-note">Donations</p>
+              <h4>Support helps MIMIC continue each semester</h4>
+              <span class="donor-year">Thank you</span>
             </article>
           </div>
           {% endif %}
