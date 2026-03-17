@@ -1,5 +1,5 @@
-headline: "Former Members & Alumni"
-lead: "Former members and alumni can help MIMIC continue its seminars, materials, and student activities."
+headline: "Support MIMIC"
+lead: "Donations help MIMIC continue its seminars, materials, and student activities."
 description: "Bank transfer is available, and listing on this page is optional."
 period: "Names listed with permission"
 account:
@@ -14,6 +14,6 @@ form:
 entries: []
 # Example entries:
 #   - name: "Example Name"
-#     note: "Former MIMIC member"
+#     note: "Supporter"
 #     message: "Always cheering for MIMIC."
 #     year: "2026"
