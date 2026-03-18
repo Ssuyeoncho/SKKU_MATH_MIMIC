@@ -1,0 +1,53 @@
+---
+layout: seminar_detail
+page_title: "A Novel Approach to Math, Combinatorics | MIMIC"
+permalink: /A_Novel_Approach_to_Math_Combinatorics
+
+# Basic info (shared fallback)
+seminar_title: "A Novel Approach to Math, Combinatorics"
+seminar_title_ko: "조합론적 수학에 대한 새로운 방식의 접근"
+seminar_title_en: "A Novel Approach to Math, Combinatorics"
+semester_label: "2025 Spring"
+seminar_date: 2025-03-12
+speaker_label_ko: "연사자"
+speaker_label_en: "Speaker"
+speaker: "Hojoon Lee (Sungkyunkwan University)"
+speaker_ko: "이호준" (성균관대학교)"
+speaker_en: "Hojoon Lee (Sungkyunkwan University)"
+current_path: "/A_Novel_Approach_to_Math_Combinatorics"
+
+# Korean abstract
+abstract_heading: "초록"
+# abstract_tagline: "\"인생을 시작할 때는 수학을 하지만, 결국에는 조합론을 하게 된다. - Ian Macdonald\""
+abstract_body_ko: |
+  고등학교 때 미적분, 방정식을 통해 해석학과 대수학을 접했는데 조합론은 경우의 수를 제외하고는 접할 기회가 없었습니다. 그렇다보니 대학에서 조합론을 처음 접할 때 낯설어하는 학생들이 많습니다. 그러나, 허준이 교수님이 조합론과 대수기하를 잇는 연구를 통해 필즈상을 받은 것처럼 현대 수학에서 조합론이 미치는 영향은 상당합니다. 이에 저의 전공분야인 조합론을 소개하고자 이 주제를 선택하였습니다. 조합론이 무엇을 하는 분야이고, 어떤 대상을 흥미로워하고, 수학에는 어떤 영향을 주는지 그 느낌을 알고 이산수학이든 조합 및 그래프 이론이든 앞으로 수학을 공부할 때 조합론을 만나면 반가워하셨으면 좋겠습니다.
+
+  제가 생각하는 조합론의 매력은 어려운 수학을 직관적으로 쉽게 바꾸는 과정에 있습니다. 이런 매력을 예시를 통해 간접적으로 느끼실 수 있도록 세미나를 준비하였습니다.
+  
+  사람의 직관과 가장 가까이에 있지만 많은 사람에겐 낯선 분야인 조합론을 카탈란 수를 통해 소개하고, 어려워 보이는 수학에 대해서 어떻게 조합론으로 쉽게 풀어가는지 보여드릴 예정입니다. 많은 관심과 참여 부탁드립니다.
+# prerequisite_label: "사전지식"
+# prerequisite: "없음"
+
+# English abstract (optional)
+# Leave abstract_body_en empty to hide the language toggle.
+abstract_heading_en: "Abstract"
+# abstract_tagline_en: "\"You start out in life doing mathematics, you end up doing combinatorics. - Ian Macdonald\""
+abstract_body_en: |
+  In high school, I was introduced to analysis and algebra through calculus and equations, but had little opportunity to encounter combinatorics beyond basic counting problems. As a result, many students find combinatorics unfamiliar when they first encounter it in university. However, as seen in the case of June Huh, who was awarded the Fields Medal for his work connecting combinatorics and algebraic geometry, the influence of combinatorics in modern mathematics is significant. For this reason, I chose this topic to introduce my field of study, combinatorics. I hope to give you a sense of what combinatorics studies, what kinds of objects it finds interesting, and how it influences mathematics, so that whether you study discrete mathematics or combinatorics and graph theory in the future, you will feel a sense of familiarity and interest when you encounter it.
+  
+  What I find most appealing about combinatorics is its ability to transform difficult mathematics into something intuitive and accessible. I have prepared this seminar so that you can experience this appeal indirectly through examples.
+  
+  Although combinatorics is a field that is closest to human intuition, it remains unfamiliar to many people. In this seminar, I will introduce combinatorics through Catalan numbers and demonstrate how problems that appear difficult can be approached and simplified using combinatorial methods. I look forward to your interest and participation.
+# prerequisite_label_en: "Prerequisite"
+# prerequisite_en: "None"
+
+# Media and materials (shared)
+video_heading: "Video Link"
+video_url: "https://youtu.be/phEjbmfQY_g"
+thumbnail_src: "/seminars/2025Spring/thumbnails/2_A Novel Approach to Math Combinatorics.jpg"
+thumbnail_alt: "A Novel Approach to Math, Combinatorics"
+materials_heading: "Presentation Material"
+materials:
+  - label: "Slide deck: A Novel Approach to Math, Combinatorics"
+    url: "/seminars/2025Spring/slidedecks/2_A Novel Approach to Math Combinatorics.pdf"
+---
