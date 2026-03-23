@@ -403,6 +403,7 @@
           </div>
         </header>
 
+        {% if page.abstract_body_ko or page.abstract_body_en or content != '' %}
         <section class="seminar-summary detail-card">
           <div class="seminar-lang-panel" data-language-panel="ko">
             <h2>{{ page.abstract_heading | default: '초록' }}</h2>
@@ -434,6 +435,7 @@
           </div>
           {% endif %}
         </section>
+         {% endif %}
 
         <section class="seminar-video detail-card">
           <h2>{{ page.video_heading | default: 'Video Link' }}</h2>
