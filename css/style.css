@@ -890,12 +890,11 @@ body {
 
 
 #conferences .project {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr) !important;
   grid-auto-rows: minmax(250px, auto);
 }
 
-/* News: seminars와 동일하게 3열 유지하되 행 높이 통일 */
 #news .project {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr) !important;
   grid-auto-rows: minmax(250px, auto);
 }
