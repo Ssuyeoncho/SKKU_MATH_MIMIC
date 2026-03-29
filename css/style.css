@@ -899,3 +899,9 @@ body {
   height: auto !important;
   min-height: 250px;
 }
+
+#news .project > .card {
+  aspect-ratio: 4 / 3;
+  height: auto !important;
+  min-height: 250px;
+}
