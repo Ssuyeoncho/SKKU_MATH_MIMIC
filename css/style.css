@@ -710,7 +710,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
-  top: 160px;
+  top: auto;
   left: 10px;
 }
 
@@ -891,10 +891,11 @@ body {
 
 #conferences .project {
   grid-template-columns: repeat(2, 1fr) !important;
-  grid-auto-rows: auto !important;
+  grid-auto-rows: minmax(250px, auto) !important;
 }
 
 #conferences .project > .card {
   aspect-ratio: 16 / 9;
   height: auto !important;
+  min-height: 250px;
 }
