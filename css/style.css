@@ -891,10 +891,10 @@ body {
 
 #conferences .project {
   grid-template-columns: repeat(2, 1fr) !important;
-  grid-auto-rows: minmax(250px, auto);
+  grid-auto-rows: auto !important;
 }
 
-#news .project {
-  grid-template-columns: repeat(3, 1fr) !important;
-  grid-auto-rows: minmax(250px, auto);
+#conferences .project > .card {
+  aspect-ratio: 16 / 9;
+  height: auto !important;
 }
