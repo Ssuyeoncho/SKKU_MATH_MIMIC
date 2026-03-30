@@ -674,6 +674,10 @@ body {
   border-color: #2a3a32;
 }
 
+[data-theme="dark"] .contact-social-card img {
+  filter: invert(1);
+}
+
 .project {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
