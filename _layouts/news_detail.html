@@ -233,7 +233,7 @@
     <main class="event-detail">
       {% assign korean_summary = page.summary_body_ko | default: page.summary_ko | default: '' | strip %}
       {% assign page_news_slug = page.name | replace: '.html', '' %}
-      {% assign page_media_base = page.dir | append: page_news_slug | append: '/' %}
+      {% assign page_media_base = page.dir | append: 'images/' | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
       {% if korean_summary != '' %}
         {% assign has_korean = true %}

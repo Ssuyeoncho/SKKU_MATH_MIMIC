@@ -1,6 +1,7 @@
 ---
 layout: news_detail
 page_title: "EVENT TITLE | MIMIC"
+# Put images in news/<year>/images/<same-slug>/.
 thumbnail: "thumbnail.jpg"
 
 # Basic info (shared)

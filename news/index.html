@@ -31,7 +31,7 @@ enable_language_toggle: true
 </header>
 
 <ul class="news-link-list">
-  {% assign news_items = site.pages | where_exp: "item", "item.path contains 'news/' and item.name != 'index.html'" | sort: "path" | reverse %}
+  {% assign news_items = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "path" | reverse %}
   {% for item in news_items %}
   {% assign news_title = item.archive_title | default: item.page_heading %}
   {% assign news_title_ko = item.archive_title_ko | default: item.page_heading_ko | default: news_title %}

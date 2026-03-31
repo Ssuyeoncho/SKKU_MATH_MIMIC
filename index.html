@@ -326,12 +326,12 @@
         </p>
       </div>
 
-      {% assign latest_news = site.pages | where_exp: "item", "item.path contains 'news/' and item.name != 'index.html'" | sort: "path" | reverse %}
+      {% assign latest_news = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "path" | reverse %}
       <article class="project">
         {% for item in latest_news limit: 3 %}
         {% assign news_date = item.date_display | default: item.event_date %}
         {% assign news_slug = item.name | replace: '.html', '' %}
-        {% assign news_media_base = item.dir | append: news_slug | append: '/' %}
+        {% assign news_media_base = item.dir | append: 'images/' | append: news_slug | append: '/' %}
         {% assign news_thumbnail = item.thumbnail | default: '' %}
         {% if news_thumbnail == '' and item.gallery and item.gallery.size > 0 %}
           {% assign first_image = item.gallery.first %}
