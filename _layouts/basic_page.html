@@ -90,7 +90,24 @@
       .page-header-copy > p {
         width: min(100%, 46rem);
         margin: 0;
-        min-height: calc(1.72em * 2);
+      }
+
+      .localized-stack {
+        display: grid;
+      }
+
+      .localized-inline-stack {
+        display: inline-grid;
+      }
+
+      .localized-stack > [data-language-option],
+      .localized-inline-stack > [data-language-option] {
+        grid-area: 1 / 1;
+      }
+
+      .localized-stack > [data-language-option]:not(.is-active),
+      .localized-inline-stack > [data-language-option]:not(.is-active) {
+        visibility: hidden;
       }
 
       .news-archive {
@@ -167,36 +184,31 @@
 
       .news-link-content {
         display: grid;
-        gap: 0.52rem;
+        gap: 0.3rem;
       }
 
       .news-link-title {
-        display: block;
         font-weight: 700;
         line-height: 1.32;
-        min-height: calc(1.32em * 2);
         max-width: 34rem;
       }
 
       .news-link-meta-row {
-        display: grid;
-        grid-template-columns: 13rem minmax(0, 1fr);
+        display: flex;
         align-items: center;
-        gap: 0.55rem;
-        min-height: 2.1rem;
+        gap: 0.75rem;
+        flex-wrap: wrap;
       }
 
       .news-link-date {
         font-size: 0.92rem;
         font-weight: 500;
         color: var(--content-muted);
-        min-width: 0;
       }
 
       .news-link-period {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
         padding: 0.18rem 0.52rem;
         border-radius: 999px;
         background: var(--sidebar-hover);
@@ -204,8 +216,6 @@
         font-size: 0.78rem;
         font-weight: 700;
         color: var(--sidebar-accent);
-        min-width: 13rem;
-        white-space: nowrap;
       }
 
       .news-link-list a:hover,
@@ -249,7 +259,6 @@
 
         .page-header-copy > p {
           width: 100%;
-          min-height: calc(1.72em * 2);
         }
 
         .news-gallery {
@@ -261,9 +270,7 @@
         }
 
         .news-link-meta-row {
-          grid-template-columns: 1fr;
           gap: 0.4rem;
-          min-height: 0;
         }
 
         .seminar-language-toggle {
@@ -274,13 +281,6 @@
 
         .news-link-title {
           max-width: none;
-          min-height: 0;
-        }
-
-        .news-link-period {
-          min-width: 0;
-          justify-content: flex-start;
-          width: fit-content;
         }
 
         .language-button {

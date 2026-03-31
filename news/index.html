@@ -10,12 +10,9 @@ enable_language_toggle: true
     <div class="page-header-copy">
       <h1>News Archive</h1>
 
-      <p
-        data-language-text
-        data-language-text-ko="세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다."
-        data-language-text-en="Recent community and project activities outside the main seminar and conference programs."
-      >
-        세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.
+      <p class="localized-stack">
+        <span class="is-active" data-language-option="ko">세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.</span>
+        <span data-language-option="en">Recent community and project activities outside the main seminar and conference programs.</span>
       </p>
     </div>
     <div class="seminar-language-toggle" data-language-toggle>
@@ -43,31 +40,25 @@ enable_language_toggle: true
         <a href="{{ item.url | relative_url }}">
           <span class="news-link-content">
             <span
-              class="news-link-title"
-              data-language-text
-              data-language-text-ko="{{ news_title_ko | escape }}"
-              data-language-text-en="{{ news_title | escape }}"
+              class="news-link-title localized-stack"
             >
-              {{ news_title_ko }}
+              <span class="is-active" data-language-option="ko">{{ news_title_ko }}</span>
+              <span data-language-option="en">{{ news_title }}</span>
             </span>
             <span class="news-link-meta-row">
               {% if news_period != '' or news_period_ko != '' %}
               <span
-                class="news-link-period"
-                data-language-text
-                data-language-text-ko="{{ news_period_ko | escape }}"
-                data-language-text-en="{{ news_period | escape }}"
+                class="news-link-period localized-inline-stack"
               >
-                {{ news_period_ko }}
+                <span class="is-active" data-language-option="ko">{{ news_period_ko }}</span>
+                <span data-language-option="en">{{ news_period }}</span>
               </span>
               {% endif %}
               <span
-                class="news-link-date"
-                data-language-text
-                data-language-text-ko="{{ news_date_ko | escape }}"
-                data-language-text-en="{{ news_date | escape }}"
+                class="news-link-date localized-inline-stack"
               >
-                {{ news_date_ko }}
+                <span class="is-active" data-language-option="ko">{{ news_date_ko }}</span>
+                <span data-language-option="en">{{ news_date }}</span>
               </span>
             </span>
           </span>
