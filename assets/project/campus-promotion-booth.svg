@@ -1,6 +1,5 @@
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <rect width="800" height="600" fill="#14532d"/>
-  <!-- dot grid -->
   <g fill="#ffffff" opacity="0.12">
     <circle cx="80" cy="80" r="2.5"/><circle cx="160" cy="80" r="2.5"/><circle cx="240" cy="80" r="2.5"/><circle cx="320" cy="80" r="2.5"/><circle cx="400" cy="80" r="2.5"/><circle cx="480" cy="80" r="2.5"/><circle cx="560" cy="80" r="2.5"/><circle cx="640" cy="80" r="2.5"/><circle cx="720" cy="80" r="2.5"/>
     <circle cx="80" cy="160" r="2.5"/><circle cx="160" cy="160" r="2.5"/><circle cx="240" cy="160" r="2.5"/><circle cx="320" cy="160" r="2.5"/><circle cx="400" cy="160" r="2.5"/><circle cx="480" cy="160" r="2.5"/><circle cx="560" cy="160" r="2.5"/><circle cx="640" cy="160" r="2.5"/><circle cx="720" cy="160" r="2.5"/>
@@ -10,8 +9,7 @@
     <circle cx="80" cy="480" r="2.5"/><circle cx="160" cy="480" r="2.5"/><circle cx="240" cy="480" r="2.5"/><circle cx="320" cy="480" r="2.5"/><circle cx="400" cy="480" r="2.5"/><circle cx="480" cy="480" r="2.5"/><circle cx="560" cy="480" r="2.5"/><circle cx="640" cy="480" r="2.5"/><circle cx="720" cy="480" r="2.5"/>
     <circle cx="80" cy="560" r="2.5"/><circle cx="160" cy="560" r="2.5"/><circle cx="240" cy="560" r="2.5"/><circle cx="320" cy="560" r="2.5"/><circle cx="400" cy="560" r="2.5"/><circle cx="480" cy="560" r="2.5"/><circle cx="560" cy="560" r="2.5"/><circle cx="640" cy="560" r="2.5"/><circle cx="720" cy="560" r="2.5"/>
   </g>
-  <!-- MIMIC lettering large -->
-  <text x="400" y="360" text-anchor="middle" font-family="Raleway, sans-serif" font-size="160" font-weight="800" fill="#ffffff" opacity="0.13" letter-spacing="20">MIMIC</text>
-  <!-- M letter centered -->
   <text x="400" y="355" text-anchor="middle" font-family="Raleway, sans-serif" font-size="155" font-weight="800" fill="#ffffff" opacity="0.82">M</text>
+  <rect x="0" y="490" width="800" height="110" fill="#000000" opacity="0.4"/>
+  <text x="52" y="562" font-family="Raleway, sans-serif" font-size="30" font-weight="700" fill="#ffffff">Campus Promotion Booth</text>
 </svg>
