@@ -24,12 +24,6 @@ const applyLanguage = (target) => {
       node.textContent = localizedText;
     }
   });
-
-  document.querySelectorAll("[data-language-option]").forEach((node) => {
-    const isActive = node.dataset.languageOption === target;
-    node.classList.toggle("is-active", isActive);
-    node.setAttribute("aria-hidden", String(!isActive));
-  });
 };
 
 document.querySelectorAll("[data-language-toggle]").forEach((toggleRoot) => {
