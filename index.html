@@ -359,27 +359,42 @@
       <div class="donations-layout">
         <article class="donations-card donations-card-account">
           <p class="donations-label">Bank Transfer</p>
-          {% if donation_account.bank_name != '' or donation_account.account_number != '' or donation_account.account_holder != '' %}
-          <dl class="donations-account-list">
-            <div class="donations-account-row">
-              <dt>Bank</dt>
-              <dd>{{ donation_account.bank_name }}</dd>
-            </div>
-            <div class="donations-account-row donations-account-row--highlight">
-              <dt>Account</dt>
-              <dd>{{ donation_account.account_number }}</dd>
-            </div>
-            {% if donation_account.account_holder != '' %}
-            <div class="donations-account-row">
-              <dt>Holder</dt>
-              <dd>{{ donation_account.account_holder }}</dd>
-            </div>
-            {% endif %}
-          </dl>
-          {% else %}
-          <p class="donations-muted">카카오뱅크 3333252798798</p>
-          {% endif %}
+          <p class="donations-account-desc">Support MIMIC's seminars and activities with a direct bank transfer.</p>
+          <button class="donations-donate-btn" id="donateBtn">Donate</button>
         </article>
+
+        <!-- Donation Modal -->
+        <div class="donations-modal-overlay" id="donationModal" aria-modal="true" role="dialog" aria-labelledby="modalTitle">
+          <div class="donations-modal">
+            <button class="donations-modal-close" id="modalClose" aria-label="Close">&times;</button>
+            <p class="donations-label">Bank Transfer</p>
+            <h3 id="modalTitle" class="donations-modal-title">Thank you for your support</h3>
+            <div class="donations-modal-rows">
+              {% if donation_account.bank_name != '' %}
+              <div class="donations-modal-row">
+                <span class="donations-modal-row-label">Bank</span>
+                <span class="donations-modal-row-value">{{ donation_account.bank_name }}</span>
+              </div>
+              {% endif %}
+              {% if donation_account.account_number != '' %}
+              <div class="donations-modal-row donations-modal-row--account">
+                <span class="donations-modal-row-label">Account</span>
+                <span class="donations-modal-row-value" id="accountNumber">{{ donation_account.account_number }}</span>
+              </div>
+              {% endif %}
+              {% if donation_account.account_holder != '' %}
+              <div class="donations-modal-row">
+                <span class="donations-modal-row-label">Holder</span>
+                <span class="donations-modal-row-value">{{ donation_account.account_holder }}</span>
+              </div>
+              {% endif %}
+            </div>
+            <button class="donations-copy-btn" id="copyBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy Account Number
+            </button>
+          </div>
+        </div>
 
         <article class="donations-card donations-card-roll">
           <div class="donations-roll-header">
@@ -478,5 +493,49 @@
 
     {% include site-footer.html %}
     <script src="js/script.js"></script>
+    <script>
+      (function () {
+        var modal = document.getElementById('donationModal');
+        var openBtn = document.getElementById('donateBtn');
+        var closeBtn = document.getElementById('modalClose');
+        var copyBtn = document.getElementById('copyBtn');
+        var accountEl = document.getElementById('accountNumber');
+
+        if (!modal || !openBtn) return;
+
+        function openModal() {
+          modal.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+          closeBtn && closeBtn.focus();
+        }
+
+        function closeModal() {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+          openBtn.focus();
+        }
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn && closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+        });
+
+        if (copyBtn && accountEl) {
+          copyBtn.addEventListener('click', function () {
+            var text = accountEl.textContent.trim();
+            navigator.clipboard.writeText(text).then(function () {
+              copyBtn.textContent = 'Copied!';
+              setTimeout(function () {
+                copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Account Number';
+              }, 2000);
+            });
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

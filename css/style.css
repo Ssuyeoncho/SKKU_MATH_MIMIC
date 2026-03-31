@@ -931,3 +931,194 @@ body {
   height: auto !important;
   min-height: 250px;
 }
+/* Donations modal */
+.donations-account-desc {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #59625e;
+}
+
+.donations-donate-btn {
+  margin-top: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent-color);
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.donations-donate-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.donations-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(10, 20, 14, 0.45);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.donations-modal-overlay.is-open {
+  display: flex;
+}
+
+.donations-modal {
+  position: relative;
+  background: var(--bg-primary);
+  border-radius: 22px;
+  border: 1px solid rgba(28, 107, 66, 0.25);
+  padding: 2rem 2rem 1.8rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  animation: modalIn 0.22s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.donations-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #59625e;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+
+.donations-modal-close:hover {
+  color: var(--accent-color);
+}
+
+.donations-modal-title {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.donations-modal-rows {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.donations-modal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d5dfd8;
+  background: #f8faf8;
+}
+
+.donations-modal-row--account {
+  border-color: rgba(28, 107, 66, 0.4);
+  background: rgba(28, 107, 66, 0.04);
+}
+
+.donations-modal-row-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.donations-modal-row-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2924;
+}
+
+.donations-modal-row--account .donations-modal-row-value {
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-color);
+}
+
+.donations-copy-btn {
+  margin-top: 1.1rem;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--accent-color);
+  background: transparent;
+  color: var(--accent-color);
+  font-family: "Raleway", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.donations-copy-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.donations-copy-btn:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .donations-modal {
+  background: #101513;
+  border-color: rgba(105, 179, 132, 0.25);
+}
+
+[data-theme="dark"] .donations-modal-row {
+  background: #0f1512;
+  border-color: #2a3a32;
+}
+
+[data-theme="dark"] .donations-modal-row--account {
+  border-color: rgba(105, 179, 132, 0.4);
+  background: rgba(105, 179, 132, 0.06);
+}
+
+[data-theme="dark"] .donations-modal-row-value {
+  color: #edf4ef;
+}
+
+[data-theme="dark"] .donations-modal-row--account .donations-modal-row-value {
+  color: #82c79a;
+}
+
+[data-theme="dark"] .donations-modal-close {
+  color: #c5d0c9;
+}
+
+[data-theme="dark"] .donations-account-desc {
+  color: #c5d0c9;
+}
