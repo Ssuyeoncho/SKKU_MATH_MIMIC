@@ -1,21 +1,53 @@
 ---
 layout: basic_page
 page_title: "NEWS | MIMIC"
-page_heading: "News Archive"
 nav_active: news
+enable_language_toggle: true
 ---
 
-<p>
-  Recent community and project activities outside the main seminar and
-  conference programs.
+<div class="detail-toolbar">
+  <h1
+    data-language-text
+    data-language-text-ko="뉴스 아카이브"
+    data-language-text-en="News Archive"
+  >
+    뉴스 아카이브
+  </h1>
+  <div class="seminar-language-toggle" data-language-toggle>
+    <button class="language-button is-active" type="button" data-language-button="ko" aria-pressed="true">한국어</button>
+    <button class="language-button" type="button" data-language-button="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<p
+  data-language-text
+  data-language-text-ko="세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다."
+  data-language-text-en="Recent community and project activities outside the main seminar and conference programs."
+>
+  세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.
 </p>
 
 <ul class="news-link-list">
   {% for item in site.data.news.items %}
   {% assign news_date = item.date_display | default: item.date %}
+  {% assign news_date_ko = item.date_display_ko | default: item.date_ko | default: news_date %}
   <li>
     <a href="{{ item.href | relative_url }}">
-      {{ item.title }} <span style="font-weight: 500;">({{ news_date }})</span>
+      <span
+        data-language-text
+        data-language-text-ko="{{ item.title_ko | default: item.title | escape }}"
+        data-language-text-en="{{ item.title | escape }}"
+      >
+        {{ item.title_ko | default: item.title }}
+      </span>
+      <span
+        style="font-weight: 500;"
+        data-language-text
+        data-language-text-ko="({{ news_date_ko | escape }})"
+        data-language-text-en="({{ news_date | escape }})"
+      >
+        ({{ news_date_ko }})
+      </span>
     </a>
   </li>
   {% endfor %}
