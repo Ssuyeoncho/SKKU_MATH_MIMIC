@@ -908,6 +908,16 @@ body {
     grid-template-columns: 1fr;
   }
 
+  #conferences .project,
+  #news .project {
+    grid-template-columns: 1fr !important;
+  }
+
+  #conferences .project > .card,
+  #news .project > .card {
+    min-height: 220px;
+  }
+
   .header-container .btn {
     border-radius: 5px;
     width: 80%;
