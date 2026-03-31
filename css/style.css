@@ -281,7 +281,7 @@ body {
 .donations-layout {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
   gap: 1rem;
   align-items: stretch;
 }
@@ -290,7 +290,7 @@ body {
   border-radius: 18px;
   border: 1px solid #dce5de;
   background: #f8faf8;
-  padding: 1.25rem;
+  padding: 1.6rem;
 }
 
 .donations-card h3 {
@@ -318,8 +318,10 @@ body {
 
 .donations-card-account {
   background:
-    linear-gradient(160deg, rgba(28, 107, 66, 0.08), rgba(28, 107, 66, 0) 52%),
+    linear-gradient(160deg, rgba(28, 107, 66, 0.13), rgba(28, 107, 66, 0) 55%),
     #f8faf8;
+  border-color: rgba(28, 107, 66, 0.35);
+  border-width: 1.5px;
 }
 
 .donations-account-list {
@@ -331,10 +333,21 @@ body {
 .donations-account-row {
   display: grid;
   gap: 0.22rem;
-  padding: 0.78rem 0.9rem;
+  padding: 0.9rem 1.1rem;
   border-radius: 14px;
   border: 1px solid #d5dfd8;
   background: #ffffff;
+}
+
+.donations-account-row--highlight {
+  border-color: rgba(28, 107, 66, 0.45);
+  background: rgba(28, 107, 66, 0.04);
+}
+
+.donations-account-row--highlight dd {
+  font-size: 1.25rem !important;
+  letter-spacing: 0.04em;
+  color: var(--accent-color) !important;
 }
 
 .donations-account-row dt {
@@ -415,10 +428,10 @@ body {
 }
 
 .donor-slide-name {
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-weight: 300;
+  letter-spacing: 0.01em;
   color: #1f2924;
   text-align: center;
 }
@@ -643,6 +656,15 @@ body {
   border-color: #2a3a32;
 }
 
+[data-theme="dark"] .donations-account-row--highlight {
+  border-color: rgba(105, 179, 132, 0.45);
+  background: rgba(105, 179, 132, 0.06);
+}
+
+[data-theme="dark"] .donations-account-row--highlight dd {
+  color: #82c79a !important;
+}
+
 [data-theme="dark"] .donations-account-row dd {
   color: #edf4ef;
 }
@@ -661,7 +683,7 @@ body {
 }
 
 [data-theme="dark"] .donor-slide-name {
-  color: #edf4ef;
+  color: #c5d0c9;
 }
 
 [data-theme="dark"] .contact-meta p,
