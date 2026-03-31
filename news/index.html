@@ -30,48 +30,56 @@ enable_language_toggle: true
   </p>
 </header>
 
-<ul class="news-link-list">
-  {% assign news_items = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "path" | reverse %}
-  {% for item in news_items %}
-  {% assign news_title = item.archive_title | default: item.page_heading %}
-  {% assign news_title_ko = item.archive_title_ko | default: item.page_heading_ko | default: news_title %}
-  {% assign news_date = item.date_display | default: item.event_date %}
-  {% assign news_date_ko = item.date_display_ko | default: item.event_date_ko | default: news_date %}
-  {% assign news_period = item.period | default: '' %}
-  {% assign news_period_ko = item.period_ko | default: news_period %}
-  <li>
-    <a href="{{ item.url | relative_url }}">
-      <span class="news-link-content">
-        <span class="news-link-title-row">
-          <span
-            class="news-link-title"
-            data-language-text
-            data-language-text-ko="{{ news_title_ko | escape }}"
-            data-language-text-en="{{ news_title | escape }}"
-          >
-            {{ news_title_ko }}
+{% assign news_items = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "path" | reverse %}
+{% assign news_groups = news_items | group_by_exp: "item", "item.path | split: '/' | slice: 1, 1 | first" %}
+<div class="news-archive">
+  {% for group in news_groups %}
+  <section class="news-year-group">
+    <h2 class="news-year-heading">{{ group.name }}</h2>
+    <ul class="news-link-list">
+      {% for item in group.items %}
+      {% assign news_title = item.archive_title | default: item.page_heading %}
+      {% assign news_title_ko = item.archive_title_ko | default: item.page_heading_ko | default: news_title %}
+      {% assign news_date = item.date_display | default: item.event_date %}
+      {% assign news_date_ko = item.date_display_ko | default: item.event_date_ko | default: news_date %}
+      {% assign news_period = item.period | default: '' %}
+      {% assign news_period_ko = item.period_ko | default: news_period %}
+      <li>
+        <a href="{{ item.url | relative_url }}">
+          <span class="news-link-content">
+            <span
+              class="news-link-title"
+              data-language-text
+              data-language-text-ko="{{ news_title_ko | escape }}"
+              data-language-text-en="{{ news_title | escape }}"
+            >
+              {{ news_title_ko }}
+            </span>
+            <span class="news-link-meta-row">
+              {% if news_period != '' or news_period_ko != '' %}
+              <span
+                class="news-link-period"
+                data-language-text
+                data-language-text-ko="{{ news_period_ko | escape }}"
+                data-language-text-en="{{ news_period | escape }}"
+              >
+                {{ news_period_ko }}
+              </span>
+              {% endif %}
+              <span
+                class="news-link-date"
+                data-language-text
+                data-language-text-ko="{{ news_date_ko | escape }}"
+                data-language-text-en="{{ news_date | escape }}"
+              >
+                {{ news_date_ko }}
+              </span>
+            </span>
           </span>
-          <span
-            class="news-link-date"
-            data-language-text
-            data-language-text-ko="({{ news_date_ko | escape }})"
-            data-language-text-en="({{ news_date | escape }})"
-          >
-            ({{ news_date_ko }})
-          </span>
-        </span>
-        {% if news_period != '' or news_period_ko != '' %}
-        <span
-          class="news-link-period"
-          data-language-text
-          data-language-text-ko="[{{ news_period_ko | escape }}]"
-          data-language-text-en="[{{ news_period | escape }}]"
-        >
-          [{{ news_period_ko }}]
-        </span>
-        {% endif %}
-      </span>
-    </a>
-  </li>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
   {% endfor %}
-</ul>
+</div>

@@ -87,6 +87,14 @@
         margin-bottom: 2.15rem;
       }
 
+      .event-block {
+        padding: 1.45rem 1.55rem;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 20px;
+        background: var(--panel-bg);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+      }
+
       .news-meta {
         margin: 0;
         font-size: 1.01rem;
@@ -235,6 +243,10 @@
       {% assign page_news_slug = page.name | replace: '.html', '' %}
       {% assign page_media_base = page.dir | append: 'images/' | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
+      {% assign has_gallery = false %}
+      {% if page.gallery and page.gallery.size > 0 %}
+        {% assign has_gallery = true %}
+      {% endif %}
       {% if korean_summary != '' %}
         {% assign has_korean = true %}
       {% endif %}
@@ -253,27 +265,33 @@
 
       {% if has_korean %}
       <section class="news-panel" data-language-panel="ko">
-        <header class="event-header">
+        <header class="event-header event-block">
           <h1 class="event-title">{{ page.page_heading_ko | default: page.page_heading }}</h1>
           <p class="news-meta"><strong>{{ page.date_label_ko | default: '일시' }}:</strong> {{ page.event_date_ko | default: page.event_date }}</p>
         </header>
 
         {% assign summary_ko_fallback = page.summary_ko | default: page.summary %}
         {% assign summary_ko_body = page.summary_body_ko | default: summary_ko_fallback %}
-        <section class="event-summary">
+        <section class="event-summary event-block">
           <div class="news-summary">
             {{ summary_ko_body | markdownify }}
           </div>
         </section>
 
+        {% assign ko_note = page.photos_note_ko | default: page.photos_note %}
+        {% assign ko_note_stripped = ko_note | strip %}
+        {% assign show_ko_photos = false %}
+        {% if has_gallery or ko_note_stripped != '' %}
+          {% assign show_ko_photos = true %}
+        {% endif %}
+        {% if show_ko_photos %}
         <section class="event-photos">
+          <div class="event-block">
           <h2>{{ page.photos_heading_ko | default: '활동 사진' }}</h2>
-          {% assign ko_note = page.photos_note_ko | default: page.photos_note %}
-          {% assign ko_note_stripped = ko_note | strip %}
           {% if ko_note_stripped != '' %}
           {{ ko_note | markdownify }}
           {% endif %}
-          {% if page.gallery %}
+          {% if has_gallery %}
           <div class="news-gallery">
             {% for image in page.gallery %}
             {% assign image_src = image.src | default: image.file | default: '' %}
@@ -287,30 +305,38 @@
             {% endfor %}
           </div>
           {% endif %}
+          </div>
         </section>
+        {% endif %}
       </section>
 
       <section class="news-panel" data-language-panel="en" hidden>
-        <header class="event-header">
+        <header class="event-header event-block">
           <h1 class="event-title">{{ page.page_heading }}</h1>
           <p class="news-meta"><strong>{{ page.date_label | default: 'Date' }}:</strong> {{ page.event_date }}</p>
         </header>
 
         {% assign summary_en_body = page.summary_body | default: page.summary %}
-        <section class="event-summary">
+        <section class="event-summary event-block">
           <div class="news-summary">
             {{ summary_en_body | markdownify }}
           </div>
         </section>
 
+        {% assign note_raw = page.photos_note | default: '' %}
+        {% assign note_stripped = note_raw | strip %}
+        {% assign show_en_photos = false %}
+        {% if has_gallery or note_stripped != '' %}
+          {% assign show_en_photos = true %}
+        {% endif %}
+        {% if show_en_photos %}
         <section class="event-photos">
+          <div class="event-block">
           <h2>{{ page.photos_heading | default: 'Activity Photos' }}</h2>
-          {% assign note_raw = page.photos_note | default: '' %}
-          {% assign note_stripped = note_raw | strip %}
           {% if note_stripped != '' %}
           {{ note_raw | markdownify }}
           {% endif %}
-          {% if page.gallery %}
+          {% if has_gallery %}
           <div class="news-gallery">
             {% for image in page.gallery %}
             {% assign image_src = image.src | default: image.file | default: '' %}
@@ -324,30 +350,38 @@
             {% endfor %}
           </div>
           {% endif %}
+          </div>
         </section>
+        {% endif %}
       </section>
       {% else %}
       <section class="news-panel">
-        <header class="event-header">
+        <header class="event-header event-block">
           <h1 class="event-title">{{ page.page_heading }}</h1>
           <p class="news-meta"><strong>{{ page.date_label | default: 'Date' }}:</strong> {{ page.event_date }}</p>
         </header>
 
         {% assign summary_en_body = page.summary_body | default: page.summary %}
-        <section class="event-summary">
+        <section class="event-summary event-block">
           <div class="news-summary">
             {{ summary_en_body | markdownify }}
           </div>
         </section>
 
+        {% assign note_raw = page.photos_note | default: '' %}
+        {% assign note_stripped = note_raw | strip %}
+        {% assign show_photos = false %}
+        {% if has_gallery or note_stripped != '' %}
+          {% assign show_photos = true %}
+        {% endif %}
+        {% if show_photos %}
         <section class="event-photos">
+          <div class="event-block">
           <h2>{{ page.photos_heading | default: 'Activity Photos' }}</h2>
-          {% assign note_raw = page.photos_note | default: '' %}
-          {% assign note_stripped = note_raw | strip %}
           {% if note_stripped != '' %}
           {{ note_raw | markdownify }}
           {% endif %}
-          {% if page.gallery %}
+          {% if has_gallery %}
           <div class="news-gallery">
             {% for image in page.gallery %}
             {% assign image_src = image.src | default: image.file | default: '' %}
@@ -361,7 +395,9 @@
             {% endfor %}
           </div>
           {% endif %}
+          </div>
         </section>
+        {% endif %}
       </section>
       {% endif %}
     </main>
