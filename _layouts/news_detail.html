@@ -232,6 +232,8 @@
 
     <main class="event-detail">
       {% assign korean_summary = page.summary_body_ko | default: page.summary_ko | default: '' | strip %}
+      {% assign page_news_slug = page.name | replace: '.html', '' %}
+      {% assign page_media_base = page.dir | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
       {% if korean_summary != '' %}
         {% assign has_korean = true %}
@@ -274,7 +276,14 @@
           {% if page.gallery %}
           <div class="news-gallery">
             {% for image in page.gallery %}
-            <img src="{{ image.src | relative_url }}" alt="{{ image.alt_ko | default: image.alt | default: page.page_heading_ko | default: page.page_heading }}" />
+            {% assign image_src = image.src | default: image.file | default: '' %}
+            {% if image_src != '' %}
+            {% assign image_first = image_src | slice: 0, 1 %}
+            {% unless image_first == '/' or image_src contains '://' %}
+              {% assign image_src = page_media_base | append: image_src %}
+            {% endunless %}
+            <img src="{{ image_src | relative_url }}" alt="{{ image.alt_ko | default: image.alt | default: page.page_heading_ko | default: page.page_heading }}" />
+            {% endif %}
             {% endfor %}
           </div>
           {% endif %}
@@ -304,7 +313,14 @@
           {% if page.gallery %}
           <div class="news-gallery">
             {% for image in page.gallery %}
-            <img src="{{ image.src | relative_url }}" alt="{{ image.alt | default: page.page_heading }}" />
+            {% assign image_src = image.src | default: image.file | default: '' %}
+            {% if image_src != '' %}
+            {% assign image_first = image_src | slice: 0, 1 %}
+            {% unless image_first == '/' or image_src contains '://' %}
+              {% assign image_src = page_media_base | append: image_src %}
+            {% endunless %}
+            <img src="{{ image_src | relative_url }}" alt="{{ image.alt | default: page.page_heading }}" />
+            {% endif %}
             {% endfor %}
           </div>
           {% endif %}
@@ -334,7 +350,14 @@
           {% if page.gallery %}
           <div class="news-gallery">
             {% for image in page.gallery %}
-            <img src="{{ image.src | relative_url }}" alt="{{ image.alt | default: page.page_heading }}" />
+            {% assign image_src = image.src | default: image.file | default: '' %}
+            {% if image_src != '' %}
+            {% assign image_first = image_src | slice: 0, 1 %}
+            {% unless image_first == '/' or image_src contains '://' %}
+              {% assign image_src = page_media_base | append: image_src %}
+            {% endunless %}
+            <img src="{{ image_src | relative_url }}" alt="{{ image.alt | default: page.page_heading }}" />
+            {% endif %}
             {% endfor %}
           </div>
           {% endif %}

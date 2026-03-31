@@ -1,14 +1,20 @@
 # News Update Guide
 
-1. Copy `_templates/news_detail.md` to a new file in `news/`.
-2. Rename the file (example: `news/2026-03-14-pi-day-event.html`).
-3. Fill only the front matter values (title/date/summary/photos).
-4. Add the new item to `_data/news.yml` so it appears on the main page and news archive.
+1. Create or reuse the year folder under `news/` such as `news/2026/`.
+2. Copy `_templates/news_detail.md` to a new file named `YYYY-MM-DD-short-title.html`.
+3. If the post has images, create a sibling folder with the same name as the HTML file, without `.html`.
+4. Put `thumbnail.jpg` and any event photos in that sibling folder.
+5. Fill the front matter in the news file. The main page and news archive update automatically as soon as the HTML file exists.
 
 ## Notes
 
-- Korean/English toggle appears only when `summary_body_ko` (or `summary_ko`) is filled.
-- `gallery` is shared by both Korean/English views.
-- `layout`, `nav_active`, and back-link defaults are configured in `_config.yml`.
+- Standard file format: `news/<year>/YYYY-MM-DD-short-title.html`
+- Image folder format: `news/<year>/YYYY-MM-DD-short-title/`
+- Use `archive_title` / `archive_title_ko` if the archive list should show a shorter title than the full page title.
+- Use `period` / `period_ko` for labels such as `2026 Spring Semester` or `2026년 1학기`.
+- `thumbnail` is read relative to the post's own image folder. If omitted, the first image in `gallery` is used for the main card.
+- Korean/English toggle appears only when `summary_body_ko` or `summary_ko` is filled.
+- `gallery` is shared by both Korean and English views.
+- In `gallery`, `file:` is also read relative to the post's own image folder.
 - `event_date` and `event_date_ko` can be a single date or a date range.
-- Use `date_display` in `_data/news.yml` for the card/archive date text.
+- Use `date_display` / `date_display_ko` only if the list date should differ from the detail-page date.

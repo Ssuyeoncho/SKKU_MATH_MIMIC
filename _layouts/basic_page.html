@@ -18,13 +18,21 @@
         padding: 7rem 2rem 4rem;
       }
 
-      .detail-toolbar {
-        display: flex;
+      .page-header {
+        display: grid;
+        gap: 1.4rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .page-header-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
         align-items: center;
-        justify-content: space-between;
         gap: 1rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.1rem;
+      }
+
+      .page-header-spacer {
+        min-width: 0;
       }
 
       .seminar-language-toggle {
@@ -56,13 +64,19 @@
 
       .page-content h1 {
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin: 0;
+        text-align: center;
       }
 
       .page-content p {
         max-width: 42rem;
         font-size: 1.1rem;
         color: var(--content-muted);
+      }
+
+      .page-header > p {
+        width: min(100%, 42rem);
+        margin: 0 auto;
       }
 
       .news-meta {
@@ -110,7 +124,32 @@
         border-radius: 12px;
         border: 1px solid var(--sidebar-border);
         background: var(--panel-bg);
+      }
+
+      .news-link-content {
+        display: grid;
+        gap: 0.24rem;
+      }
+
+      .news-link-title-row {
+        display: flex;
+        align-items: baseline;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .news-link-title {
         font-weight: 700;
+      }
+
+      .news-link-date {
+        font-weight: 500;
+      }
+
+      .news-link-period {
+        font-size: 0.86rem;
+        font-weight: 700;
+        color: var(--content-subtle);
       }
 
       .news-link-list a:hover,
@@ -129,8 +168,25 @@
           padding: 6.2rem 1rem 3rem;
         }
 
+        .page-header {
+          gap: 1rem;
+        }
+
+        .page-header-row {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+
+        .page-header-spacer {
+          display: none;
+        }
+
         .page-content h1 {
           font-size: 2.2rem;
+        }
+
+        .page-header > p {
+          width: 100%;
         }
 
         .news-gallery {
@@ -139,6 +195,10 @@
 
         .news-gallery img {
           height: 200px;
+        }
+
+        .news-link-title-row {
+          gap: 0.25rem;
         }
 
         .seminar-language-toggle {
