@@ -10,12 +10,16 @@ enable_language_toggle: true
     <div class="page-header-copy">
       <h1>News Archive</h1>
 
-      <p
-        data-language-text
-        data-language-text-ko="세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다."
-        data-language-text-en="Recent community and project activities outside the main seminar and conference programs."
-      >
-        세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.
+      <p class="page-header-description localized-fixed">
+        <span class="localized-fixed-sizer" aria-hidden="true">Recent community and project activities outside the main seminar and conference programs.</span>
+        <span
+          class="localized-fixed-text"
+          data-language-text
+          data-language-text-ko="세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다."
+          data-language-text-en="Recent community and project activities outside the main seminar and conference programs."
+        >
+          세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.
+        </span>
       </p>
     </div>
     <div class="seminar-language-toggle" data-language-toggle>
@@ -42,32 +46,41 @@ enable_language_toggle: true
       <li>
         <a class="news-link-row" href="{{ item.url | relative_url }}">
           <span class="news-link-main">
-            <span
-              class="news-link-title"
-              data-language-text
-              data-language-text-ko="{{ news_title_ko | escape }}"
-              data-language-text-en="{{ news_title | escape }}"
-            >
-              {{ news_title_ko }}
+            <span class="news-link-title localized-fixed">
+              <span class="localized-fixed-sizer" aria-hidden="true">{{ news_title }}</span>
+              <span
+                class="localized-fixed-text"
+                data-language-text
+                data-language-text-ko="{{ news_title_ko | escape }}"
+                data-language-text-en="{{ news_title | escape }}"
+              >
+                {{ news_title_ko }}
+              </span>
             </span>
             {% if news_period != '' or news_period_ko != '' %}
-            <span
-              class="news-link-period"
-              data-language-text
-              data-language-text-ko="{{ news_period_ko | escape }}"
-              data-language-text-en="{{ news_period | escape }}"
-            >
-              {{ news_period_ko }}
+            <span class="news-link-period localized-fixed localized-fixed-inline">
+              <span class="localized-fixed-sizer" aria-hidden="true">{{ news_period }}</span>
+              <span
+                class="localized-fixed-text"
+                data-language-text
+                data-language-text-ko="{{ news_period_ko | escape }}"
+                data-language-text-en="{{ news_period | escape }}"
+              >
+                {{ news_period_ko }}
+              </span>
             </span>
             {% endif %}
           </span>
-          <span
-            class="news-link-date"
-            data-language-text
-            data-language-text-ko="{{ news_date_ko | escape }}"
-            data-language-text-en="{{ news_date | escape }}"
-          >
-            {{ news_date_ko }}
+          <span class="news-link-date localized-fixed">
+            <span class="localized-fixed-sizer" aria-hidden="true">{{ news_date }}</span>
+            <span
+              class="localized-fixed-text"
+              data-language-text
+              data-language-text-ko="{{ news_date_ko | escape }}"
+              data-language-text-en="{{ news_date | escape }}"
+            >
+              {{ news_date_ko }}
+            </span>
           </span>
         </a>
       </li>
