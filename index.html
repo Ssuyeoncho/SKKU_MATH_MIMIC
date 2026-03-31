@@ -360,20 +360,13 @@
         <article class="donations-card donations-card-account">
           <p class="donations-label">Bank Transfer</p>
           {% if donation_account.bank_name != '' or donation_account.account_number != '' or donation_account.account_holder != '' %}
-          <dl class="donations-account-list">
-            <div class="donations-account-row">
-              <dt>Bank</dt>
-              <dd>{{ donation_account.bank_name }}</dd>
-            </div>
-            <div class="donations-account-row">
-              <dt>Account</dt>
-              <dd>{{ donation_account.account_number }}</dd>
-            </div>
-            <div class="donations-account-row">
-              <dt>Holder</dt>
-              <dd>{{ donation_account.account_holder }}</dd>
-            </div>
-          </dl>
+          <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:0.3rem; text-align:center;">
+            <p style="font-weight:700; font-size:1.15rem; margin:0;">{{ donation_account.bank_name }}</p>
+            <p style="font-weight:700; font-size:1.15rem; margin:0;">{{ donation_account.account_number }}</p>
+            {% if donation_account.account_holder != '' %}
+            <p style="font-weight:700; font-size:1.15rem; margin:0;">{{ donation_account.account_holder }}</p>
+            {% endif %}
+          </div>
           {% else %}
           <p class="donations-muted">카카오뱅크 3333252798798</p>
           {% endif %}
@@ -391,7 +384,7 @@
               {% for item in donation_entries %}
               {% assign donor_name = item.name | default: item %}
               <div class="donor-slide">
-                <span class="donor-slide-name">{{ donor_name }}</span>
+                <span class="donor-slide-name" style="font-size:0.85rem; font-weight:300;">{{ donor_name }}</span>
               </div>
               {% endfor %}
               {% if donation_entries.size > 1 %}
@@ -405,7 +398,7 @@
           {% else %}
           <div class="donations-slider donations-slider-empty">
             <div class="donor-slide">
-              <span class="donor-slide-name">Donor will appear here</span>
+              <span class="donor-slide-name" style="font-size:0.85rem; font-weight:300;">Donor will appear here</span>
             </div>
           </div>
           {% endif %}
