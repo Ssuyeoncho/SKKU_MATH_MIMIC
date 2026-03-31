@@ -5,6 +5,7 @@ page_title: "EVENT TITLE | MIMIC"
 thumbnail: "thumbnail.jpg"
 
 # Basic info (shared)
+news_date: "2026-03-11"
 page_heading: "Event Title"
 archive_title: "Event Title"
 event_date: "March 11-12, 2026"

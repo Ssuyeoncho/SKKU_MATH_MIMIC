@@ -7,31 +7,32 @@ enable_language_toggle: true
 
 <header class="page-header">
   <div class="page-header-row">
-    <div class="page-header-spacer" aria-hidden="true"></div>
-    <h1
-      data-language-text
-      data-language-text-ko="뉴스 아카이브"
-      data-language-text-en="News Archive"
-    >
-      뉴스 아카이브
-    </h1>
+    <div class="page-header-copy">
+      <h1
+        data-language-text
+        data-language-text-ko="뉴스 아카이브"
+        data-language-text-en="News Archive"
+      >
+        뉴스 아카이브
+      </h1>
+
+      <p
+        data-language-text
+        data-language-text-ko="세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다."
+        data-language-text-en="Recent community and project activities outside the main seminar and conference programs."
+      >
+        세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.
+      </p>
+    </div>
     <div class="seminar-language-toggle" data-language-toggle>
       <button class="language-button is-active" type="button" data-language-button="ko" aria-pressed="true">한국어</button>
       <button class="language-button" type="button" data-language-button="en" aria-pressed="false">EN</button>
     </div>
   </div>
-
-  <p
-    data-language-text
-    data-language-text-ko="세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다."
-    data-language-text-en="Recent community and project activities outside the main seminar and conference programs."
-  >
-    세미나와 컨퍼런스 외의 주요 활동과 커뮤니티 소식을 정리합니다.
-  </p>
 </header>
 
-{% assign news_items = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "path" | reverse %}
-{% assign news_groups = news_items | group_by_exp: "item", "item.path | split: '/' | slice: 1, 1 | first" %}
+{% assign news_items = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "news_date" | reverse %}
+{% assign news_groups = news_items | group_by_exp: "item", "item.news_date | slice: 0, 4" %}
 <div class="news-archive">
   {% for group in news_groups %}
   <section class="news-year-group">

@@ -326,7 +326,7 @@
         </p>
       </div>
 
-      {% assign latest_news = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "path" | reverse %}
+      {% assign latest_news = site.pages | where: "layout", "news_detail" | where_exp: "item", "item.path contains 'news/'" | sort: "news_date" | reverse %}
       <article class="project">
         {% for item in latest_news limit: 3 %}
         {% assign news_date = item.date_display | default: item.event_date %}
