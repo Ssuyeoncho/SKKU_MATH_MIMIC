@@ -93,8 +93,8 @@
       .event-title {
         margin: 0;
         max-width: none;
-        font-size: clamp(2.9rem, 6vw, 4.5rem);
-        line-height: 0.98;
+        font-size: clamp(2.35rem, 5vw, 3.6rem);
+        line-height: 1.02;
         letter-spacing: -0.03em;
       }
 
@@ -109,7 +109,7 @@
 
       .news-meta {
         margin: 0;
-        font-size: 1rem;
+        font-size: 1.14rem;
         color: var(--content-subtle);
         font-weight: 600;
       }
@@ -128,21 +128,6 @@
 
       .news-summary > p + p {
         margin-top: 1.05rem;
-      }
-
-      .event-hero {
-        margin: 0;
-        border-radius: 24px;
-        overflow: hidden;
-        border: 1px solid var(--sidebar-border);
-        background: var(--panel-bg);
-      }
-
-      .event-hero img {
-        display: block;
-        width: 100%;
-        height: 420px;
-        object-fit: cover;
       }
 
       .event-photos h2 {
@@ -197,10 +182,6 @@
         .news-gallery {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-
-        .event-hero img {
-          height: 340px;
-        }
       }
 
       @media (max-width: 768px) {
@@ -209,7 +190,7 @@
         }
 
         .event-title {
-          font-size: 2.9rem;
+          font-size: 2.55rem;
         }
 
         .detail-toolbar {
@@ -222,9 +203,6 @@
           line-height: 1.72;
         }
 
-        .event-hero img {
-          height: 280px;
-        }
       }
 
       @media (max-width: 600px) {
@@ -252,16 +230,12 @@
         }
 
         .event-title {
-          font-size: 2.35rem;
+          font-size: 2.05rem;
         }
 
         .news-summary {
           font-size: 0.95rem;
           line-height: 1.7;
-        }
-
-        .event-hero img {
-          height: 220px;
         }
 
         .news-gallery {
@@ -283,20 +257,8 @@
       {% assign page_media_base = page.dir | append: 'images/' | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
       {% assign has_gallery = false %}
-      {% assign thumbnail_src = page.thumbnail | default: '' %}
       {% if page.gallery and page.gallery.size > 0 %}
         {% assign has_gallery = true %}
-      {% endif %}
-      {% if thumbnail_src == '' and has_gallery %}
-        {% assign thumbnail_src = page.gallery.first.src | default: page.gallery.first.file | default: '' %}
-      {% endif %}
-      {% assign has_thumbnail = false %}
-      {% if thumbnail_src != '' %}
-        {% assign thumbnail_first = thumbnail_src | slice: 0, 1 %}
-        {% unless thumbnail_first == '/' or thumbnail_src contains '://' %}
-          {% assign thumbnail_src = page_media_base | append: thumbnail_src %}
-        {% endunless %}
-        {% assign has_thumbnail = true %}
       {% endif %}
       {% if korean_summary != '' %}
         {% assign has_korean = true %}
@@ -323,15 +285,6 @@
           <h1 class="event-title">{{ page.page_heading_ko | default: page.page_heading }}</h1>
           <p class="news-meta">{{ page.event_date_ko | default: page.event_date }}</p>
         </header>
-
-        {% if has_thumbnail %}
-        <figure class="event-hero">
-          <img
-            src="{{ thumbnail_src | relative_url }}"
-            alt="{{ page.thumbnail_alt_ko | default: page.thumbnail_alt | default: page.page_heading_ko | default: page.page_heading }}"
-          />
-        </figure>
-        {% endif %}
 
         {% assign summary_ko_fallback = page.summary_ko | default: page.summary %}
         {% assign summary_ko_body = page.summary_body_ko | default: summary_ko_fallback %}
@@ -380,15 +333,6 @@
           <p class="news-meta">{{ page.event_date }}</p>
         </header>
 
-        {% if has_thumbnail %}
-        <figure class="event-hero">
-          <img
-            src="{{ thumbnail_src | relative_url }}"
-            alt="{{ page.thumbnail_alt | default: page.page_heading }}"
-          />
-        </figure>
-        {% endif %}
-
         {% assign summary_en_body = page.summary_body | default: page.summary %}
         <section class="event-summary">
           <div class="news-summary">
@@ -434,15 +378,6 @@
           <h1 class="event-title">{{ page.page_heading }}</h1>
           <p class="news-meta">{{ page.event_date }}</p>
         </header>
-
-        {% if has_thumbnail %}
-        <figure class="event-hero">
-          <img
-            src="{{ thumbnail_src | relative_url }}"
-            alt="{{ page.thumbnail_alt | default: page.page_heading }}"
-          />
-        </figure>
-        {% endif %}
 
         {% assign summary_en_body = page.summary_body | default: page.summary %}
         <section class="event-summary">
