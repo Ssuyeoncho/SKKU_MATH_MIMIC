@@ -12,9 +12,10 @@ nav_active: news
 
 <ul class="news-link-list">
   {% for item in site.data.news.items %}
+  {% assign news_date = item.date_display | default: item.date %}
   <li>
     <a href="{{ item.href | relative_url }}">
-      {{ item.title }} <span style="font-weight: 500;">({{ item.date }})</span>
+      {{ item.title }} <span style="font-weight: 500;">({{ news_date }})</span>
     </a>
   </li>
   {% endfor %}

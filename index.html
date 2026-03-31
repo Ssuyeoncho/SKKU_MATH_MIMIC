@@ -329,6 +329,7 @@
       {% assign latest_news = site.data.news.items | default: empty %}
       <article class="project">
         {% for item in latest_news limit: 3 %}
+        {% assign news_date = item.date_display | default: item.date %}
         <a
           class="card news-card"
           href="{{ item.href | relative_url }}"
@@ -337,7 +338,7 @@
           <div class="project-info">
             <div class="project-bio">
               <h3>{{ item.title }}</h3>
-              <p>{{ item.date }}</p>
+              <p>{{ news_date }}</p>
             </div>
           </div>
         </a>

@@ -1,4 +1,9 @@
 items:
+  - title: "2026 Spring Club Promotion Booth Operation"
+    date_display: "March 11-12, 2026"
+    summary: "MIMIC operated a promotion booth during the 2026 Spring club promotion event."
+    href: "news/2026-spring-club-promotion-booth.html"
+    thumbnail: "/assets/project/campus-promotion-booth.svg"
   - title: "Pi Day Event"
     date: "March 14, 2026"
     summary: "Pi Day booth and interactive math activities for students."

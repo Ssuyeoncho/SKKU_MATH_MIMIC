@@ -10,3 +10,5 @@
 - Korean/English toggle appears only when `summary_body_ko` (or `summary_ko`) is filled.
 - `gallery` is shared by both Korean/English views.
 - `layout`, `nav_active`, and back-link defaults are configured in `_config.yml`.
+- `event_date` and `event_date_ko` can be a single date or a date range.
+- Use `date_display` in `_data/news.yml` for the card/archive date text.
