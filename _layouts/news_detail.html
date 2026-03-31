@@ -13,11 +13,11 @@
       }
 
       .event-detail {
-        max-width: 980px;
+        max-width: 1040px;
         margin: 0 auto;
         margin-top: 80px;
         min-height: calc(100vh - 80px);
-        padding: 3rem 2.1rem 4.1rem;
+        padding: 3rem 2.5rem 4.5rem;
       }
 
       .detail-toolbar {
@@ -26,7 +26,7 @@
         justify-content: space-between;
         gap: 1rem;
         flex-wrap: wrap;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
       }
 
       .back-link {
@@ -49,10 +49,8 @@
       .seminar-language-toggle {
         display: inline-flex;
         align-items: center;
-        justify-content: space-between;
-        width: 10.6rem;
-        gap: 0.25rem;
-        padding: 0.24rem;
+        gap: 0.5rem;
+        padding: 0.3rem;
         border: 1px solid var(--sidebar-border);
         border-radius: 999px;
         background: var(--panel-bg);
@@ -65,13 +63,10 @@
         color: var(--content-muted);
         font: inherit;
         font-weight: 700;
-        flex: 1 1 0;
-        min-width: 0;
-        padding: 0.52rem 0;
+        padding: 0.45rem 0.95rem;
         border-radius: 999px;
         cursor: pointer;
         transition: background-color 0.2s ease, color 0.2s ease;
-        text-align: center;
       }
 
       .language-button.is-active {
@@ -83,46 +78,47 @@
         display: none;
       }
 
+      .news-panel {
+        display: grid;
+        gap: 1.9rem;
+      }
+
       .event-header {
-        margin-bottom: 1.7rem;
-        padding-bottom: 1.35rem;
+        display: grid;
+        gap: 0.9rem;
+        padding-bottom: 1.3rem;
         border-bottom: 1px solid var(--sidebar-border);
       }
 
       .event-title {
-        margin: 0 0 0.9rem;
-        max-width: 46rem;
-        font-size: clamp(2.5rem, 5.3vw, 4rem);
-        line-height: 1.02;
+        margin: 0;
+        max-width: none;
+        font-size: clamp(2.9rem, 6vw, 4.5rem);
+        line-height: 0.98;
         letter-spacing: -0.03em;
       }
 
-      .event-summary {
-        margin-bottom: 0;
+      .event-kicker {
+        margin: 0;
+        font-size: 0.88rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--content-subtle);
       }
 
       .news-meta {
         margin: 0;
-        font-size: 0.96rem;
+        font-size: 1rem;
         color: var(--content-subtle);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .news-meta strong {
-        color: var(--content-subtle);
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        font-weight: 600;
       }
 
       .news-summary {
-        max-width: 45rem;
-        font-size: 1.08rem;
-        line-height: 1.92;
+        max-width: none;
+        width: 100%;
+        font-size: 1.07rem;
+        line-height: 1.9;
         color: var(--text-color);
       }
 
@@ -131,7 +127,22 @@
       }
 
       .news-summary > p + p {
-        margin-top: 1rem;
+        margin-top: 1.05rem;
+      }
+
+      .event-hero {
+        margin: 0;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid var(--sidebar-border);
+        background: var(--panel-bg);
+      }
+
+      .event-hero img {
+        display: block;
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
       }
 
       .event-photos h2 {
@@ -145,7 +156,7 @@
 
       .event-photos p {
         margin: 0;
-        max-width: 45rem;
+        max-width: none;
         font-size: 1rem;
         line-height: 1.75;
         color: var(--content-muted);
@@ -156,13 +167,12 @@
       }
 
       .event-photos {
-        margin-top: 2.8rem;
-        padding-top: 1.35rem;
+        padding-top: 1.4rem;
         border-top: 1px solid var(--sidebar-border);
       }
 
       .news-gallery {
-        margin-top: 1.15rem;
+        margin-top: 1.05rem;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.75rem;
@@ -187,15 +197,19 @@
         .news-gallery {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
+        .event-hero img {
+          height: 340px;
+        }
       }
 
       @media (max-width: 768px) {
         .event-detail {
-          padding: 2rem 1rem 2.6rem;
+          padding: 2rem 1.3rem 2.8rem;
         }
 
         .event-title {
-          font-size: 2.5rem;
+          font-size: 2.9rem;
         }
 
         .detail-toolbar {
@@ -208,8 +222,8 @@
           line-height: 1.72;
         }
 
-        .event-summary {
-          margin-bottom: 1.8rem;
+        .event-hero img {
+          height: 280px;
         }
       }
 
@@ -228,24 +242,26 @@
         }
 
         .seminar-language-toggle {
-          width: 10rem;
-          padding: 0.22rem;
-          gap: 0.22rem;
+          gap: 0.5rem;
+          padding: 0.3rem;
         }
 
         .language-button {
-          font-size: 0.84rem;
-          padding: 0.42rem 0;
+          font-size: inherit;
+          padding: 0.45rem 0.95rem;
         }
 
         .event-title {
-          font-size: 2.15rem;
-          margin-bottom: 0.78rem;
+          font-size: 2.35rem;
         }
 
         .news-summary {
           font-size: 0.95rem;
           line-height: 1.7;
+        }
+
+        .event-hero img {
+          height: 220px;
         }
 
         .news-gallery {
@@ -267,8 +283,20 @@
       {% assign page_media_base = page.dir | append: 'images/' | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
       {% assign has_gallery = false %}
+      {% assign thumbnail_src = page.thumbnail | default: '' %}
       {% if page.gallery and page.gallery.size > 0 %}
         {% assign has_gallery = true %}
+      {% endif %}
+      {% if thumbnail_src == '' and has_gallery %}
+        {% assign thumbnail_src = page.gallery.first.src | default: page.gallery.first.file | default: '' %}
+      {% endif %}
+      {% assign has_thumbnail = false %}
+      {% if thumbnail_src != '' %}
+        {% assign thumbnail_first = thumbnail_src | slice: 0, 1 %}
+        {% unless thumbnail_first == '/' or thumbnail_src contains '://' %}
+          {% assign thumbnail_src = page_media_base | append: thumbnail_src %}
+        {% endunless %}
+        {% assign has_thumbnail = true %}
       {% endif %}
       {% if korean_summary != '' %}
         {% assign has_korean = true %}
@@ -289,9 +317,21 @@
       {% if has_korean %}
       <section class="news-panel" data-language-panel="ko">
         <header class="event-header">
+          {% if page.period_ko or page.period %}
+          <p class="event-kicker">{{ page.period_ko | default: page.period }}</p>
+          {% endif %}
           <h1 class="event-title">{{ page.page_heading_ko | default: page.page_heading }}</h1>
-          <p class="news-meta"><strong>{{ page.date_label_ko | default: '일시' }}:</strong> {{ page.event_date_ko | default: page.event_date }}</p>
+          <p class="news-meta">{{ page.event_date_ko | default: page.event_date }}</p>
         </header>
+
+        {% if has_thumbnail %}
+        <figure class="event-hero">
+          <img
+            src="{{ thumbnail_src | relative_url }}"
+            alt="{{ page.thumbnail_alt_ko | default: page.thumbnail_alt | default: page.page_heading_ko | default: page.page_heading }}"
+          />
+        </figure>
+        {% endif %}
 
         {% assign summary_ko_fallback = page.summary_ko | default: page.summary %}
         {% assign summary_ko_body = page.summary_body_ko | default: summary_ko_fallback %}
@@ -333,9 +373,21 @@
 
       <section class="news-panel" data-language-panel="en" hidden>
         <header class="event-header">
+          {% if page.period %}
+          <p class="event-kicker">{{ page.period }}</p>
+          {% endif %}
           <h1 class="event-title">{{ page.page_heading }}</h1>
-          <p class="news-meta"><strong>{{ page.date_label | default: 'Date' }}:</strong> {{ page.event_date }}</p>
+          <p class="news-meta">{{ page.event_date }}</p>
         </header>
+
+        {% if has_thumbnail %}
+        <figure class="event-hero">
+          <img
+            src="{{ thumbnail_src | relative_url }}"
+            alt="{{ page.thumbnail_alt | default: page.page_heading }}"
+          />
+        </figure>
+        {% endif %}
 
         {% assign summary_en_body = page.summary_body | default: page.summary %}
         <section class="event-summary">
@@ -376,9 +428,21 @@
       {% else %}
       <section class="news-panel">
         <header class="event-header">
+          {% if page.period %}
+          <p class="event-kicker">{{ page.period }}</p>
+          {% endif %}
           <h1 class="event-title">{{ page.page_heading }}</h1>
-          <p class="news-meta"><strong>{{ page.date_label | default: 'Date' }}:</strong> {{ page.event_date }}</p>
+          <p class="news-meta">{{ page.event_date }}</p>
         </header>
+
+        {% if has_thumbnail %}
+        <figure class="event-hero">
+          <img
+            src="{{ thumbnail_src | relative_url }}"
+            alt="{{ page.thumbnail_alt | default: page.page_heading }}"
+          />
+        </figure>
+        {% endif %}
 
         {% assign summary_en_body = page.summary_body | default: page.summary %}
         <section class="event-summary">
