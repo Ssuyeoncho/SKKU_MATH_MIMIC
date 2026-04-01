@@ -173,12 +173,13 @@
       .event-link-card {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 1rem;
         padding: 1rem 1.1rem;
         border: 1px solid var(--sidebar-border);
         border-radius: 16px;
         background: rgba(255, 255, 255, 0.7);
+        transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       }
 
       .event-link-copy {
@@ -198,21 +199,11 @@
         color: var(--content-muted);
       }
 
-      .event-link-action {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.72rem 1rem;
-        border-radius: 999px;
-        border: 1px solid var(--sidebar-border);
-        font-weight: 700;
-        color: var(--sidebar-accent);
-        white-space: nowrap;
-      }
-
-      .event-link-action:hover,
-      .event-link-action:focus-visible {
+      .event-link-card:hover,
+      .event-link-card:focus-visible {
         border-color: var(--sidebar-accent);
+        background: rgba(34, 97, 60, 0.04);
+        box-shadow: 0 10px 24px rgba(34, 97, 60, 0.08);
       }
 
       .news-gallery {
@@ -310,10 +301,6 @@
           grid-template-columns: 1fr;
           align-items: start;
         }
-
-        .event-link-action {
-          width: fit-content;
-        }
       }
     </style>
   </head>
@@ -379,7 +366,6 @@
               <span>{{ related_link_note_ko }}</span>
               {% endif %}
             </span>
-            <span class="event-link-action">{{ page.related_link_action_ko | default: '바로가기' }}</span>
           </a>
         </section>
         {% endif %}
@@ -440,7 +426,6 @@
               <span>{{ page.related_link_note }}</span>
               {% endif %}
             </span>
-            <span class="event-link-action">{{ page.related_link_action | default: 'Open' }}</span>
           </a>
         </section>
         {% endif %}
@@ -501,7 +486,6 @@
               <span>{{ page.related_link_note }}</span>
               {% endif %}
             </span>
-            <span class="event-link-action">{{ page.related_link_action | default: 'Open' }}</span>
           </a>
         </section>
         {% endif %}
