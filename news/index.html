@@ -37,8 +37,8 @@ enable_language_toggle: true
     <h2 class="news-year-heading">{{ group.name }}</h2>
     <ul class="news-link-list">
       {% for item in group.items %}
-      {% assign news_title = item.archive_title | default: item.page_heading %}
-      {% assign news_title_ko = item.archive_title_ko | default: item.page_heading_ko | default: news_title %}
+      {% assign news_title = item.page_heading %}
+      {% assign news_title_ko = item.page_heading_ko | default: news_title %}
       {% assign news_date = item.date_display | default: item.event_date %}
       {% assign news_date_ko = item.date_display_ko | default: item.event_date_ko | default: news_date %}
       {% assign news_period = item.period | default: '' %}
