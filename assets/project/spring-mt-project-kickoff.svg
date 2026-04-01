@@ -1,31 +1,37 @@
-<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" fill="#166534"/>
-  <rect width="800" height="350" fill="#0d4a26"/>
-  <g fill="#ffffff">
-    <circle cx="80" cy="60" r="1.8" opacity="0.7"/>
-    <circle cx="150" cy="40" r="1.2" opacity="0.5"/>
-    <circle cx="220" cy="90" r="2" opacity="0.65"/>
-    <circle cx="310" cy="50" r="1.5" opacity="0.6"/>
-    <circle cx="380" cy="30" r="1" opacity="0.4"/>
-    <circle cx="460" cy="75" r="1.8" opacity="0.7"/>
-    <circle cx="540" cy="45" r="1.2" opacity="0.5"/>
-    <circle cx="610" cy="85" r="2" opacity="0.6"/>
-    <circle cx="690" cy="55" r="1.5" opacity="0.55"/>
-    <circle cx="730" cy="100" r="1" opacity="0.4"/>
-    <circle cx="120" cy="120" r="1" opacity="0.35"/>
-    <circle cx="500" cy="110" r="1.2" opacity="0.4"/>
-    <circle cx="660" cy="130" r="1" opacity="0.35"/>
-  </g>
-  <circle cx="640" cy="110" r="42" fill="#ffcd42" opacity="0.82"/>
-  <circle cx="660" cy="98" r="34" fill="#0d4a26" opacity="0.6"/>
-  <polygon points="0,420 180,160 360,420" fill="#1a5c38" opacity="0.9"/>
-  <polygon points="200,420 440,140 680,420" fill="#1c6b42" opacity="0.95"/>
-  <polygon points="440,420 640,200 800,420" fill="#155730" opacity="0.85"/>
-  <polygon points="0,600 140,350 280,600" fill="#0f3d20"/>
-  <polygon points="100,600 300,380 500,600" fill="#123826"/>
-  <polygon points="380,600 560,340 740,600" fill="#0e3620"/>
-  <polygon points="600,600 750,400 900,600" fill="#102e1a"/>
-  <rect x="0" y="520" width="800" height="80" fill="#0a2e14"/>
-  <rect x="0" y="490" width="800" height="110" fill="#000000" opacity="0.35"/>
-  <text x="52" y="562" font-family="Pretendard, sans-serif" font-size="32" font-weight="700" fill="#ffffff">Spring MT &amp; Project Kickoff</text>
+<svg width="100%" viewBox="0 0 680 410" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="400" fill="#1a3a2a" style="fill:rgb(26, 58, 42);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Mountain silhouettes -->
+  <polygon points="0,400 120,200 240,400" fill="#0f2a1a" style="fill:rgb(15, 42, 26);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="80,400 220,160 360,400" fill="#0d2618" style="fill:rgb(13, 38, 24);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="200,400 340,190 480,400" fill="#0f2a1a" style="fill:rgb(15, 42, 26);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="320,400 440,210 580,400" fill="#0b2216" style="fill:rgb(11, 34, 22);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="420,400 560,170 680,400" fill="#0d2618" style="fill:rgb(13, 38, 24);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Lighter mountain peaks for depth -->
+  <polygon points="100,400 230,220 360,400" fill="#163322" style="fill:rgb(22, 51, 34);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="300,400 430,230 560,400" fill="#163322" style="fill:rgb(22, 51, 34);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Sunrise glow -->
+  <ellipse cx="340" cy="195" rx="120" ry="60" fill="#2d6b3a" opacity="0.5" style="fill:rgb(45, 107, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="340" cy="200" rx="70" ry="35" fill="#3d8a4a" opacity="0.5" style="fill:rgb(61, 138, 74);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="340" cy="205" rx="40" ry="20" fill="#4aaa5a" opacity="0.4" style="fill:rgb(74, 170, 90);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Stars -->
+  <circle cx="80" cy="60" r="1.5" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="150" cy="40" r="1" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="250" cy="70" r="1.5" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="400" cy="50" r="1" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="500" cy="80" r="1.5" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="580" cy="45" r="1" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="620" cy="100" r="1.5" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="50" cy="110" r="1" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="450" cy="35" r="1.5" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="340" cy="60" r="1" fill="#a8d8b0" style="fill:rgb(168, 216, 176);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- MT text large background -->
+  <text x="340" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="90" font-weight="700" fill="#1a5c30" opacity="0.35" letter-spacing="8" style="fill:rgb(26, 92, 48);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:Georgia, serif;font-size:90px;font-weight:700;text-anchor:middle;dominant-baseline:auto">MT</text>
+  <!-- Main title -->
+  <text x="340" y="290" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#c8e6c9" letter-spacing="2" style="fill:rgb(200, 230, 201);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:32px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Spring MT</text>
+  <text x="340" y="325" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#81c784" letter-spacing="4" style="fill:rgb(129, 199, 132);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:15px;font-weight:400;text-anchor:middle;dominant-baseline:auto">&amp; Project Kickoff</text>
+  <!-- Bottom date bar -->
+  <rect x="200" y="350" width="280" height="1" fill="#4caf50" opacity="0.5" style="fill:rgb(76, 175, 80);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="340" y="372" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#66bb6a" letter-spacing="2" style="fill:rgb(102, 187, 106);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:13px;font-weight:400;text-anchor:middle;dominant-baseline:auto">April 5, 2026</text>
+  <!-- MIMIC small logo text top right -->
+  <text x="630" y="38" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4caf50" letter-spacing="2" style="fill:rgb(76, 175, 80);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">MIMIC</text>
 </svg>
