@@ -13,6 +13,10 @@ date_display: "March 11-12, 2026"
 period: "2026 Spring Semester"
 date_label: "Date"
 back_label: "Back to News"
+related_link_url: ""
+related_link_label: "Read the article"
+related_link_note: ""
+related_link_action: "Open"
 
 # Korean content (optional)
 ## Leave summary_body_ko empty if you do not want Korean/English toggle.
@@ -22,6 +26,10 @@ event_date_ko: "2026년 3월 11일-12일"
 date_display_ko: "2026년 3월 11일-12일"
 period_ko: "2026년 1학기"
 date_label_ko: "일시"
+related_link_heading_ko: "관련 링크"
+related_link_label_ko: "기사 보기"
+related_link_note_ko: ""
+related_link_action_ko: "바로가기"
 summary_body_ko: |
   행사 소개 첫 번째 문단.
 

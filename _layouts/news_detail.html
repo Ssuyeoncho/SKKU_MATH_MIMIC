@@ -156,6 +156,65 @@
         border-top: 1px solid var(--sidebar-border);
       }
 
+      .event-links {
+        padding-top: 1.4rem;
+        border-top: 1px solid var(--sidebar-border);
+      }
+
+      .event-links h2 {
+        margin: 0 0 0.95rem;
+        font-size: 0.86rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--content-subtle);
+      }
+
+      .event-link-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.1rem;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .event-link-copy {
+        display: grid;
+        gap: 0.28rem;
+      }
+
+      .event-link-copy strong {
+        font-size: 1rem;
+        line-height: 1.35;
+        color: var(--text-color);
+      }
+
+      .event-link-copy span {
+        font-size: 0.94rem;
+        line-height: 1.6;
+        color: var(--content-muted);
+      }
+
+      .event-link-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.72rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--sidebar-border);
+        font-weight: 700;
+        color: var(--sidebar-accent);
+        white-space: nowrap;
+      }
+
+      .event-link-action:hover,
+      .event-link-action:focus-visible {
+        border-color: var(--sidebar-accent);
+      }
+
       .news-gallery {
         margin-top: 1.05rem;
         display: grid;
@@ -245,6 +304,16 @@
         .news-gallery img {
           height: 190px;
         }
+
+        .event-link-card {
+          display: grid;
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .event-link-action {
+          width: fit-content;
+        }
       }
     </style>
   </head>
@@ -257,6 +326,11 @@
       {% assign page_media_base = page.dir | append: 'images/' | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
       {% assign has_gallery = false %}
+      {% assign related_link_url = page.related_link_url | default: '' | strip %}
+      {% assign has_related_link = false %}
+      {% if related_link_url != '' %}
+        {% assign has_related_link = true %}
+      {% endif %}
       {% if page.gallery and page.gallery.size > 0 %}
         {% assign has_gallery = true %}
       {% endif %}
@@ -293,6 +367,22 @@
             {{ summary_ko_body | markdownify }}
           </div>
         </section>
+
+        {% if has_related_link %}
+        <section class="event-links">
+          <h2>{{ page.related_link_heading_ko | default: '관련 링크' }}</h2>
+          <a class="event-link-card" href="{{ related_link_url }}" target="_blank" rel="noopener noreferrer">
+            <span class="event-link-copy">
+              <strong>{{ page.related_link_label_ko | default: page.related_link_label | default: '기사 보기' }}</strong>
+              {% assign related_link_note_ko = page.related_link_note_ko | default: page.related_link_note %}
+              {% if related_link_note_ko and related_link_note_ko != '' %}
+              <span>{{ related_link_note_ko }}</span>
+              {% endif %}
+            </span>
+            <span class="event-link-action">{{ page.related_link_action_ko | default: '바로가기' }}</span>
+          </a>
+        </section>
+        {% endif %}
 
         {% assign ko_note = page.photos_note_ko | default: page.photos_note %}
         {% assign ko_note_stripped = ko_note | strip %}
@@ -340,6 +430,21 @@
           </div>
         </section>
 
+        {% if has_related_link %}
+        <section class="event-links">
+          <h2>{{ page.related_link_heading | default: 'Related Link' }}</h2>
+          <a class="event-link-card" href="{{ related_link_url }}" target="_blank" rel="noopener noreferrer">
+            <span class="event-link-copy">
+              <strong>{{ page.related_link_label | default: 'Read the article' }}</strong>
+              {% if page.related_link_note and page.related_link_note != '' %}
+              <span>{{ page.related_link_note }}</span>
+              {% endif %}
+            </span>
+            <span class="event-link-action">{{ page.related_link_action | default: 'Open' }}</span>
+          </a>
+        </section>
+        {% endif %}
+
         {% assign note_raw = page.photos_note | default: '' %}
         {% assign note_stripped = note_raw | strip %}
         {% assign show_en_photos = false %}
@@ -385,6 +490,21 @@
             {{ summary_en_body | markdownify }}
           </div>
         </section>
+
+        {% if has_related_link %}
+        <section class="event-links">
+          <h2>{{ page.related_link_heading | default: 'Related Link' }}</h2>
+          <a class="event-link-card" href="{{ related_link_url }}" target="_blank" rel="noopener noreferrer">
+            <span class="event-link-copy">
+              <strong>{{ page.related_link_label | default: 'Read the article' }}</strong>
+              {% if page.related_link_note and page.related_link_note != '' %}
+              <span>{{ page.related_link_note }}</span>
+              {% endif %}
+            </span>
+            <span class="event-link-action">{{ page.related_link_action | default: 'Open' }}</span>
+          </a>
+        </section>
+        {% endif %}
 
         {% assign note_raw = page.photos_note | default: '' %}
         {% assign note_stripped = note_raw | strip %}
