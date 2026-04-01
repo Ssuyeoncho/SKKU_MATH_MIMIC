@@ -107,7 +107,7 @@ body {
 
 .navbar .nav-link {
   margin: 0 1rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: var(--weight-semibold);
 }
 
@@ -255,7 +255,7 @@ body {
 }
 
 .news-card .project-bio p {
-  font-size: 0.86rem;
+  font-size: 0.93rem;
   letter-spacing: 0.02em;
   opacity: 0.92;
 }
@@ -301,14 +301,14 @@ body {
 
 .donations-card p {
   margin-top: 0.8rem;
-  font-size: 0.97rem;
+  font-size: 1.05rem;
   line-height: 1.72;
   color: #59625e;
 }
 
 .donations-card .donations-label {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.12em;
@@ -368,7 +368,7 @@ body {
 
 .donations-muted {
   margin: 1rem 0 0 !important;
-  font-size: 0.92rem !important;
+  font-size: 1rem !important;
   line-height: 1.65 !important;
   color: #59625e !important;
 }
@@ -551,7 +551,7 @@ body {
 .overview-label {
   display: inline-flex;
   align-items: center;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.12em;
   font-weight: 800;
   color: var(--accent-color);
@@ -565,7 +565,7 @@ body {
 }
 
 .overview-card p {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: #4d5250;
 }
@@ -576,7 +576,7 @@ body {
 }
 
 .overview-list li {
-  font-size: 0.96rem;
+  font-size: 1.02rem;
   line-height: 1.65;
   color: #4d5250;
 }
@@ -716,11 +716,11 @@ body {
 }
 
 .card .project-bio p {
-  font-size: 0.83rem;
+  font-size: 0.92rem;
 }
 
 .card .project-bio h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .project-info {
@@ -1132,4 +1132,48 @@ body {
 
 [data-theme="dark"] .donations-account-desc {
   color: #c5d0c9;
+}
+
+/* ── 섹션 설명 텍스트 / 네비 크기 조정 ── */
+
+/* 히어로: "We welcome anyone..." */
+#hero .header-container > p,
+.header-container > p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* About MIMIC 섹션 부제목: "MIMIC's history, core activities..." */
+#club-overview > p,
+#club-overview .content-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Seminars 섹션 부제목: "Check out some of our seminars" */
+#seminars > p,
+#seminars .content-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Conferences 섹션 설명: "MCUS was established..." */
+#conferences > p,
+#conferences .content-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* News 섹션 부제목: "Recent events beyond..." */
+#news > p,
+#news .content-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Donations 섹션 부제목: "Support helps MIMIC..." */
+#donations > p,
+#donations .content-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
