@@ -27,5 +27,5 @@
   <polygon points="600,600 750,400 900,600" fill="#102e1a"/>
   <rect x="0" y="520" width="800" height="80" fill="#0a2e14"/>
   <rect x="0" y="490" width="800" height="110" fill="#000000" opacity="0.35"/>
-  <text x="52" y="562" font-family="Raleway, sans-serif" font-size="32" font-weight="700" fill="#ffffff">Spring MT &amp; Project Kickoff</text>
+  <text x="52" y="562" font-family="Pretendard, sans-serif" font-size="32" font-weight="700" fill="#ffffff">Spring MT &amp; Project Kickoff</text>
 </svg>
