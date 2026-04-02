@@ -56,7 +56,7 @@ const applyLanguage = (target) => {
     const localizedText = node.dataset[textKey];
 
     if (typeof localizedText === "string" && localizedText !== "") {
-      node.textContent = localizedText;
+      node.innerHTML = localizedText.replace(/\n/g, "<br>");
     }
   });
 };
