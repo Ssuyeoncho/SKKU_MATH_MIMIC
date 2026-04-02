@@ -1030,8 +1030,9 @@ body {
 
 @media (min-width: 1001px) {
   #conferences .project {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
     grid-auto-rows: minmax(250px, auto);
+    justify-content: center;
   }
 }
 
