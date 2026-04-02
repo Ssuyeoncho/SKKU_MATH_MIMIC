@@ -1275,10 +1275,11 @@ body {
   line-height: 1.75;
 }
 
-.contact-social-grid {
-  width: 100%;
-}
-
 .contact-panel {
   max-width: 620px;
+}
+
+.contact-social-grid {
+  width: 100%;
+  justify-self: stretch;
 }
