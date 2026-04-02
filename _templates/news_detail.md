@@ -30,6 +30,12 @@ related_link_heading_ko: "관련 링크"
 related_link_label_ko: "기사 보기"
 related_link_note_ko: ""
 related_link_action_ko: "바로가기"
+related_links:
+  - url: ""
+    label: "Related link title"
+    label_ko: "관련 링크 제목"
+    note: ""
+    note_ko: ""
 summary_body_ko: |
   행사 소개 첫 번째 문단.
 
