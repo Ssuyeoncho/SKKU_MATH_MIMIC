@@ -16,7 +16,7 @@ seminar_date: 2025-09-08
 # Optional fallback if seminar_date is omitted:
 # seminar_number: "02"
 speaker_label: "Speaker"
-# speaker_label_ko: "연사자"
+# speaker_label_ko: "연사"
 # speaker_label_en: "Speaker"
 speaker: "Speaker Name (Affiliation)"
 # speaker_ko: "홍길동 (소속)"
