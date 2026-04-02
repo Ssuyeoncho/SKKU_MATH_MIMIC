@@ -20,8 +20,10 @@
 
       .page-header {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
         margin-bottom: 2.8rem;
+        width: 100%;
       }
 
       .page-header-row {
@@ -29,13 +31,16 @@
         grid-template-columns: minmax(0, 1fr) auto;
         align-items: start;
         gap: 2rem;
+        width: 100%;
       }
 
       .page-header-copy {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 0.95rem;
         min-width: 0;
         max-width: 42rem;
+        width: 100%;
       }
 
       .page-content h1 {
@@ -82,13 +87,17 @@
 
       .news-archive {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 3rem;
         margin-top: 0.4rem;
+        width: 100%;
       }
 
       .news-year-group {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 0.55rem;
+        width: 100%;
       }
 
       .news-year-group + .news-year-group {
@@ -141,7 +150,13 @@
         padding: 0;
         list-style: none;
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 0;
+        width: 100%;
+      }
+
+      .news-link-list > li {
+        width: 100%;
       }
 
       .news-link-row {
@@ -153,6 +168,7 @@
         border-radius: 0;
         border: 0;
         background: transparent;
+        width: 100%;
       }
 
       .news-link-main {
