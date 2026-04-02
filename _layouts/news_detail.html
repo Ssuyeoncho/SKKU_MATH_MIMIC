@@ -231,6 +231,15 @@
         display: block;
         width: 100%;
         height: auto;
+        transition: filter 0.2s ease;
+      }
+
+      .news-gallery-item.is-gently-brightened img {
+        filter: brightness(1.06) saturate(1.01);
+      }
+
+      .news-gallery-item.is-softened img {
+        filter: brightness(0.92) saturate(0.95) contrast(0.98);
       }
 
       .news-gallery-item:hover {
@@ -418,7 +427,7 @@
             {% unless image_first == '/' or image_src contains '://' %}
               {% assign image_src = page_media_base | append: image_src %}
             {% endunless %}
-            <figure class="news-gallery-item">
+            <figure class="news-gallery-item{% if image.class and image.class != '' %} {{ image.class }}{% endif %}">
               <img src="{{ image_src | relative_url }}" alt="{{ image.alt_ko | default: image.alt | default: page.page_heading_ko | default: page.page_heading }}" />
             </figure>
             {% endif %}
@@ -498,7 +507,7 @@
             {% unless image_first == '/' or image_src contains '://' %}
               {% assign image_src = page_media_base | append: image_src %}
             {% endunless %}
-            <figure class="news-gallery-item">
+            <figure class="news-gallery-item{% if image.class and image.class != '' %} {{ image.class }}{% endif %}">
               <img src="{{ image_src | relative_url }}" alt="{{ image.alt | default: page.page_heading }}" />
             </figure>
             {% endif %}
