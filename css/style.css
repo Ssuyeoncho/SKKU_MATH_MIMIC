@@ -800,7 +800,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .card .project-bio p {
   font-size: 0.92rem;
 }
@@ -1025,13 +1024,15 @@ body {
 
 @media (min-width: 1001px) {
   #conferences .project {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(250px, auto);
+    grid-template-columns: repeat(2, minmax(0, 350px));
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 #conferences .project > .card {
-  aspect-ratio: 3 / 5;
+  aspect-ratio: 4 / 3;
   height: auto !important;
   min-height: 250px;
 }
