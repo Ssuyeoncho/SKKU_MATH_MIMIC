@@ -64,7 +64,7 @@
       }
 
       .localized-fixed {
-        position: static;
+        position: relative;
         display: block;
       }
 
@@ -73,11 +73,14 @@
       }
 
       .localized-fixed-sizer {
-        display: none;
+        display: block;
+        visibility: hidden;
+        white-space: inherit;
       }
 
       .localized-fixed-text {
-        position: static;
+        position: absolute;
+        inset: 0;
         display: block;
         white-space: inherit;
       }
