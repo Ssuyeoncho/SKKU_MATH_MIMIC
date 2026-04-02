@@ -794,11 +794,16 @@ body {
 }
 
 #seminars .project > .card,
-#conferences .project > .card,
 #news .project > .card {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+#conferences .project > .card {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .card .project-bio p {
@@ -1035,7 +1040,6 @@ body {
   aspect-ratio: 4 / 3;
   height: auto !important;
   min-height: 250px;
-  width: 100%;
 }
 
 #news .project > .card {
