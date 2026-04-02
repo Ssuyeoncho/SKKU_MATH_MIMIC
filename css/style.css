@@ -1025,12 +1025,9 @@ body {
 
 @media (min-width: 1001px) {
   #conferences .project {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(250px, auto);
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    grid-auto-rows: auto;
     justify-content: center;
-    max-width: 780px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -1038,6 +1035,7 @@ body {
   aspect-ratio: 4 / 3;
   height: auto !important;
   min-height: 250px;
+  width: 100%;
 }
 
 #news .project > .card {
