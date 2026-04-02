@@ -794,13 +794,8 @@ body {
 }
 
 #seminars .project > .card,
+#conferences .project > .card,
 #news .project > .card {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-#conferences .project > .card {
   display: block;
   width: 100%;
   height: 100%;
@@ -1030,12 +1025,15 @@ body {
 
 @media (min-width: 1001px) {
   #conferences .project {
-    grid-template-columns: repeat(2, minmax(0, 420px));
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(250px, auto);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
   }
+}
+
+#conferences .project > .card {
+  aspect-ratio: 4 / 3;
+  height: auto !important;
+  min-height: 250px;
 }
 
 #news .project > .card {
@@ -1251,7 +1249,7 @@ body {
   line-height: 1.75;
 }
 
-/* Seminars 섹션 부제목: "Check out some of our seminars." */
+/* Seminars 섹션 부제목: "Check out some of our seminars" */
 #seminars > p,
 #seminars .content-text p {
   font-size: 1.05rem;
