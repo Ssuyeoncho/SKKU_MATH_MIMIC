@@ -64,7 +64,7 @@
       }
 
       .localized-fixed {
-        position: relative;
+        position: static;
         display: block;
       }
 
@@ -73,14 +73,11 @@
       }
 
       .localized-fixed-sizer {
-        display: block;
-        visibility: hidden;
-        white-space: inherit;
+        display: none;
       }
 
       .localized-fixed-text {
-        position: absolute;
-        inset: 0;
+        position: static;
         display: block;
         white-space: inherit;
       }
@@ -191,16 +188,6 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
-      }
-
-      html[data-language="ko"] .news-link-title .localized-fixed-sizer {
-        display: none;
-      }
-
-      html[data-language="ko"] .news-link-title .localized-fixed-text {
-        position: static;
-        inset: auto;
-        display: -webkit-box;
       }
 
       .news-link-date {
