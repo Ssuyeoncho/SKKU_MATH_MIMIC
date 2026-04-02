@@ -167,6 +167,15 @@
         line-height: 1.28;
         letter-spacing: -0.015em;
         color: var(--text-color);
+        min-height: calc(1.28em * 2);
+      }
+
+      .news-link-title .localized-fixed-sizer,
+      .news-link-title .localized-fixed-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
       }
 
       .news-link-date {
