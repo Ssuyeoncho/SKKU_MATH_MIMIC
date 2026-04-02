@@ -520,6 +520,7 @@ body {
     #f8faf8;
   display: grid;
   gap: 1.2rem;
+  min-width: 820px;
 }
 
 .contact-meta {
@@ -987,6 +988,7 @@ body {
 
   .contact-panel {
     padding: 1.15rem 1rem;
+    min-width: unset;
   }
 
   .donations-card {
