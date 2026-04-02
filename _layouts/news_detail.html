@@ -222,6 +222,19 @@
         margin: 0;
       }
 
+      .news-gallery--quad-balanced {
+        column-count: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 0;
+        gap: 0.8rem;
+        align-items: start;
+      }
+
+      .news-gallery--quad-balanced .news-gallery-item {
+        margin: 0;
+      }
+
       .news-gallery-item {
         break-inside: avoid;
         margin: 0 0 0.75rem;
@@ -282,6 +295,10 @@
         }
 
         .news-gallery--duo-large {
+          grid-template-columns: 1fr;
+        }
+
+        .news-gallery--quad-balanced {
           grid-template-columns: 1fr;
         }
       }
