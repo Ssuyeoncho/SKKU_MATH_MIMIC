@@ -1277,5 +1277,8 @@ body {
 
 .contact-social-grid {
   width: 100%;
-  max-width: 540px;
+}
+
+.contact-panel {
+  max-width: 620px;
 }
