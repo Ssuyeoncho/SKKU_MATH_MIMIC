@@ -1027,6 +1027,10 @@ body {
   #conferences .project {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(250px, auto);
+    justify-content: center;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
