@@ -1240,6 +1240,7 @@ body {
 .header-container > p {
   font-size: 1.05rem;
   line-height: 1.75;
+  margin-top: 1.5rem;
 }
 
 /* About MIMIC 섹션 부제목: "MIMIC's history, core activities..." */
