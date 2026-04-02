@@ -803,7 +803,7 @@ body {
 #conferences .project > .card {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .card .project-bio p {
@@ -1033,11 +1033,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(250px, auto);
   }
-}
-
-#conferences .project > .card {
-  aspect-ratio: 4 / 3;
-  height: 100%;
 }
 
 #news .project > .card {
