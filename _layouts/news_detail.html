@@ -189,6 +189,26 @@
         column-gap: 0.75rem;
       }
 
+      .news-gallery--single {
+        column-count: 1;
+        max-width: 860px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .news-gallery--duo-balanced {
+        column-count: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
+        column-gap: 0;
+        gap: 0.75rem;
+        align-items: start;
+      }
+
+      .news-gallery--duo-balanced .news-gallery-item {
+        margin: 0;
+      }
+
       .news-gallery-item {
         break-inside: avoid;
         margin: 0 0 0.75rem;
@@ -204,6 +224,10 @@
         width: 100%;
         height: auto;
         transition: filter 0.2s ease;
+      }
+
+      .news-gallery-item.is-brightened img {
+        filter: brightness(1.14) saturate(1.02);
       }
 
       .news-gallery-item.is-gently-brightened img {
@@ -226,6 +250,10 @@
       @media (max-width: 900px) {
         .news-gallery {
           column-count: 2;
+        }
+
+        .news-gallery--duo-balanced {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -294,6 +322,8 @@
       {% assign page_media_base = page.dir | append: 'images/' | append: page_news_slug | append: '/' %}
       {% assign has_korean = false %}
       {% assign has_gallery = false %}
+      {% assign gallery_count = 0 %}
+      {% assign single_gallery = false %}
       {% assign related_link_url = page.related_link_url | default: '' | strip %}
       {% assign has_related_links = false %}
       {% if page.related_links and page.related_links.size > 0 %}
@@ -303,6 +333,10 @@
       {% endif %}
       {% if page.gallery and page.gallery.size > 0 %}
         {% assign has_gallery = true %}
+        {% assign gallery_count = page.gallery.size %}
+      {% endif %}
+      {% if gallery_count == 1 %}
+        {% assign single_gallery = true %}
       {% endif %}
       {% if korean_summary != '' %}
         {% assign has_korean = true %}
@@ -385,7 +419,7 @@
           {{ ko_note | markdownify }}
           {% endif %}
           {% if has_gallery %}
-          <div class="news-gallery">
+          <div class="news-gallery{% if single_gallery %} news-gallery--single{% endif %}{% if page.gallery_layout and page.gallery_layout != '' %} {{ page.gallery_layout }}{% endif %}">
             {% for image in page.gallery %}
             {% assign image_src = image.src | default: image.file | default: '' %}
             {% if image_src != '' %}
@@ -465,7 +499,7 @@
           {{ note_raw | markdownify }}
           {% endif %}
           {% if has_gallery %}
-          <div class="news-gallery">
+          <div class="news-gallery{% if single_gallery %} news-gallery--single{% endif %}{% if page.gallery_layout and page.gallery_layout != '' %} {{ page.gallery_layout }}{% endif %}">
             {% for image in page.gallery %}
             {% assign image_src = image.src | default: image.file | default: '' %}
             {% if image_src != '' %}
@@ -545,7 +579,7 @@
           {{ note_raw | markdownify }}
           {% endif %}
           {% if has_gallery %}
-          <div class="news-gallery">
+          <div class="news-gallery{% if single_gallery %} news-gallery--single{% endif %}{% if page.gallery_layout and page.gallery_layout != '' %} {{ page.gallery_layout }}{% endif %}">
             {% for image in page.gallery %}
             {% assign image_src = image.src | default: image.file | default: '' %}
             {% if image_src != '' %}
