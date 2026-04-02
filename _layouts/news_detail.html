@@ -46,34 +46,6 @@
         color: var(--sidebar-accent);
       }
 
-      .seminar-language-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.3rem;
-        border: 1px solid var(--sidebar-border);
-        border-radius: 999px;
-        background: var(--panel-bg);
-        flex-shrink: 0;
-      }
-
-      .language-button {
-        border: 0;
-        background: transparent;
-        color: var(--content-muted);
-        font: inherit;
-        font-weight: 700;
-        padding: 0.45rem 0.95rem;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: background-color 0.2s ease, color 0.2s ease;
-      }
-
-      .language-button.is-active {
-        background: var(--sidebar-accent);
-        color: var(--bg-primary);
-      }
-
       .news-panel[hidden] {
         display: none;
       }
@@ -288,16 +260,6 @@
           font-size: 0.9rem;
         }
 
-        .seminar-language-toggle {
-          gap: 0.5rem;
-          padding: 0.3rem;
-        }
-
-        .language-button {
-          font-size: inherit;
-          padding: 0.45rem 0.95rem;
-        }
-
         .event-title {
           font-size: 1.8rem;
         }
@@ -343,15 +305,15 @@
       {% endif %}
 
       <div class="detail-toolbar">
-        <a class="back-link" href="{{ page.back_url | default: '/news/index.html' | relative_url }}">
-          ← {{ page.back_label | default: 'Back to News' }}
+        <a
+          class="back-link"
+          href="{{ page.back_url | default: '/news/index.html' | relative_url }}"
+          data-language-text
+          data-language-text-ko="← 뉴스 목록으로"
+          data-language-text-en="← {{ page.back_label | default: 'Back to News' }}"
+        >
+          ← 뉴스 목록으로
         </a>
-        {% if has_korean %}
-        <div class="seminar-language-toggle" data-language-toggle>
-          <button class="language-button is-active" type="button" data-language-button="ko" aria-pressed="true">한국어</button>
-          <button class="language-button" type="button" data-language-button="en" aria-pressed="false">EN</button>
-        </div>
-        {% endif %}
       </div>
 
       {% if has_korean %}
@@ -601,9 +563,7 @@
     </main>
 
     {% include site-footer.html %}
-    {% if has_korean %}
     <script src="{{ '/js/seminar-language-toggle.js' | relative_url }}"></script>
-    {% endif %}
     <script src="{{ '/js/script.js' | relative_url }}"></script>
   </body>
 </html>

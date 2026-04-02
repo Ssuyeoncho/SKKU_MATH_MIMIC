@@ -29,33 +29,6 @@
         margin-bottom: 0.35rem;
       }
 
-      .seminar-language-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.3rem;
-        border: 1px solid var(--sidebar-border);
-        border-radius: 999px;
-        background: var(--panel-bg);
-      }
-
-      .language-button {
-        border: 0;
-        background: transparent;
-        color: var(--content-muted);
-        font: inherit;
-        font-weight: 700;
-        padding: 0.45rem 0.95rem;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: background-color 0.2s ease, color 0.2s ease;
-      }
-
-      .language-button.is-active {
-        background: var(--sidebar-accent);
-        color: var(--bg-primary);
-      }
-
       .seminar-lang-panel {
         display: grid;
         gap: 0.65rem;
@@ -356,23 +329,13 @@
         {% endif %}
 
         <div class="detail-toolbar">
-          <a class="back-link" href="{{ '/seminars/index.html' | relative_url }}">← Back to seminars</a>
-          {% if has_english %}
-          <div class="seminar-language-toggle" data-language-toggle>
-            <button
-              class="language-button is-active"
-              type="button"
-              data-language-button="ko"
-              aria-pressed="true"
-            >한국어</button>
-            <button
-              class="language-button"
-              type="button"
-              data-language-button="en"
-              aria-pressed="false"
-            >EN</button>
-          </div>
-          {% endif %}
+          <a
+            class="back-link"
+            href="{{ '/seminars/index.html' | relative_url }}"
+            data-language-text
+            data-language-text-ko="← 세미나 목록으로"
+            data-language-text-en="← Back to seminars"
+          >← 세미나 목록으로</a>
         </div>
 
         <header class="seminar-detail-header seminar-hero-card">
@@ -488,9 +451,7 @@
     </main>
 
     {% include site-footer.html %}
-    {% if has_english %}
     <script src="{{ '/js/seminar-language-toggle.js' | relative_url }}"></script>
-    {% endif %}
     <script src="{{ '/js/seminar-sidebar.js' | relative_url }}"></script>
     <script src="{{ '/js/script.js' | relative_url }}"></script>
   </body>

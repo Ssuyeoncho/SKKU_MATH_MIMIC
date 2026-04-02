@@ -28,11 +28,36 @@ function closeMenu() {
 const scrollSpyItems = navLinks
   .map((link) => {
     const href = link.getAttribute("href");
-    if (!href || !href.startsWith("#")) {
+    if (!href) {
       return null;
     }
 
-    const section = document.querySelector(href);
+    let hash = "";
+
+    try {
+      const linkUrl = new URL(href, window.location.href);
+      const normalizePath = (path) =>
+        path.replace(/\/index\.html$/, "/").replace(/\/+$/, "") || "/";
+      if (
+        linkUrl.origin !== window.location.origin ||
+        normalizePath(linkUrl.pathname) !== normalizePath(window.location.pathname)
+      ) {
+        return null;
+      }
+      hash = linkUrl.hash;
+    } catch (error) {
+      if (href.startsWith("#")) {
+        hash = href;
+      } else {
+        return null;
+      }
+    }
+
+    if (!hash || hash === "#") {
+      return null;
+    }
+
+    const section = document.querySelector(hash);
     if (!section) {
       return null;
     }

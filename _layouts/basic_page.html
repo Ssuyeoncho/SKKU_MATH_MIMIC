@@ -38,34 +38,6 @@
         max-width: 42rem;
       }
 
-      .seminar-language-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.3rem;
-        border: 1px solid var(--sidebar-border);
-        border-radius: 999px;
-        background: var(--panel-bg);
-        flex-shrink: 0;
-      }
-
-      .language-button {
-        border: 0;
-        background: transparent;
-        color: var(--content-muted);
-        font: inherit;
-        font-weight: 700;
-        padding: 0.45rem 0.95rem;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: background-color 0.2s ease, color 0.2s ease;
-      }
-
-      .language-button.is-active {
-        background: var(--sidebar-accent);
-        color: var(--bg-primary);
-      }
-
       .page-content h1 {
         font-size: clamp(3rem, 6.5vw, 4.6rem);
         margin: 0;
@@ -262,21 +234,11 @@
           height: 200px;
         }
 
-        .seminar-language-toggle {
-          gap: 0.5rem;
-          padding: 0.3rem;
-        }
-
         .news-link-row {
           grid-template-columns: 1fr;
           align-items: start;
           gap: 0.35rem;
           padding: 1rem 0;
-        }
-
-        .language-button {
-          font-size: inherit;
-          padding: 0.45rem 0.95rem;
         }
       }
     </style>
@@ -292,9 +254,7 @@
     </main>
 
     {% include site-footer.html %}
-    {% if page.enable_language_toggle %}
     <script src="{{ '/js/seminar-language-toggle.js' | relative_url }}"></script>
-    {% endif %}
     <script src="{{ '/js/script.js' | relative_url }}"></script>
   </body>
 </html>

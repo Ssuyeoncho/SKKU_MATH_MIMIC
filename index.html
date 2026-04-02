@@ -2,7 +2,7 @@
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -102,38 +102,7 @@
   </head>
   <body>
     <header id="hero">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="container">
-          <!-- Logo -->
-          <h1 id="logo">
-            <a href="#"><img src="./assets/logo.png" alt="Your Logo"></a>
-          </h1>
-          <!-- Navbar links -->
-          <ul class="nav-menu">
-            <li><a class="nav-link is-active" href="#hero">MAIN</a></li>
-            <li><a class="nav-link" href="#seminars">SEMINARS</a></li>
-            <li><a class="nav-link" href="#conferences">CONFERENCES</a></li>
-            <li><a class="nav-link" href="#news">NEWS</a></li>
-            <li><a class="nav-link" href="#donations">DONATIONS</a></li>
-            <li><a class="nav-link" href="#contact">CONTACT</a></li>
-            <!-- Toggle switch -->
-            <div class="theme-switch">
-              <input type="checkbox" id="switch" />
-              <label class="toggle-icons" for="switch">
-                <img class="moon" src="assets/moon.svg" />
-                <img class="sun" src="assets/sun.svg" />
-              </label>
-            </div>
-            <!-- Hamburger menu -->
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </div>
-      </nav>
+      {% include site-navbar.html active="main" %}
 
       <section class="header-container">
         <img
@@ -150,11 +119,23 @@
         </h1>
 
         <div class="content-text">
-          <h2>An academic mathematics club</h2>
-          <h2>at Sungkyunkwan university.</h2>
+          <h2
+            data-language-text
+            data-language-text-ko="성균관대학교의"
+            data-language-text-en="An academic mathematics club"
+          >성균관대학교의</h2>
+          <h2
+            data-language-text
+            data-language-text-ko="수학 학술 동아리"
+            data-language-text-en="at Sungkyunkwan University."
+          >수학 학술 동아리</h2>
 
-          <p>
-            We welcome anyone with a curiosity for mathematics to explore ideas, share insights, and grow together.
+          <p
+            data-language-text
+            data-language-text-ko="수학에 대한 호기심이 있는 누구나 함께 아이디어를 탐구하고, 생각을 나누며, 함께 성장할 수 있습니다."
+            data-language-text-en="We welcome anyone with a curiosity for mathematics to explore ideas, share insights, and grow together."
+          >
+            수학에 대한 호기심이 있는 누구나 함께 아이디어를 탐구하고, 생각을 나누며, 함께 성장할 수 있습니다.
           </p>
         </div>
       </section>
@@ -164,8 +145,12 @@
       <div class="division"></div>
       <div class="content-text">
         <h2>About MIMIC</h2>
-        <p>
-          MIMIC’s history, core activities, and key achievements at a glance.
+        <p
+          data-language-text
+          data-language-text-ko="MIMIC의 역사와 주요 활동, 대표 성과를 한눈에 살펴볼 수 있습니다."
+          data-language-text-en="MIMIC’s history, core activities, and key achievements at a glance."
+        >
+          MIMIC의 역사와 주요 활동, 대표 성과를 한눈에 살펴볼 수 있습니다.
         </p>
       </div>
 
@@ -173,29 +158,31 @@
         <article class="overview-card">
           <p class="overview-label">SINCE 2018</p>
           <h3>Our Story</h3>
-          <p>
-            MIMIC was founded in 2018 as a small group of students devoted to
-            studying mathematics together. After becoming an officially
-            recognized departmental club in 2022, it continued to host regular
-            seminars and study sessions. In 2024, MIMIC was selected as one of
-            Sungkyunkwan University’s SKKU Prestige Study Clubs, and from 2025
-            it also began hosting MCUS, a Mathematics Conference for
-            Undergraduate Students.
+          <p
+            data-language-text
+            data-language-text-ko="MIMIC은 2018년 학생들이 함께 수학을 공부하기 위해 만든 작은 모임으로 시작했습니다. 2022년 학과 공식 동아리로 인정받은 뒤 정기 세미나와 스터디를 꾸준히 운영해 왔습니다. 2024년에는 성균 명품 스터디클럽에 선정되었고, 2025년부터는 학부생을 위한 수학 학회 MCUS도 개최하고 있습니다."
+            data-language-text-en="MIMIC was founded in 2018 as a small group of students devoted to studying mathematics together. After becoming an officially recognized departmental club in 2022, it continued to host regular seminars and study sessions. In 2024, MIMIC was selected as one of Sungkyunkwan University’s SKKU Prestige Study Clubs, and from 2025 it also began hosting MCUS, a Mathematics Conference for Undergraduate Students."
+          >
+            MIMIC은 2018년 학생들이 함께 수학을 공부하기 위해 만든 작은 모임으로 시작했습니다. 2022년 학과 공식 동아리로 인정받은 뒤 정기 세미나와 스터디를 꾸준히 운영해 왔습니다. 2024년에는 성균 명품 스터디클럽에 선정되었고, 2025년부터는 학부생을 위한 수학 학회 MCUS도 개최하고 있습니다.
           </p>
         </article>
 
         <article class="overview-card">
           <p class="overview-label">ACTIVITIES</p>
           <h3>What We Do</h3>
-          <p>
-            Each semester, our programs are organized around five key tracks.
+          <p
+            data-language-text
+            data-language-text-ko="매 학기 MIMIC의 프로그램은 다섯 가지 축을 중심으로 운영됩니다."
+            data-language-text-en="Each semester, our programs are organized around five key tracks."
+          >
+            매 학기 MIMIC의 프로그램은 다섯 가지 축을 중심으로 운영됩니다.
           </p>
           <ul class="overview-tags">
-            <li>Seminars</li>
-            <li>Tutoring</li>
-            <li>Paper Reading</li>
-            <li>Student Symposium</li>
-            <li>Study Groups</li>
+            <li data-language-text data-language-text-ko="정기 세미나" data-language-text-en="Seminars">정기 세미나</li>
+            <li data-language-text data-language-text-ko="튜터링" data-language-text-en="Tutoring">튜터링</li>
+            <li data-language-text data-language-text-ko="논문 읽기" data-language-text-en="Paper Reading">논문 읽기</li>
+            <li data-language-text data-language-text-ko="학생 심포지엄" data-language-text-en="Student Symposium">학생 심포지엄</li>
+            <li data-language-text data-language-text-ko="스터디 그룹" data-language-text-en="Study Groups">스터디 그룹</li>
           </ul>
         </article>
 
@@ -203,8 +190,16 @@
           <p class="overview-label">ACHIEVEMENTS</p>
           <h3>Recognition</h3>
           <ul class="overview-list">
-            <li>Outstanding Club Award in the Korean Mathematical Society’s 2025 Mathematics Club Support Program at the 43rd Korean Collegiate Mathematics Competition</li>
-            <li>Best Academic Club, 2nd Overall in SKKU’s 2024 Prestige Study Club Program</li>
+            <li
+              data-language-text
+              data-language-text-ko="대한수학회 2025 수학 동아리 지원 사업 우수동아리상"
+              data-language-text-en="Outstanding Club Award in the Korean Mathematical Society’s 2025 Mathematics Club Support Program at the 43rd Korean Collegiate Mathematics Competition"
+            >대한수학회 2025 수학 동아리 지원 사업 우수동아리상</li>
+            <li
+              data-language-text
+              data-language-text-ko="2024 성균 명품 스터디클럽 최우수 학회, 전체 2위"
+              data-language-text-en="Best Academic Club, 2nd Overall in SKKU’s 2024 Prestige Study Club Program"
+            >2024 성균 명품 스터디클럽 최우수 학회, 전체 2위</li>
           </ul>
         </article>
       </div>
@@ -215,7 +210,7 @@
       <div class="division"></div>
       <div class="content-text">
         <h2>Seminars</h2>
-        <p>Check out some of our seminars</p>
+        <p data-language-text data-language-text-ko="최근 세미나를 확인해보세요." data-language-text-en="Check out some of our seminars">최근 세미나를 확인해보세요.</p>
       </div>
 
       <article class="project">
@@ -225,17 +220,40 @@
             {% assign seminar_url = seminar_page.url | default: '' %}
             {% assign seminar_thumbnail = seminar_page.thumbnail_src | default: '/assets/project/project-one.png' %}
             {% assign seminar_title = seminar_page.seminar_title | default: seminar_page.title | default: 'Seminar' %}
+            {% assign seminar_title_en = seminar_page.seminar_title_en | default: seminar_title %}
+            {% assign seminar_title_ko = seminar_page.seminar_title_ko | default: seminar_title_en %}
             {% assign seminar_label = seminar_page.semester_label | default: 'Seminar' %}
+            {% assign seminar_label_ko = seminar_page.semester_label_ko | default: seminar_label %}
+            {% if seminar_page.semester_label_ko == nil %}
+              {% if seminar_label contains 'Spring' %}
+                {% assign seminar_label_ko = seminar_label | replace: ' Spring', '년 1학기' %}
+              {% elsif seminar_label contains 'Fall' %}
+                {% assign seminar_label_ko = seminar_label | replace: ' Fall', '년 2학기' %}
+              {% endif %}
+            {% endif %}
             {% assign seminar_date_text = '' %}
+            {% assign seminar_date_text_ko = '' %}
             {% if seminar_page.seminar_date_display %}
               {% assign seminar_date_text = seminar_page.seminar_date_display %}
             {% elsif seminar_page.seminar_date %}
               {% assign seminar_date_input = seminar_page.seminar_date | append: '' %}
               {% if seminar_date_input contains '.' %}
                 {% assign seminar_date_text = seminar_page.seminar_date %}
+                {% assign seminar_date_text_ko = seminar_page.seminar_date %}
               {% else %}
                 {% assign seminar_date_text = seminar_page.seminar_date | date: '%Y.%m.%d.' %}
+                {% assign seminar_date_text_ko = seminar_page.seminar_date | date: '%Y년 %m월 %d일' %}
               {% endif %}
+            {% endif %}
+            {% assign seminar_meta_en = seminar_label %}
+            {% assign seminar_meta_ko = seminar_label_ko %}
+            {% if seminar_date_text != '' %}
+              {% assign seminar_meta_en = seminar_label | append: ' · ' | append: seminar_date_text %}
+            {% endif %}
+            {% if seminar_date_text_ko != '' %}
+              {% assign seminar_meta_ko = seminar_label_ko | append: ' · ' | append: seminar_date_text_ko %}
+            {% elsif seminar_date_text != '' %}
+              {% assign seminar_meta_ko = seminar_label_ko | append: ' · ' | append: seminar_date_text %}
             {% endif %}
 
             <a
@@ -245,11 +263,16 @@
             >
               <div class="project-info">
                 <div class="project-bio">
-                  <h3>{{ seminar_title }}</h3>
-                  <p>
-                    {{ seminar_label }}
-                    {% if seminar_date_text != '' %} · {{ seminar_date_text }}{% endif %}
-                  </p>
+                  <h3
+                    data-language-text
+                    data-language-text-ko="{{ seminar_title_ko | escape }}"
+                    data-language-text-en="{{ seminar_title_en | escape }}"
+                  >{{ seminar_title_ko }}</h3>
+                  <p
+                    data-language-text
+                    data-language-text-ko="{{ seminar_meta_ko | escape }}"
+                    data-language-text-en="{{ seminar_meta_en | escape }}"
+                  >{{ seminar_meta_ko }}</p>
                 </div>
               </div>
             </a>
@@ -258,8 +281,8 @@
           <div class="card">
             <div class="project-info">
               <div class="project-bio">
-                <h3>Seminars coming soon</h3>
-                <p>New seminar cards will appear here automatically.</p>
+                <h3 data-language-text data-language-text-ko="세미나 준비 중" data-language-text-en="Seminars coming soon">세미나 준비 중</h3>
+                <p data-language-text data-language-text-ko="새로운 세미나 카드가 여기에 자동으로 표시됩니다." data-language-text-en="New seminar cards will appear here automatically.">새로운 세미나 카드가 여기에 자동으로 표시됩니다.</p>
               </div>
             </div>
           </div>
@@ -267,7 +290,7 @@
       </article>
 
       <a href="seminars/index.html" class="btn btn-secondary archive-link"
-        >See More <i class="fas fa-arrow-right"></i
+        ><span data-language-text data-language-text-ko="더 보기" data-language-text-en="See More">더 보기</span> <i class="fas fa-arrow-right"></i
       ></a>
     </section>
 
@@ -275,10 +298,12 @@
       <div class="division"></div>
       <div class="content-text">
         <h2>Conferences</h2>
-        <p>
-          MCUS was established to provide an academic forum in mathematics for
-          undergraduate students, in recognition that existing conferences are
-          often less accessible at the undergraduate level.
+        <p
+          data-language-text
+          data-language-text-ko="MCUS는 기존 수학 학회가 학부생에게는 다소 접근하기 어렵다는 문제의식에서 출발해, 학부생을 위한 수학 학술 교류의 장으로 마련되었습니다."
+          data-language-text-en="MCUS was established to provide an academic forum in mathematics for undergraduate students, in recognition that existing conferences are often less accessible at the undergraduate level."
+        >
+          MCUS는 기존 수학 학회가 학부생에게는 다소 접근하기 어렵다는 문제의식에서 출발해, 학부생을 위한 수학 학술 교류의 장으로 마련되었습니다.
         </p>
       </div>
 
@@ -294,7 +319,7 @@
           <div class="project-info">
             <div class="project-bio">
               <h3>2026 MCUS</h3>
-              <p>MIMIC SKKU Conference Page</p>
+              <p data-language-text data-language-text-ko="MIMIC SKKU 학회 페이지" data-language-text-en="MIMIC SKKU Conference Page">MIMIC SKKU 학회 페이지</p>
             </div>
           </div>
         </a>
@@ -310,7 +335,7 @@
           <div class="project-info">
             <div class="project-bio">
               <h3>2025 MCUS</h3>
-              <p>MIMIC SKKU Conference Page</p>
+              <p data-language-text data-language-text-ko="MIMIC SKKU 학회 페이지" data-language-text-en="MIMIC SKKU Conference Page">MIMIC SKKU 학회 페이지</p>
             </div>
           </div>
         </a>
@@ -321,8 +346,12 @@
       <div class="division"></div>
       <div class="content-text">
         <h2>News</h2>
-        <p>
-          Recent events beyond our main seminar and conference programs.
+        <p
+          data-language-text
+          data-language-text-ko="세미나와 컨퍼런스 외의 최근 활동과 소식을 확인해보세요."
+          data-language-text-en="Recent events beyond our main seminar and conference programs."
+        >
+          세미나와 컨퍼런스 외의 최근 활동과 소식을 확인해보세요.
         </p>
       </div>
 
@@ -330,6 +359,7 @@
       <article class="project">
         {% for item in latest_news limit: 3 %}
         {% assign news_date = item.date_display | default: item.event_date %}
+        {% assign news_date_ko = item.date_display_ko | default: item.event_date_ko | default: news_date %}
         {% assign news_slug = item.name | replace: '.html', '' %}
         {% assign news_media_base = item.dir | append: 'images/' | append: news_slug | append: '/' %}
         {% assign news_thumbnail = item.thumbnail | default: '' %}
@@ -350,8 +380,16 @@
         >
           <div class="project-info">
             <div class="project-bio">
-              <h3>{{ item.page_heading }}</h3>
-              <p>{{ news_date }}</p>
+              <h3
+                data-language-text
+                data-language-text-ko="{{ item.page_heading_ko | default: item.page_heading | escape }}"
+                data-language-text-en="{{ item.page_heading | escape }}"
+              >{{ item.page_heading_ko | default: item.page_heading }}</h3>
+              <p
+                data-language-text
+                data-language-text-ko="{{ news_date_ko | escape }}"
+                data-language-text-en="{{ news_date | escape }}"
+              >{{ news_date_ko }}</p>
             </div>
           </div>
         </a>
@@ -359,7 +397,7 @@
       </article>
 
       <a href="{{ '/news/index.html' | relative_url }}" class="btn btn-secondary archive-link"
-        >See More <i class="fas fa-arrow-right"></i
+        ><span data-language-text data-language-text-ko="더 보기" data-language-text-en="See More">더 보기</span> <i class="fas fa-arrow-right"></i
       ></a>
     </section>
 
@@ -370,55 +408,64 @@
       <div class="division"></div>
       <div class="content-text">
         <h2>Donations</h2>
-        <p>
-          {{ donations.lead | default: "Support helps MIMIC continue its seminars and activities." }}
+        <p
+          data-language-text
+          data-language-text-ko="{{ donations.lead_ko | default: '후원은 MIMIC의 세미나와 활동이 이어질 수 있도록 돕습니다.' | escape }}"
+          data-language-text-en="{{ donations.lead | default: 'Support helps MIMIC continue its seminars and activities.' | escape }}"
+        >
+          {{ donations.lead_ko | default: "후원은 MIMIC의 세미나와 활동이 이어질 수 있도록 돕습니다." }}
         </p>
       </div>
 
       <div class="donations-layout">
         <article class="donations-card donations-card-account">
-          <p class="donations-label">Bank Transfer</p>
-          <p class="donations-account-desc">Support MIMIC's seminars and activities with a direct bank transfer.</p>
-          <button class="donations-donate-btn" id="donateBtn">Donate</button>
+          <p class="donations-label" data-language-text data-language-text-ko="계좌이체" data-language-text-en="Bank Transfer">계좌이체</p>
+          <p class="donations-account-desc" data-language-text data-language-text-ko="계좌이체로 MIMIC의 세미나와 활동을 후원할 수 있습니다." data-language-text-en="Support MIMIC's seminars and activities with a direct bank transfer.">계좌이체로 MIMIC의 세미나와 활동을 후원할 수 있습니다.</p>
+          <button class="donations-donate-btn" id="donateBtn" data-language-text data-language-text-ko="후원하기" data-language-text-en="Donate">후원하기</button>
         </article>
 
         <!-- Donation Modal -->
         <div class="donations-modal-overlay" id="donationModal" aria-modal="true" role="dialog" aria-labelledby="modalTitle">
           <div class="donations-modal">
             <button class="donations-modal-close" id="modalClose" aria-label="Close">&times;</button>
-            <p class="donations-label">Bank Transfer</p>
-            <h3 id="modalTitle" class="donations-modal-title">Thank you for your support</h3>
+            <p class="donations-label" data-language-text data-language-text-ko="계좌이체" data-language-text-en="Bank Transfer">계좌이체</p>
+            <h3 id="modalTitle" class="donations-modal-title" data-language-text data-language-text-ko="후원에 감사드립니다" data-language-text-en="Thank you for your support">후원에 감사드립니다</h3>
             <div class="donations-modal-rows">
               {% if donation_account.bank_name != '' %}
               <div class="donations-modal-row">
-                <span class="donations-modal-row-label">Bank</span>
+                <span class="donations-modal-row-label" data-language-text data-language-text-ko="은행" data-language-text-en="Bank">은행</span>
                 <span class="donations-modal-row-value">{{ donation_account.bank_name }}</span>
               </div>
               {% endif %}
               {% if donation_account.account_number != '' %}
               <div class="donations-modal-row donations-modal-row--account">
-                <span class="donations-modal-row-label">Account</span>
+                <span class="donations-modal-row-label" data-language-text data-language-text-ko="계좌" data-language-text-en="Account">계좌</span>
                 <span class="donations-modal-row-value" id="accountNumber">{{ donation_account.account_number }}</span>
               </div>
               {% endif %}
               {% if donation_account.account_holder != '' %}
               <div class="donations-modal-row">
-                <span class="donations-modal-row-label">Holder</span>
+                <span class="donations-modal-row-label" data-language-text data-language-text-ko="예금주" data-language-text-en="Holder">예금주</span>
                 <span class="donations-modal-row-value">{{ donation_account.account_holder }}</span>
               </div>
               {% endif %}
             </div>
             <button class="donations-copy-btn" id="copyBtn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copy Account Number
+              <span id="copyBtnLabel" data-language-text data-language-text-ko="계좌번호 복사" data-language-text-en="Copy Account Number">계좌번호 복사</span>
             </button>
           </div>
         </div>
 
         <article class="donations-card donations-card-roll">
           <div class="donations-roll-header">
-            <h3>Donors</h3>
-            <p class="donations-roll-note">{{ donations.period | default: "Names listed with permission" }}</p>
+            <h3 data-language-text data-language-text-ko="후원자 명단" data-language-text-en="Donors">후원자 명단</h3>
+            <p
+              class="donations-roll-note"
+              data-language-text
+              data-language-text-ko="{{ donations.period_ko | default: donations.period | escape }}"
+              data-language-text-en="{{ donations.period | default: 'Names listed with permission' | escape }}"
+            >{{ donations.period_ko | default: donations.period }}</p>
           </div>
 
           {% if donation_entries and donation_entries.size > 0 %}
@@ -453,14 +500,29 @@
       <div class="division"></div>
       <div class="content-text">
         <h2>Contact</h2>
-        <p>
-          MIMIC is a student math club in the Department of Mathematics,
-          College of Natural Sciences, Sungkyunkwan University.
+        <p
+          data-language-text
+          data-language-text-ko="MIMIC은 성균관대학교 자연과학대학 수학과의 학생 수학 동아리입니다."
+          data-language-text-en="MIMIC is a student math club in the Department of Mathematics, College of Natural Sciences, Sungkyunkwan University."
+        >
+          MIMIC은 성균관대학교 자연과학대학 수학과의 학생 수학 동아리입니다.
         </p>
       </div>
 
       <div class="contact-panel">
-        <div class="contact-meta">
+        <div class="contact-meta" data-language-panel="ko">
+          <p>
+            <strong>소속:</strong> 성균관대학교 자연과학대학 수학과
+          </p>
+          <p>
+            <strong>위치:</strong> 성균관대학교 자연과학캠퍼스(수원)
+          </p>
+          <p>
+            <strong>이메일:</strong> skkumathmimic@gmail.com
+          </p>
+        </div>
+
+        <div class="contact-meta" data-language-panel="en" hidden>
           <p>
             <strong>Affiliation:</strong> Department of Mathematics, College of
             Natural Sciences, Sungkyunkwan University
@@ -514,6 +576,7 @@
     </section>
 
     {% include site-footer.html %}
+    <script src="js/seminar-language-toggle.js"></script>
     <script src="js/script.js"></script>
     <script>
       (function () {
@@ -521,9 +584,27 @@
         var openBtn = document.getElementById('donateBtn');
         var closeBtn = document.getElementById('modalClose');
         var copyBtn = document.getElementById('copyBtn');
+        var copyBtnLabel = document.getElementById('copyBtnLabel');
         var accountEl = document.getElementById('accountNumber');
 
         if (!modal || !openBtn) return;
+
+        function getCurrentLanguage() {
+          try {
+            return localStorage.getItem('siteLanguage') === 'en' ? 'en' : 'ko';
+          } catch (error) {
+            return 'ko';
+          }
+        }
+
+        function setCopyButtonLabel(isCopied) {
+          if (!copyBtnLabel) return;
+          if (isCopied) {
+            copyBtnLabel.textContent = getCurrentLanguage() === 'en' ? 'Copied!' : '복사됨!';
+            return;
+          }
+          copyBtnLabel.textContent = getCurrentLanguage() === 'en' ? 'Copy Account Number' : '계좌번호 복사';
+        }
 
         function openModal() {
           modal.classList.add('is-open');
@@ -546,13 +627,15 @@
           if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
         });
 
+        setCopyButtonLabel(false);
+
         if (copyBtn && accountEl) {
           copyBtn.addEventListener('click', function () {
             var text = accountEl.textContent.trim();
             navigator.clipboard.writeText(text).then(function () {
-              copyBtn.textContent = 'Copied!';
+              setCopyButtonLabel(true);
               setTimeout(function () {
-                copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Account Number';
+                setCopyButtonLabel(false);
               }, 2000);
             });
           });
